@@ -1,0 +1,183 @@
+* {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+    background-color: rgb(198, 227, 240)
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 96%;
+    max-width: 900px;
+}
+
+@media (max-width: 870px) {
+    .container {
+        width: 482px;
+        min-width: 470px;
+    }
+}
+
+.blockContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(to right, lightgray 0%, white 50%, lightgray 100%);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.blockContainer-sml {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: linear-gradient(to right, lightgray 0%, white 50%, lightgray 100%);
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.divider {
+    width: 100%;
+}
+
+.header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    height: 20px;
+    margin: 20px 0 20px 0;
+    background-color: rgba(255, 255, 255, 0.267);
+    height: auto;
+}
+
+.headerMenu {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.headerButton {
+    margin: 0 10px 0 0;    
+}
+
+.btn_sml {
+    padding: 5px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    background-image: linear-gradient(gray,silver);
+    margin: 0 3px 0 0;
+}
+
+.btn_lg {
+    padding: 5px 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    border: 1px solid lightgray;
+    background-image: linear-gradient(gray,silver);
+    margin: 0 3px 0 0;
+}
+
+.logo {
+    height: 40px;
+}
+
+.appHeader {
+    padding: 0 0 0 20px;
+}
+
+.contentRow {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;    
+    border: 1px solid rgb(96, 147, 180);
+    border-radius: 8px;
+    padding: 10px 10px 0 10px;
+    margin: 5px;
+    background-color: white;
+}
+
+.contentCol {
+    display: flex;
+    justify-content: flex-start;
+    border-right: 3px solid rgb(96, 147, 180);
+    margin: 0 10px 0 0;
+}
+
+.labels {
+    display: flex;
+    flex-wrap: nowrap;
+    min-width: 200px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 0 2px 0;
+}
+
+.contentSection {
+    display: flex;
+    flex-wrap: wrap;
+    min-width: 200px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0 0 10px 0;
+}
+
+.contentLabel {
+    font-size: 0.8em;
+    margin: 0 10px 0 0;
+}
+
+.contentInput {
+    display: flex;
+    width: 408px;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 0 10px 0 0 ;
+}
+
+.studentInput {
+    display: flex;
+    width: 200px;
+    margin: 0 0 0 0;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.studentUsername {
+    display: flex;
+    width: 200px;
+    margin: 0 10px 0 0;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid lightgray;
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.flex-row-divider {
+    width: 4px;
+    height: 40px;
+}

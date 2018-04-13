@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/index.css">
+    <title>PM App</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="./assets/img/PMLogo.svg" alt="PM Logo" class="logo">
+            <h1 class="appHeader">Lambda PM App</h1>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer'>
+                    <label for=headerMenu class="contentLabel">App Functions</label>
+                    <div class="headerMenu">
+                        <button class="headerButton btn_lg" onclick="handleBatch()">BATCH</button>
+                        <button class="headerButton btn_lg" onclick="handleSave()">SAVE</button>
+                    </div>
+                </div>
+                <div class='blockContainer'>
+                    <label for=headerMenu class="contentLabel">Student Forms</label>
+                    <div class="headerMenu">
+                        <button class="headerButton btn_lg" onclick="handleForms('studentStandUp')">STANDUP</button>
+                        <button class="headerButton btn_lg" onclick="handleForms('studentSprint')">SPRINT</button>
+                    </div>
+                </div>
+                <div class='blockContainer'>
+                    <label for=headerMenu class="contentLabel">PM Forms</label>
+                    <div class="headerMenu">
+                        <button class="headerButton btn_lg" onclick="handleForms('attendance')">ATTENDANCE</button>
+                        <button class="headerButton btn_lg" onclick="handleForms('pmDaily')">DAILY</button>
+                        <button class="headerButton btn_lg" onclick="handleForms('pmSprint')">SPRINT</button>
+                    </div>
+                </div>
+            </div>
+            <div class="divider"></div>
+            <div class='contentSection'>
+                <div class='blockContainer'>
+                    <label for="Working Directory" class="contentLabel">Working Directory</label>
+                    <input class="contentInput" type="text" name="Working Directory" id="workDir" value="" placeholder="Please Paste your Current Work Directory">
+                </div>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer'>
+                    <label for="Assignment GitHub Repository" class="contentLabel">Assignment Github Repo:</label>
+                    <input class="contentInput" type="text" name="Assignment GitHub Repository" id="assignmentRepo">
+                </div>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='studentInputs_container'>
+                <div class='contentSection'>
+                    <div class='blockContainer-sml'>
+                        <label for="studentName" class="contentLabel">Student Name:</label>
+                        <input type="text" class="studentInput" name="studentName">
+                    </div>
+                    <div class='blockContainer-sml'>
+                        <label for="studentGh" class="contentLabel">username:</label>
+                        <input type="text" class="studentUsername" name="studentUsername">
+                    </div>
+                    <div class='flex-row-divider'></div>
+                    <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                    <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                    <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                    <button class="headerButton btn_lg">Grading</button>
+                    <button class="headerButton btn_lg">1on1</button>
+                </div>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+        <div class="contentRow">
+            <div class='contentSection'>
+                <div class='blockContainer-sml'>
+                    <label for="studentName" class="contentLabel">Student Name:</label>
+                    <input type="text" class="studentInput" name="studentName">
+                </div>
+                <div class='blockContainer-sml'>
+                    <label for="studentGh" class="contentLabel">username:</label>
+                    <input type="text" class="studentUsername" name="studentUsername">
+                </div>
+                <button class="headerButton btn_sml" onclick="handleGh(event)">GH</button>
+                <button class="headerButton btn_lg" onclick="handleClone(event)">CLONE</button>
+                <button class="headerButton btn_sml" onclick="handlePR(event)">PR</button>
+                <button class="headerButton btn_lg">Grading</button>
+                <button class="headerButton btn_lg">1on1</button>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <script src="./assets/js/index.js"></script>
+</body>
+
+</html>
