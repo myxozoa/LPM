@@ -8,6 +8,13 @@ let workDir, students, usernames, assignment;
 const folderNames = [];
 
 // ########     BEGIN DATABASE FUNCTIONALITY     ########
+// Ensure DB file exists if not Create it
+let touchCommand = process.platform == 'win32' ? `.>/assets/db/settings.db` : `touch /assets/db/settings.db`;
+
+exec(`mkdir assets/db/ && ${touchCommand}`, (err) => {
+    if (err) console.log(err);
+});
+
 const DataStore = require('nedb');
 let dbpath = path.resolve('./assets/db/settings.db');
 const db = new DataStore({ filename: dbpath, autoload: true });
