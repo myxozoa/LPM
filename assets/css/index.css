@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
@@ -14,23 +14,37 @@ body {
     display: flex;
     flex-direction: column;
     margin: 0 auto;
-    width: 96%;
-    max-width: 900px;
+    width: 100%;
+    max-width: 810px;
 }
 
-@media (max-width: 870px) {
-    .container {
-        width: 482px;
-        min-width: 470px;
-    }
+.contentRow {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border: 1px solid rgb(96, 147, 180);
+    border-radius: 8px;
+    padding: 10px 10px 10px 10px;
+    margin: 2px 0;
+    background-color: white;
+}
+
+.contentSection {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-end;
+    margin: 0 0 0 0;
 }
 
 .blockContainer {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: linear-gradient(to right, lightgray 0%, white 50%, lightgray 100%);
-    padding: 10px;
+    /* background-image: linear-gradient(to right, lightgray 0%, white 50%, lightgray 100%); */
+    padding: 4px;
     border-radius: 5px;
     margin: 5px;
 }
@@ -40,35 +54,32 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-image: linear-gradient(to right, lightgray 0%, white 50%, lightgray 100%);
-    padding: 10px;
+    padding: 4px;
     border-radius: 5px;
-    margin: 5px;
 }
 
-.divider {
-    width: 100%;
-}
-
-.header {
+.btnContainer {
     display: flex;
-    width: 100%;
-    justify-content: center;
-    flex-wrap: nowrap;
-    align-items: center;
-    height: 20px;
-    margin: 20px 0 20px 0;
-    background-color: rgba(255, 255, 255, 0.267);
-    height: auto;
+    justify-content: flex-start;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+.block-red {
+    background-image: linear-gradient(to right, rgb(247, 167, 167) 0%, rgb(255, 215, 215) 50%, rgb(247, 167, 167) 100%);
+}
+
+.block-blue {
+    background-image: linear-gradient(to right, rgb(167, 167, 247) 0%, rgb(215, 215, 255) 50%, rgb(167, 167, 247) 100%);
+}
+
+.block-green {
+    background-image: linear-gradient(to right, rgb(167, 247, 167) 0%, rgb(215, 255, 215) 50%, rgb(167, 247, 167) 100%);
 }
 
 .headerMenu {
     display: flex;
     justify-content: space-evenly;
-}
-
-.headerButton {
-    margin: 0 10px 0 0;    
 }
 
 .btn_sml {
@@ -93,72 +104,33 @@ body {
     margin: 0 3px 0 0;
 }
 
-.logo {
-    height: 40px;
-}
-
-.appHeader {
-    padding: 0 0 0 20px;
-}
-
-.contentRow {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-wrap: wrap;
-    width: 100%;    
+.btn_sml:hover, .btn_lg:hover {
+    color: white;
     border: 1px solid rgb(96, 147, 180);
-    border-radius: 8px;
-    padding: 10px 10px 0 10px;
-    margin: 5px;
-    background-color: white;
-}
-
-.contentCol {
-    display: flex;
-    justify-content: flex-start;
-    border-right: 3px solid rgb(96, 147, 180);
-    margin: 0 10px 0 0;
-}
-
-.labels {
-    display: flex;
-    flex-wrap: nowrap;
-    min-width: 200px;
-    justify-content: space-around;
-    align-items: center;
-    margin: 0 0 2px 0;
-}
-
-.contentSection {
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 200px;
-    justify-content: flex-start;
-    align-items: flex-end;
-    margin: 0 0 10px 0;
+    background-image: linear-gradient(rgb(68, 68, 68),rgb(141, 141, 141));
+    cursor: pointer;
 }
 
 .contentLabel {
     font-size: 0.8em;
-    margin: 0 10px 0 0;
+    margin: 0 10px 2px 0;
 }
 
 .contentInput {
     display: flex;
-    width: 408px;
+    width: 416px;
     justify-content: flex-start;
     align-items: center;
     border: 1px solid lightgray;
     border-radius: 4px;
     padding: 4px;
-    margin: 0 10px 0 0 ;
+    margin: 0;
 }
 
 .studentInput {
     display: flex;
     width: 200px;
-    margin: 0 0 0 0;
+    margin: 0;
     justify-content: flex-start;
     align-items: center;
     border: 1px solid lightgray;
@@ -177,7 +149,9 @@ body {
     padding: 4px;
 }
 
-.flex-row-divider {
-    width: 4px;
-    height: 40px;
+@media (max-width: 870px) {
+    .container {
+        width: 462px;
+        min-width: 462px;
+    }
 }

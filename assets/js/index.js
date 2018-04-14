@@ -171,7 +171,6 @@ handleLoad();
 const handleBatch = () => {
     gatherData();
     // ASSIGNMENT: "https://github.com/LambdaSchool/Preprocessing-Part-I"
-    console.log("HandleBatch Firing!");
 
     let re = /https:\/\/github.com\/LambdaSchool\/(.+)/g;
     const extractedAssignment = re.exec(assignment)[1];
@@ -199,8 +198,9 @@ const handleClone = (event) => {
     gatherData();
     let re = /https:\/\/github.com\/LambdaSchool\/(.+)/g;
     const extractedAssignment = re.exec(assignment)[1];
-
-    const eventParent = event.path['1'];
+    // extract event element's parent's parent;
+    // 2 parents deep because it is nested now
+    const eventParent = event.path['1'].parentElement;
 
     const studentFolder = eventParent.querySelector(".studentInput").value.split(" ").join("_");
     const studentUsername = eventParent.querySelector(".studentUsername").value;
@@ -212,8 +212,10 @@ const handleClone = (event) => {
 
 const handleGh = (event) => {
     gatherData();
-    // extract event element's parent;
-    const eventParent = event.path['1'];
+    // extract event element's parent's parent;
+    // 2 parents deep because it is nested now
+    const eventParent = event.path['1'].parentElement;
+    console.log(eventParent)
     const currentUsername = eventParent.querySelector(".studentUsername").value;
     shell.openExternal(`https://github.com/${currentUsername}?tab=repositories`);
 }
@@ -222,8 +224,9 @@ const handlePR = (event) => {
     // https://github.com/LambdaSchool/Responsive-Web-Design/pulls/designerexpert
     gatherData();
 
-    // extract event element's parent;
-    const eventParent = event.path['1'];
+    // extract event element's parent's parent;
+    // 2 parents deep because it is nested now
+    const eventParent = event.path['1'].parentElement;
     const currentUsername = eventParent.querySelector(".studentUsername").value;
     shell.openExternal(`${assignment}/pulls/${currentUsername}`);
 }
