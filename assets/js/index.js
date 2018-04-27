@@ -205,14 +205,14 @@ const handleClone = (event) => {
     const studentFolder = eventParent.querySelector(".studentInput").value.split(" ").join("_");
     const studentUsername = eventParent.querySelector(".studentUsername").value;
 
-    exec(`cd ${workDir}\\${studentFolder}\\${extractedAssignment} && git stash && git pull`, (err) => {
+    exec(`cd ${workDir}\\${studentFolder}\\${extractedAssignment} && git pull`, (err) => {
         if (err) console.log(err);
     });
 }
 
 const handleGh = (event) => {
     gatherData();
-    // extract event element's parent's parent;
+    // extract event element's parent's parent
     // 2 parents deep because it is nested now
     const eventParent = event.path['1'].parentElement;
     console.log(eventParent)
@@ -229,6 +229,17 @@ const handlePR = (event) => {
     const eventParent = event.path['1'].parentElement;
     const currentUsername = eventParent.querySelector(".studentUsername").value;
     shell.openExternal(`${assignment}/pulls/${currentUsername}`);
+}
+
+const handleSandbox = (event) => {
+    gatherData();
+
+    let re = /https:\/\/github.com\/LambdaSchool\/(.+)/g;
+    const extractedAssignment = re.exec(assignment)[1];
+    const eventParent = event.path['1'].parentElement;
+    const currentUsername = eventParent.querySelector(".studentUsername").value;
+    // Open Codesandbox on this pattern : https://codesandbox.io/s/github/username/assignment
+    shell.openExternal(`https://codesandbox.io/s/github/${currentUsername}/${extractedAssignment}`);
 }
 
 const handleForms = (formName) => {
