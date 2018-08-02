@@ -25,7 +25,7 @@ body {
     max-width: 810px;
 }
 
-.contentRow {
+.container-row {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -33,7 +33,7 @@ body {
     width: 100%;
     border: 1px solid var(--border);
     border-radius: 8px;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     margin: 2px 0;
     background-color: white;
 }
@@ -71,7 +71,7 @@ body {
     border-radius: 5px;
 }
 
-.btnContainer {
+.container-button {
     display: flex;
     justify-content: flex-start;
     padding: 4px;
@@ -83,7 +83,7 @@ body {
     background: var(--blocks);
 }
 
-.headerMenu {
+.container-block {
     display: flex;
     justify-content: space-evenly;
 }
@@ -99,7 +99,7 @@ body {
     margin: 0 20px 0 0;
 }
 
-.btn {
+.button {
     padding: 5px 10px;
     display: flex;
     justify-content: center;
@@ -110,35 +110,24 @@ body {
     margin: 0 3px 0 0;
 }
 
-.btn:hover {
+.button:hover {
     background: var(--button-bg-hover);
     cursor: pointer;
 }
 
-.contentLabel {
+.label-block {
     font-size: 0.8em;
     margin: 0 10px 2px 0;
 }
 
-.contentInput {
+.input {
     display: flex;
-    width: 416px;
     justify-content: flex-start;
     align-items: center;
     border: 1px solid lightgray;
     border-radius: 4px;
     padding: 4px;
     margin: 0;
-}
-
-.studentInput {
-    display: flex;
-    margin: 0;
-    justify-content: flex-start;
-    align-items: center;
-    border: 1px solid lightgray;
-    border-radius: 4px;
-    padding: 4px;
 }
 
 .studentInputs_container {
@@ -147,7 +136,6 @@ body {
 
 @media (max-width: 870px) {
     .container {
-        width: 462px;
-        min-width: 462px;
+        width: 80%;
     }
 }
