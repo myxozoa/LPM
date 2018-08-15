@@ -2,16 +2,18 @@ const fs = require('fs');
 const path = require('path');
 const shell = require('electron').shell;
 const exec = require('child_process').exec;
+const mkdirp = require('mkdirp');
 
 // Global Variables
-let workDir, students, usernames, assignment;
+let workDir, students, usernames, assignment, assignmentElement;
 const folderNames = [];
 
 // ########     BEGIN DATABASE FUNCTIONALITY     ########
 // Ensure DB file exists if not Create it
-let touchCommand = process.platform == 'win32' ? `.>/assets/db/settings.db` : `touch /assets/db/settings.db`;
+let touchCommand = process.platform == 'win32' ? 'if not exist "assets\\db\\" mkdir assets\\db\\ && type nul >> .\\assets\\db\\settings.db' :
+                                                 'mkdir -p assets/db/ && touch /assets/db/settings.db';
 
-exec(`mkdir assets/db/ && ${touchCommand}`, (err) => {
+exec(touchCommand, (err) => {
     if (err) console.log(err);
 });
 
@@ -33,15 +35,16 @@ const db = new DataStore({ filename: dbpath, autoload: true });
 // Initialize Data
 const gatherData = () => {
     // Populate workDir global variable.
-    workDir = document.getElementById('workDir').value;
+    workDir = document.getElementById('workDir').value.trim();
     // Populate students global variable.
-    students = Array.from(document.getElementsByClassName('studentInput'));
+    students = Array.from(document.getElementsByClassName('studentName'));
     let newStudents = students.map(student => {
-        return student.value;
+        return student.value.trim();
     });
     students = newStudents;
     // Populate assignment global variable.
-    assignment = document.getElementById('assignmentRepo').value;
+    assignmentElement = document.getElementById('assignmentRepo');
+    assignment = assignmentElement.value.trim();
     // Populate folder Names.
     students.forEach(student => {
         if (student === '') {
@@ -53,7 +56,7 @@ const gatherData = () => {
     // Populate usernames gloval variable
     usernames = Array.from(document.getElementsByClassName('studentUsername'));
     let newUsernames = usernames.map(username => {
-        return username.value;
+        return username.value.trim();
     });
     usernames = newUsernames;
 };
@@ -118,7 +121,7 @@ const handleSave = () => {
 
 const handleLoad = () => {
     const workDirElement = document.getElementById('workDir');
-    const studentElements = document.getElementsByClassName('studentInput');
+    const studentElements = document.getElementsByClassName('studentName');
     const assignmentElement = document.getElementById('assignmentRepo');
     const usernameElements = document.getElementsByClassName('studentUsername');
     // Load workDir if available.
@@ -127,7 +130,7 @@ const handleLoad = () => {
         if (found.length > 0) {
             workDirElement.value = found[0].workDir;
         } else {
-            console.log('Work Directory not saved in database yet')
+            console.warn('Work Directory not saved in database yet')
         }
     });
     // Load students list if available.
@@ -140,7 +143,7 @@ const handleLoad = () => {
                 studentElements[index].value = item;
             })
         } else {
-            console.log('Students not saved in database yet')
+            console.warn('Students not saved in database yet')
         }
     });
     // Load usernames list if available.
@@ -153,7 +156,7 @@ const handleLoad = () => {
                 usernameElements[index].value = item;
             })
         } else {
-            console.log('Usernames not saved in database yet')
+            console.warn('Usernames not saved in database yet')
         }
     });
     // Load assignment if available.
@@ -162,7 +165,7 @@ const handleLoad = () => {
         if (found.length > 0) {
             assignmentElement.value = found[0].assignment;
         } else {
-            console.log('Work Directory not saved in database yet')
+            console.warn('Work Directory not saved in database yet')
         }
     });
 }
@@ -179,12 +182,17 @@ const handleBatch = () => {
     // Iterate over folderNames
     if (folderNames.length > 0) {
         folderNames.forEach((studentFolder, index) => {
-            fs.mkdir(`${workDir}/${studentFolder}`, (error) => {
+            mkdirp(`${workDir}/${studentFolder}`, (error) => {
                 if (error) {
-                    console.log('Failed to create folders', error);
+                    console.error('Failed to create folders', error);
                 } else {
-                    exec(`git clone https://github.com/${usernames[index]}/${extractedAssignment} ${workDir}/${studentFolder}/${extractedAssignment}`, (err) => {
-                        if (err) console.log(err);
+                    exec(`git clone https://github.com/${usernames[index]}/${extractedAssignment} ${workDir}/${studentFolder}/${extractedAssignment} || (cd ${workDir}/${studentFolder}/${extractedAssignment} && git pull)`, (err, stdout) => {
+                        console.log(`${usernames[index]}:`, stdout);
+                        if (err) {
+                            console.error(err);
+                        } else {
+                            console.info('Successfully cloned/pulled from: ', usernames[index]);
+                        }
                     });
                 }
             });
@@ -194,19 +202,44 @@ const handleBatch = () => {
     }
 }
 
-const handleClone = (event) => {
+const validInput = (element, errorTarget, message) => {
+    if(element && (element.value !== '')) {
+        errorTarget.classList.remove('error');
+        return true;
+    } else {
+        errorTarget.classList.add('error');
+        console.error('Error: ', message || '');
+        return false;
+    }
+}
+
+const handlePull = (event) => {
     gatherData();
-    let re = /https:\/\/github.com\/LambdaSchool\/(.+)/g;
-    const extractedAssignment = re.exec(assignment)[1];
+    let re = /https:\/\/github.com\/.+\/(.+)/g;
+    const repoName = re.exec(assignment);
+
+    if(!validInput(repoName, assignmentElement, 'Repo name is missing or Invalid')) return;
+
+    let extractedAssignment = repoName[1];
     // extract event element's parent's parent;
     // 2 parents deep because it is nested now
     const eventParent = event.path['1'].parentElement;
 
-    const studentFolder = eventParent.querySelector(".studentInput").value.split(" ").join("_");
-    const studentUsername = eventParent.querySelector(".studentUsername").value;
+    const studentName = eventParent.querySelector('.studentName');
 
-    exec(`cd ${workDir}\\${studentFolder}\\${extractedAssignment} && git pull`, (err) => {
-        if (err) console.log(err);
+    if(!validInput(studentName, studentName, 'The students name has not been defined')) return;
+
+    let studentFolder = studentName.value.split(" ").join("_");
+    // const studentUsername = eventParent.querySelector(".studentUsername").value;
+
+    exec(`cd ${workDir.trim()}\\${studentFolder.trim()}\\${extractedAssignment.trim()} && git pull`, (err) => {
+        if (err) {
+            console.error(err);
+            eventParent.classList.add('error');
+        } else {
+            eventParent.classList.remove('error');
+            console.info('Pull Successful');
+        }
     });
 }
 
@@ -215,9 +248,12 @@ const handleGh = (event) => {
     // extract event element's parent's parent
     // 2 parents deep because it is nested now
     const eventParent = event.path['1'].parentElement;
-    console.log(eventParent)
-    const currentUsername = eventParent.querySelector(".studentUsername").value;
-    shell.openExternal(`https://github.com/${currentUsername}?tab=repositories`);
+
+    const currentUsername = eventParent.querySelector(".studentUsername");
+
+    if(!validInput(currentUsername, currentUsername, 'The students username has not been defined')) return;
+
+    shell.openExternal(`https://github.com/${currentUsername.value.trim()}?tab=repositories`);
 }
 
 const handlePR = (event) => {
@@ -227,8 +263,11 @@ const handlePR = (event) => {
     // extract event element's parent's parent;
     // 2 parents deep because it is nested now
     const eventParent = event.path['1'].parentElement;
-    const currentUsername = eventParent.querySelector(".studentUsername").value;
-    shell.openExternal(`${assignment}/pulls/${currentUsername}`);
+    const currentUsername = eventParent.querySelector(".studentUsername");
+    if(!validInput(currentUsername, currentUsername, 'The students username has not been defined')) return;
+    if(!validInput(assignmentElement, assignmentElement, 'Repo name is missing or Invalid')) return;
+
+    shell.openExternal(`${assignment.trim()}/pulls/${currentUsername.value.trim()}`);
 }
 
 const handleSandbox = (event) => {
@@ -237,9 +276,9 @@ const handleSandbox = (event) => {
     let re = /https:\/\/github.com\/LambdaSchool\/(.+)/g;
     const extractedAssignment = re.exec(assignment)[1];
     const eventParent = event.path['1'].parentElement;
-    const currentUsername = eventParent.querySelector(".studentUsername").value;
+    const currentUsername = eventParent.querySelector(".studentUsername").value.trim();
     // Open Codesandbox on this pattern : https://codesandbox.io/s/github/username/assignment
-    shell.openExternal(`https://codesandbox.io/s/github/${currentUsername}/${extractedAssignment}`);
+    shell.openExternal(`https://codesandbox.io/s/github/${currentUsername}/${extractedAssignment.trim()}`);
 }
 
 const handleForms = (formName) => {

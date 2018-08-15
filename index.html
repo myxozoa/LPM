@@ -1,38 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
+<head
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,400,400i,700,700i" rel="stylesheet">
     <link href="./assets/css/index.css" rel="stylesheet">
     <title>PM App</title>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container-app">
         <div class="header">
-            <img alt="PM Logo" class="logo" height="50px" src="./assets/img/PMLogo.svg">
-            <h1 class="appHeader">Lambda PM App</h1>
+            <img alt="PM Logo" class="logo" height="30px" src="./assets/img/PMLogo.svg">
+            <h2 class="title">Lambda PM App</h2>
         </div>
         <div class="container-row">
             <div class="contentSection">
-                <div class="blockContainer block">
-                    <label class="label-block">App Functions</label>
+                <div class="container-functions">
                     <div class="container-block">
-                        <button class="button" onclick="handleBatch()">Clone All</button>
-                        <button class="button" onclick="handleSave()">Save</button>
+                        <label class="label-block">App Functions:</label>
+                        <div class="container-button">
+                            <button class="button buttonFrequent" onclick="handleBatch()">Batch</button>
+                            <button class="button" onclick="handleSave()">Save</button>
+                        </div>
+                    </div>
+                    <div class="container-block">
+                        <label class="label-block">Student Forms:</label>
+                        <div class="container-button">
+                            <button class="button" onclick="handleForms('studentStandUp')">Standup</button>
+                            <button class="button" onclick="handleForms('studentSprint')">Sprint</button>
+                        </div>
                     </div>
                 </div>
-                <div class="blockContainer block">
-                    <label class="label-block">Student Forms</label>
-                    <div class="container-block">
-                        <button class="button" onclick="handleForms('studentStandUp')">Standup</button>
-                        <button class="button" onclick="handleForms('studentSprint')">Sprint</button>
-                    </div>
-                </div>
-                <div class="blockContainer block">
-                    <label class="label-block">PM Forms</label>
-                    <div class="container-block">
+                <div class="container-block">
+                    <label class="label-block">PM Forms:</label>
+                    <div class="container-button">
                         <button class="button" onclick="handleForms('attendance')">Attendance</button>
                         <button class="button" onclick="handleForms('pmDaily')">Daily</button>
                         <button class="button" onclick="handleForms('pmSprint')">Sprint</button>
@@ -40,8 +43,8 @@
                 </div>
             </div>
             <div class="contentSection">
-                <div class="blockContainer">
-                    <label class="label-block" for="Working Directory">Working Directory</label>
+                <div class="container-block">
+                    <label class="label-block" for="Working Directory">Working Directory:</label>
                     <input class="input" id="workDir" name="Working Directory" placeholder="C:\Users\admin\Documents\Lambda-PM *NO SPACES*"
                         type="text" value="">
                 </div>
@@ -49,37 +52,36 @@
         </div>
         <div class="container-row">
             <div class="contentSection">
-                <div class="blockContainer">
-                    <label class="label-block" for="Assignment GitHub Repository">Assignment Github Repo:</label>
+                <div class="container-block">
+                    <label class="label-block" for="Assignment GitHub Repository">Assignment Github Repo URL:</label>
                     <input class="input" id="assignmentRepo" name="Assignment GitHub Repository"
                         placeholder="https://github.com/myxozoa/LPM" type="text">
                 </div>
             </div>
         </div>
         <div class="container-row">
-            <div class="studentInputs_container">
-                <div class="contentSection">
-                    <div class="inputs">
-                        <div class="blockContainer-sml">
-                            <label class="label-block" for="studentName">Student Name:</label>
-                            <input class="input" name="studentName" placeholder="John Smith"
-                                type="text">
-                        </div>
-                        <div class="blockContainer-sml">
-                            <label class="label-block" for="studentGh">Username:</label>
-                            <input class="input" name="studentUsername" placeholder="johnnyboy12"
-                                type="text">
-                        </div>
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith"
+                            type="text">
                     </div>
-                    <div class="container-button">
-                        <button class="button" onclick="handleGh(event)">GH</button>
-                        <button class="button" onclick="handlePR(event)">PR</button>
-                        <button class="button" onclick="handlePull(event)">Pull</button>
-                        <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12"
+                            type="text">
                     </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
                 </div>
             </div>
         </div>
+        
     </div>
     <script src="./assets/js/index.js"></script>
 </body>
