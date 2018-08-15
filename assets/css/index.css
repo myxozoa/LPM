@@ -170,6 +170,10 @@ input[type=text]:focus {
     border: 1px solid var(--error) !important;
 }
 
+.logo {
+    padding: 7px 0 0 0;
+}
+
 @media (max-width: 870px) {
     .container-app {
         width: 90%;

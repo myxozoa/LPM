@@ -38,21 +38,23 @@ const gatherData = () => {
     workDir = document.getElementById('workDir').value.trim();
     // Populate students global variable.
     students = Array.from(document.getElementsByClassName('studentName'));
-    let newStudents = students.map(student => {
+    console.log('students data', students);
+    students = students.filter((el) => {
+        return el.value !== '';
+    }).map(student => {
+        folderNames.push(student.value.trim().split(" ").join("_"));
         return student.value.trim();
     });
-    students = newStudents;
+    console.log('students data 2', students);
+
+    // let newStudents = students.map(student => {
+    //     return student.value.trim();
+    // });
+    // students = newStudents;
     // Populate assignment global variable.
     assignmentElement = document.getElementById('assignmentRepo');
     assignment = assignmentElement.value.trim();
     // Populate folder Names.
-    students.forEach(student => {
-        if (student === '') {
-            return;
-        } else {
-            folderNames.push(student.split(" ").join("_"));
-        }
-    });
     // Populate usernames gloval variable
     usernames = Array.from(document.getElementsByClassName('studentUsername'));
     let newUsernames = usernames.map(username => {
@@ -183,6 +185,9 @@ const handleBatch = () => {
     if (folderNames.length > 0) {
         folderNames.forEach((studentFolder, index) => {
             mkdirp(`${workDir}/${studentFolder}`, (error) => {
+                console.log(studentFolder);
+                console.log(students);
+                console.log(folderNames);
                 if (error) {
                     console.error('Failed to create folders', error);
                 } else {

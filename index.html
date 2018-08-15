@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head
-    <meta charset="UTF-8">
+<head <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,400,400i,700,700i" rel="stylesheet">
     <link href="./assets/css/index.css" rel="stylesheet">
@@ -45,8 +44,8 @@
             <div class="contentSection">
                 <div class="container-block">
                     <label class="label-block" for="Working Directory">Working Directory:</label>
-                    <input class="input" id="workDir" name="Working Directory" placeholder="C:\Users\admin\Documents\Lambda-PM *NO SPACES*"
-                        type="text" value="">
+                    <input class="input" id="workDir" name="Working Directory" placeholder="C:\Users\admin\Documents\Lambda-PM *NO SPACES*" type="text"
+                        value="">
                 </div>
             </div>
         </div>
@@ -54,8 +53,8 @@
             <div class="contentSection">
                 <div class="container-block">
                     <label class="label-block" for="Assignment GitHub Repository">Assignment Github Repo URL:</label>
-                    <input class="input" id="assignmentRepo" name="Assignment GitHub Repository"
-                        placeholder="https://github.com/myxozoa/LPM" type="text">
+                    <input class="input" id="assignmentRepo" name="Assignment GitHub Repository" placeholder="https://github.com/myxozoa/LPM"
+                        type="text">
                 </div>
             </div>
         </div>
@@ -64,13 +63,11 @@
                 <div class="inputContainer-students">
                     <div class="container-block--small">
                         <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith"
-                            type="text">
+                        <input class="input studentName" placeholder="John Smith" type="text">
                     </div>
                     <div class="container-block--small">
                         <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12"
-                            type="text">
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
                     </div>
                 </div>
                 <div class="container-button">
@@ -81,7 +78,207 @@
                 </div>
             </div>
         </div>
-        
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+        <div class="container-row">
+            <div class="contentSection">
+                <div class="inputContainer-students">
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentName">Student Name:</label>
+                        <input class="input studentName" placeholder="John Smith" type="text">
+                    </div>
+                    <div class="container-block--small">
+                        <label class="label-block" for="studentGh">Username:</label>
+                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
+                    </div>
+                </div>
+                <div class="container-button">
+                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button" onclick="handleGh(event)">GH</button>
+                    <button class="button" onclick="handlePR(event)">PR</button>
+                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
+                </div>
+            </div>
+        </div>
+
     </div>
     <script src="./assets/js/index.js"></script>
 </body>
