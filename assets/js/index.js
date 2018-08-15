@@ -218,12 +218,12 @@ const validInput = (element, errorTarget, message) => {
     }
 }
 
-const handlePull = (event) => {
+const handleClonePull = (event) => {
     gatherData();
     let re = /https:\/\/github.com\/.+\/(.+)/g;
     const repoName = re.exec(assignment);
 
-    if(!validInput(repoName, assignmentElement, 'Repo name is missing or Invalid')) return;
+    if(!validInput(repoName, assignmentElement, 'Repo name is missing or Invalid.')) return;
 
     let extractedAssignment = repoName[1];
     // extract event element's parent's parent;
@@ -232,18 +232,30 @@ const handlePull = (event) => {
 
     const studentName = eventParent.querySelector('.studentName');
 
-    if(!validInput(studentName, studentName, 'The students name has not been defined')) return;
+    if(!validInput(studentName, studentName, 'The students name has not been defined.')) return;
 
     let studentFolder = studentName.value.split(" ").join("_");
-    // const studentUsername = eventParent.querySelector(".studentUsername").value;
+    const studentUsername = eventParent.querySelector(".studentUsername");
 
-    exec(`cd ${workDir.trim()}\\${studentFolder.trim()}\\${extractedAssignment.trim()} && git pull`, (err) => {
+    if(!validInput(studentUsername, studentUsername, 'The students username has not been defined.')) return;
+
+    // exec(`cd ${workDir.trim()}\\${studentFolder.trim()}\\${extractedAssignment.trim()} && git pull`, (err) => {
+    //     if (err) {
+    //         console.error(err);
+    //         eventParent.classList.add('error');
+    //     } else {
+    //         eventParent.classList.remove('error');
+    //         console.info('Pull Successful');
+    //     }
+    // });
+    const username = studentUsername.value;
+
+    exec(`git clone https://github.com/${username}/${extractedAssignment} ${workDir}/${studentFolder}/${extractedAssignment} || (cd ${workDir}/${studentFolder}/${extractedAssignment} && git pull)`, (err, stdout) => {
+        console.log(`${username}:`, stdout);
         if (err) {
             console.error(err);
-            eventParent.classList.add('error');
         } else {
-            eventParent.classList.remove('error');
-            console.info('Pull Successful');
+            console.info('Successfully cloned/pulled from: ', username);
         }
     });
 }

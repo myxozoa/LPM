@@ -1,5 +1,5 @@
 {
-  "name": "PM_App",
+  "name": "lambda-pm-app",
   "version": "1.1.0",
   "description": "Project Management App",
   "main": "main.js",

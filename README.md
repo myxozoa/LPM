@@ -1,22 +1,45 @@
 ## Lambda PM Companion
 1. The purpose of this app is to assist Lambda School Project Managers with daily tasks, to eliminate repetition of work and streamline daily tasks.
 
-## Whiteboard of the PM Code Review GUI
-![alt text](./Whiteboard/GitCloneMultiple.jpg "Logo Title Text 1")
+![alt text](./pm_app.png)
 
-## Expected Functionality and Flow of User Interaction
-1. The user would enter the github link to a Lambda School Repository in the `GH Repo Link Here` text box.
-2. The very first time a user interacts with the application, he/she will have to enter the first and last name of the student, and the student's github username.
-3. At this point the user should press the `SAVE LIST` button on the top right corner of the screen, which will prompt the application to do the following:
-  * Create a DB document for that specific School Repository that will contain all the information.
-  * Create a DB document for the list of students, to automatically load them in the future.
-  * Populate both documents.
-4. From here the application would utilize the provided information to do the following:
-  * Create a Folder named: [FirstName LastName] for each student listed.
-  * Place a shortcut inside that folder to the student's github profile landing on the list of all repositories.
-  * Clone the respective fork for the provided Repo inside the respective student's folders.
-  * Generate links for both Github Repo, and Pull Request related to that specific project.
-  * Save all the information to the DB document.
-5. If the `EXPORT` button is pressed then a snapshot of all the information currently in the database pertaining to that specific project will be exported to a JSON file.
-6. If the `BATCH` button is pressed, a BASH script to perform the Folder Creations, and GitHub Cloning of each of the student's repositories will be executed.
-7. Information like Grading Stars and 1 on 1 CheckMarks will also be stored in the database once filled in.
+## Requirements
+* `git` installed and configured
+* `node.js` with `npm` or `yarn` installed and configured
+
+## Basic Usage
+* The `Batch` button will `git clone` or `git pull` the input repo from any students added into the `Working Directory`.
+    ```
+    Note: The Working Directory must be an absolute path.
+    ```
+* The `Save` button will save all the input data to _save_ you from having to input it again on subsequent uses of the app.
+* All the `Forms` buttons will open a browser window to their respective airtables.
+* The `Clone \ Pull` button will perform a `git clone` or `git pull` in the `Working Directory` inside a folder using the student's name depending if the folder exists or not.
+* The `GH` button will open a browser window to the student's github in the repository section.
+* The `PR` button will open a browser window to the student's PR on the input repo.
+* The `Sandbox` button will open a Code Sandbox with the student's git repo (intended for React etc. repos, may not work for others).
+* If there is any unexpected behavior you can check the `Dev Tools` under `Dev Tools > Toggle` to see more information about any errors.
+
+## Building
+1. Run `yarn` or `npm i` to install the necessary dependencies.
+
+2. To build an executable run:
+    ```
+    npm run package-win
+    or
+    npm run package-mac
+    or
+    npm run pacakge-linux
+    ```
+    depending on your target platform.
+
+3. Navigate to the `release-builds` folder to find the folder containing the executable.
+
+## To Run for Development
+1. Run `yarn` or `npm i` to install the necessary dependencies.
+
+2. Run `npm start` .
+
+## TODO
+* Add popups explaining any errors in addition to the border changes
+* Add functionality to allow commenting on a PR directly in the app

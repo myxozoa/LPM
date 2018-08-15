@@ -11,7 +11,7 @@
 <body>
     <div class="container-app">
         <div class="header">
-            <img alt="PM Logo" class="logo" height="30px" src="./assets/img/PMLogo.svg">
+            <img alt="PM Logo" class="logo" height="40px" src="./assets/img/PMLogo.svg">
             <h2 class="title">Lambda PM App</h2>
         </div>
         <div class="container-row">
@@ -71,7 +71,7 @@
                     </div>
                 </div>
                 <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button buttonFrequent" onclick="handleClonePull(event)">Clone / Pull</button>
                     <button class="button" onclick="handleGh(event)">GH</button>
                     <button class="button" onclick="handlePR(event)">PR</button>
                     <button class="button" onclick="handleSandbox(event)">Sandbox</button>
@@ -91,187 +91,7 @@
                     </div>
                 </div>
                 <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
-                    <button class="button" onclick="handleGh(event)">GH</button>
-                    <button class="button" onclick="handlePR(event)">PR</button>
-                    <button class="button" onclick="handleSandbox(event)">Sandbox</button>
-                </div>
-            </div>
-        </div>
-        <div class="container-row">
-            <div class="contentSection">
-                <div class="inputContainer-students">
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentName">Student Name:</label>
-                        <input class="input studentName" placeholder="John Smith" type="text">
-                    </div>
-                    <div class="container-block--small">
-                        <label class="label-block" for="studentGh">Username:</label>
-                        <input class="input studentUsername" placeholder="johnnyboy12" type="text">
-                    </div>
-                </div>
-                <div class="container-button">
-                    <button class="button buttonFrequent" onclick="handlePull(event)">Pull</button>
+                    <button class="button buttonFrequent" onclick="handleClonePull(event)">Clone / Pull</button>
                     <button class="button" onclick="handleGh(event)">GH</button>
                     <button class="button" onclick="handlePR(event)">PR</button>
                     <button class="button" onclick="handleSandbox(event)">Sandbox</button>
