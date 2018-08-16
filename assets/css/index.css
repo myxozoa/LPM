@@ -73,6 +73,8 @@ input[type=text]:focus {
 .container-app {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     margin: 0 auto;
     width: 100%;
     max-width: 810px;
@@ -129,6 +131,10 @@ input[type=text]:focus {
     border-radius: 5px;
 }
 
+.container-student {
+    width: 100%;
+}
+
 .header {
     width: 100%;
     display: flex;
@@ -183,6 +189,11 @@ input[type=text]:focus {
     background: #ebebeb;
     border-radius: 0 8px 0 4px;
     /* border: 1px solid var(--border); */
+}
+
+.addNewStudent {
+    width: calc(100% - 5px);
+    margin: 0 0 10px 0;
 }
 
 @media (max-width: 870px) {
