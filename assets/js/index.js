@@ -324,6 +324,9 @@ const handleForms = (formName) => {
         case 'studentSprint':
             shell.openExternal(`https://airtable.com/shruSVU97eR6CHE5A`);
             break;
+        case 'studentPeer':
+            shell.openExternal('https://airtable.com/shrVBzrhkcT6GqExr');
+            break;
         case 'attendance':
             shell.openExternal(`https://airtable.com/shrEawWXvMldYbm5Q`);
             break;
