@@ -1,5 +1,4 @@
 ## Lambda PM Companion
-1. The purpose of this app is to assist Lambda School Project Managers with daily tasks, to eliminate repetition of work and streamline daily tasks.
 
 ![alt text](./pm_app.png)
 
