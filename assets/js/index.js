@@ -121,18 +121,48 @@ const handleSave = () => {
     });
 }
 
+const newStudentRow = () => {
+    const studentsArray = document.getElementsByClassName('student');
+    const toCopy = studentsArray[studentsArray.length - 1];
+
+    const duplicateStudentNode = toCopy.cloneNode(true);
+
+    const inputs = Array.from(duplicateStudentNode.getElementsByClassName('input'));
+
+    inputs.forEach((element, index) => {
+        element.value = '';
+    });
+
+    const studentContainer = document.getElementsByClassName('container-student')[0];
+
+    studentContainer.appendChild(duplicateStudentNode);
+
+    console.log('new student added');
+}
+
+const removeStudentRow = (event) => {
+    const studentsArray = document.getElementsByClassName('student');
+
+    if(studentsArray.length === 1) return;
+
+    event.path['1'].parentElement.parentElement.remove();
+}
+
 const handleLoad = () => {
     const workDirElement = document.getElementById('workDir');
-    const studentElements = document.getElementsByClassName('studentName');
     const assignmentElement = document.getElementById('assignmentRepo');
-    const usernameElements = document.getElementsByClassName('studentUsername');
+
+    // const usernameElementsArray = Array.from(usernameElements);
+    // usernameElementsArray.forEach((el, index) => {
+
+    // });
     // Load workDir if available.
     db.find({ workDir: /./ }, (err, found) => {
         if (err) console.log('Error loading data', err);
         if (found.length > 0) {
             workDirElement.value = found[0].workDir;
         } else {
-            console.warn('Work Directory not saved in database yet')
+            console.warn('Work Directory not saved in database yet');
         }
     });
     // Load students list if available.
@@ -141,11 +171,18 @@ const handleLoad = () => {
         if (found.length > 0) {
             // For the first array found iterate over the students
             // update the field values for each
+
+            found[0].students.forEach(() => {
+                newStudentRow();
+            });
+
+            const studentElements = document.getElementsByClassName('studentName');
+
             found[0].students.forEach((item, index) => {
                 studentElements[index].value = item;
             })
         } else {
-            console.warn('Students not saved in database yet')
+            console.warn('Students not saved in database yet');
         }
     });
     // Load usernames list if available.
@@ -154,11 +191,14 @@ const handleLoad = () => {
         if (found.length > 0) {
             // For the first array found iterate over the usernames
             // update the field values for each
+
+            const usernameElements = document.getElementsByClassName('studentUsername');
+
             found[0].usernames.forEach((item, index) => {
                 usernameElements[index].value = item;
             })
         } else {
-            console.warn('Usernames not saved in database yet')
+            console.warn('Usernames not saved in database yet');
         }
     });
     // Load assignment if available.
@@ -167,7 +207,7 @@ const handleLoad = () => {
         if (found.length > 0) {
             assignmentElement.value = found[0].assignment;
         } else {
-            console.warn('Work Directory not saved in database yet')
+            console.warn('Assignment Github URL not saved in database yet');
         }
     });
 }
