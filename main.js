@@ -11,7 +11,7 @@ let main;
 // Listen for app to be ready
 app.on('ready', () => {
     // create new window
-    main = new BrowserWindow({ width: 500, height: 1000 });
+    main = new BrowserWindow({ width: 500, height: 800 });
     // Load HTML into window
     main.loadURL(url.format({
         pathname: path.join(__dirname, './index.html'),
