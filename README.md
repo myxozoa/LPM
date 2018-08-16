@@ -17,7 +17,7 @@
 * The `Clone \ Pull` button will perform a `git clone` or `git pull` in the `Working Directory` inside a folder using the student's name depending if the folder exists or not.
 * The `GH` button will open a browser window to the student's github in the repository section.
 * The `PR` button will open a browser window to the student's PR on the input repo.
-* The `Sandbox` button will open a Code Sandbox with the student's git repo (intended for React etc. repos, may not work for others).
+* The `Sandbox` button will open a  browser window for [Code Sandbox](https://codesandbox.io/) with the student's git repo (intended for React etc. repos, may not work for others).
 * If there is any unexpected behavior you can check the `Dev Tools` under `Dev Tools > Toggle` to see more information about any errors.
 
 ## Building
