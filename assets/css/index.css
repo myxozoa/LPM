@@ -204,7 +204,7 @@ input[type=text]:focus {
     border-radius: 50%;
     position: absolute;
     padding: 10px;
-    transform: scale(50.0);
+    transform: scale(20.0);
     margin: 0 0 0 -17%;
     opacity: 0;
     transition: all 0.7s;
