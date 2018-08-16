@@ -47,9 +47,6 @@ const gatherData = () => {
     });
     console.log('students data 2', students);
 
-    // let newStudents = students.map(student => {
-    //     return student.value.trim();
-    // });
     // students = newStudents;
     // Populate assignment global variable.
     assignmentElement = document.getElementById('assignmentRepo');
@@ -152,10 +149,6 @@ const handleLoad = () => {
     const workDirElement = document.getElementById('workDir');
     const assignmentElement = document.getElementById('assignmentRepo');
 
-    // const usernameElementsArray = Array.from(usernameElements);
-    // usernameElementsArray.forEach((el, index) => {
-
-    // });
     // Load workDir if available.
     db.find({ workDir: /./ }, (err, found) => {
         if (err) console.log('Error loading data', err);
@@ -215,12 +208,10 @@ handleLoad();
 
 const handleBatch = () => {
     gatherData();
-    // ASSIGNMENT: "https://github.com/LambdaSchool/Preprocessing-Part-I"
 
     let re = /https:\/\/github.com\/LambdaSchool\/(.+)/g;
     const extractedAssignment = re.exec(assignment)[1];
 
-    // Pattern https://github.com/designerexpert/Sprint-Challenge--UI-Responsive
     // Iterate over folderNames
     if (folderNames.length > 0) {
         folderNames.forEach((studentFolder, index) => {
@@ -279,15 +270,6 @@ const handleClonePull = (event) => {
 
     if(!validInput(studentUsername, studentUsername, 'The students username has not been defined.')) return;
 
-    // exec(`cd ${workDir.trim()}\\${studentFolder.trim()}\\${extractedAssignment.trim()} && git pull`, (err) => {
-    //     if (err) {
-    //         console.error(err);
-    //         eventParent.classList.add('error');
-    //     } else {
-    //         eventParent.classList.remove('error');
-    //         console.info('Pull Successful');
-    //     }
-    // });
     const username = studentUsername.value;
 
     exec(`git clone https://github.com/${username}/${extractedAssignment} ${workDir}/${studentFolder}/${extractedAssignment} || (cd ${workDir}/${studentFolder}/${extractedAssignment} && git pull)`, (err, stdout) => {
@@ -314,7 +296,6 @@ const handleGh = (event) => {
 }
 
 const handlePR = (event) => {
-    // https://github.com/LambdaSchool/Responsive-Web-Design/pulls/designerexpert
     gatherData();
 
     // extract event element's parent's parent;
