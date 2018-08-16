@@ -42,3 +42,4 @@
 ## TODO
 * Add popups explaining any errors in addition to the border changes
 * Add functionality to allow commenting on a PR directly in the app
+* Add the ability to add or remove student rows
