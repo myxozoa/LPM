@@ -2,9 +2,9 @@
 
 ![alt text](./lambda_pm_app_screenshot.png)
 
-## Requirements
-* `git` installed and configured
-* `node.js` with `npm` or `yarn` installed and configured
+
+## Download Latest
+The latest build is available [here](https://github.com/myxozoa/LPM/releases) for all platforms.
 
 ## Basic Usage
 * The `Batch` button will `git clone` or `git pull` the input repo from any students added into the `Working Directory`.
@@ -21,6 +21,10 @@
 * The `PR` button will open a browser window to the student's PR on the input repo.
 * The `Sandbox` button will open a  browser window for [Code Sandbox](https://codesandbox.io/) with the student's git repo (intended for React etc. repos, may not work for others).
 * If there is any unexpected behavior you can check the `Dev Tools` under `Dev Tools > Toggle` to see more information about any errors.
+
+## Requirements
+* `git` installed and configured
+* `node.js` with `npm` or `yarn` installed and configured
 
 ## Building
 1. Run `yarn` or `npm i` to install the necessary dependencies.
