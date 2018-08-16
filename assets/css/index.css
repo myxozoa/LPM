@@ -71,6 +71,7 @@ input[type=text]:focus {
 }
 
 .container-app {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -194,6 +195,18 @@ input[type=text]:focus {
 .addNewStudent {
     width: calc(100% - 5px);
     margin: 0 0 10px 0;
+}
+
+.addNewStudent:after {
+    content: "";
+    background: var(--button-bg-active);
+    border-radius: 50%;
+    position: absolute;
+    padding: 10px;
+    transform: scale(50.0);
+    margin: 0 0 0 -17%;
+    opacity: 0;
+    transition: all 0.9s
 }
 
 @media (max-width: 870px) {
