@@ -19,6 +19,7 @@ body {
     height: 100%;
     width: 100%;
     background-color: var(--bg);
+    overflow-y: scroll;
 }
 
 input[type=text] {
@@ -61,7 +62,7 @@ input[type=text]:focus {
     transform: scale(5.0);
     margin: 0 calc(50% - 5px) 0 calc(-50% + 5px);
     opacity: 0;
-    transition: all 0.7s
+    transition: all 0.7s;
 }
 
 .button:active:after {
@@ -206,7 +207,7 @@ input[type=text]:focus {
     transform: scale(50.0);
     margin: 0 0 0 -17%;
     opacity: 0;
-    transition: all 0.9s
+    transition: all 0.7s;
 }
 
 @media (max-width: 870px) {
