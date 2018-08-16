@@ -1,6 +1,6 @@
 ## Lambda PM Companion
 
-![alt text](./pm_app_screenshot.png)
+![alt text](./lambda_pm_app_screenshot.png)
 
 ## Requirements
 * `git` installed and configured
