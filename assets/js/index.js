@@ -216,9 +216,6 @@ const handleBatch = () => {
     if (folderNames.length > 0) {
         folderNames.forEach((studentFolder, index) => {
             mkdirp(`${workDir}/${studentFolder}`, (error) => {
-                console.log(studentFolder);
-                console.log(students);
-                console.log(folderNames);
                 if (error) {
                     console.error('Failed to create folders', error);
                 } else {
