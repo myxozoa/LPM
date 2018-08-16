@@ -13,6 +13,9 @@
     ```
 * The `Save` button will save all the input data to _save_ you from having to input it again on subsequent uses of the app.
 * All the `Forms` buttons will open a browser window to their respective airtables.
+    ```
+    Note: Ending a Student's Name in a period "." will cause many issues with accessing the resulting folder or even deleting it on many OSes. Try to avoid doing that for the time being.
+    ```
 * The `Clone \ Pull` button will perform a `git clone` or `git pull` in the `Working Directory` inside a folder using the student's name depending if the folder exists or not.
 * The `GH` button will open a browser window to the student's github in the repository section.
 * The `PR` button will open a browser window to the student's PR on the input repo.
@@ -42,4 +45,4 @@
 ## TODO
 * Add popups explaining any errors in addition to the border changes
 * Add functionality to allow commenting on a PR directly in the app
-* Add the ability to add or remove student rows
+* Add right click to copy student form urls
