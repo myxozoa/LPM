@@ -6,25 +6,29 @@
 ## Download Latest
 The latest build is available [here](https://github.com/myxozoa/LPM/releases) for all platforms.
 
+
+## Requirements
+* `git` installed and configured
+
+        Note: If you're using WSL or gitbash exclusively you need to also have git installed so it can run from the regular command prompt.
+* `node.js` with `npm` or `yarn` installed and configured
+
 ## Basic Usage
 * The `Batch` button will `git clone` or `git pull` the input repo from any students added into the `Working Directory`.
-    ```
-    Note: The Working Directory must be an absolute path.
-    ```
+
+        Note: The Working Directory must be an absolute path.
+
 * The `Save` button will save all the input data to _save_ you from having to input it again on subsequent uses of the app.
 * All the `Forms` buttons will open a browser window to their respective airtables.
-    ```
-    Note: Ending a Student's Name in a period "." will cause many issues with accessing the resulting folder or even deleting it on many OSes. Try to avoid doing that for the time being.
-    ```
+
+        Note: Ending a Student's Name in a period "." will cause many issues with accessing the resulting folder or even deleting it on many OSes. Try to avoid doing that for the time being.
+
 * The `Clone \ Pull` button will perform a `git clone` or `git pull` in the `Working Directory` inside a folder using the student's name depending if the folder exists or not.
 * The `GH` button will open a browser window to the student's github in the repository section.
 * The `PR` button will open a browser window to the student's PR on the input repo.
 * The `Sandbox` button will open a  browser window for [Code Sandbox](https://codesandbox.io/) with the student's git repo (intended for React etc. repos, may not work for others).
 * If there is any unexpected behavior you can check the `Dev Tools` under `Dev Tools > Toggle` to see more information about any errors.
 
-## Requirements
-* `git` installed and configured
-* `node.js` with `npm` or `yarn` installed and configured
 
 ## Building
 1. Run `yarn` or `npm i` to install the necessary dependencies.
@@ -39,7 +43,14 @@ The latest build is available [here](https://github.com/myxozoa/LPM/releases) fo
     ```
     depending on your target platform.
 
+        If you use WSL or GitBash exclusively note that this is a native GUI App, so you would build it for windows.
+
 3. Navigate to the `release-builds` folder to find the folder containing the executable.
+
+4. Run the App directly, no need to install.
+    * On Mac you can drag the `.app` to Applications
+    * On Windows you can choose a permanent place for the folder and add the `.exe` to your Start Menu or Taskbar
+    * On Linux you can choose a permanent place for the folder and either create an alias or add it to your `PATH`. Some info [here](https://unix.stackexchange.com/questions/57601/create-a-command-for-a-linux-executable-file)
 
 ## To Run for Development
 1. Run `yarn` or `npm i` to install the necessary dependencies.
