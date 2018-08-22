@@ -11,7 +11,7 @@ const folderNames = [];
 // ########     BEGIN DATABASE FUNCTIONALITY     ########
 // Ensure DB file exists if not Create it
 let touchCommand = process.platform == 'win32' ? 'if not exist "assets\\db\\" mkdir assets\\db\\ && type nul >> .\\assets\\db\\settings.db' :
-                                                 'mkdir -p assets/db/ && touch /assets/db/settings.db';
+                                                 'mkdir -p assets/db/ && touch assets/db/settings.db';
 
 exec(touchCommand, (err) => {
     if (err) console.log(err);
