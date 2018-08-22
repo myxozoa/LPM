@@ -233,6 +233,10 @@ input[type=text]:focus {
     animation: fadein 0.3s, fadeout 0.5s 2.5s;
 }
 
+.dragover {
+    cursor: alias;
+}
+
 @keyframes fadein {
     from {
         bottom: -20px;

@@ -351,5 +351,15 @@ const setFilePathListener = () => {
 
         workingDirectory.value = e.dataTransfer.files[0].path;
     });
+    workingDirectory.addEventListener('dragover', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        workingDirectory.classList.add('dragover');
+
+        setTimeout(() => {
+            workingDirectory.classList.remove('dragover');
+        });
+    });
 }
 setFilePathListener();
