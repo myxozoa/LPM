@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const shell = require('electron').shell;
+const { shell, clipboard } = require('electron');
 const exec = require('child_process').exec;
 const mkdirp = require('mkdirp');
 
@@ -316,28 +316,29 @@ const handleSandbox = (event) => {
     shell.openExternal(`https://codesandbox.io/s/github/${currentUsername}/${extractedAssignment.trim()}`);
 }
 
-const handleForms = (formName) => {
-    switch (formName) {
-        case 'studentStandUp':
-            shell.openExternal(`https://airtable.com/shr8ZYuNjevMLRsxI`);
-            break;
-        case 'studentSprint':
-            shell.openExternal(`https://airtable.com/shruSVU97eR6CHE5A`);
-            break;
-        case 'studentPeer':
-            shell.openExternal('https://airtable.com/shrVBzrhkcT6GqExr');
-            break;
-        case 'attendance':
-            shell.openExternal(`https://airtable.com/shrEawWXvMldYbm5Q`);
-            break;
-        case 'pmDaily':
-            shell.openExternal(`https://airtable.com/shripCmauVlvxNrAT`);
-            break;
-        case 'pmSprint':
-            shell.openExternal(`https://airtable.com/shr6wexWV3RM4ITJP`);
-            break;
+const airtables = {
+    'studentStandUp': 'https://airtable.com/shr8ZYuNjevMLRsxI',
+    'studentSprint': 'https://airtable.com/shruSVU97eR6CHE5A',
+    'studentPeer': 'https://airtable.com/shrVBzrhkcT6GqExr',
+    'attendance': 'https://airtable.com/shrEawWXvMldYbm5Q',
+    'pmDaily': 'https://airtable.com/shripCmauVlvxNrAT',
+    'pmSprint': 'https://airtable.com/shr6wexWV3RM4ITJP',
+}
 
-        default:
-            break;
-    }
+const handleForms = (formName) => {
+    shell.openExternal(airtables[formName]);
+}
+
+const showSnackbar = () => {
+    const snackbar = document.getElementsByClassName('snackbar-copied')[0];
+    snackbar.classList.add('showSnackbar');
+
+    setTimeout(() => {
+        snackbar.classList.remove('showSnackbar');
+    }, 3000);
+}
+
+const copyLink = (formName) => {
+    clipboard.writeText(airtables[formName], 'selection');
+    showSnackbar();
 }

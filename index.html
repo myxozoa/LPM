@@ -14,6 +14,7 @@
             <img alt="PM Logo" class="logo" height="40px" src="./assets/img/PMLogo.svg">
             <h2 class="title">Lambda PM App</h2>
         </div>
+        <div class="snackbar-copied">Link Copied!</div>
         <div class="container-row">
             <div class="contentSection">
                 <div class="container-functions">
@@ -27,18 +28,18 @@
                     <div class="container-block">
                         <label class="label-block">Student Forms:</label>
                         <div class="container-button">
-                            <button class="button" onclick="handleForms('studentStandUp')">Standup</button>
-                            <button class="button" onclick="handleForms('studentSprint')">Sprint</button>
-                            <button class="button" onclick="handleForms('studentPeer')">Peer2Peer</button>
+                            <button class="button" onclick="handleForms('studentStandUp')" oncontextmenu="copyLink('studentStandUp')">Standup</button>
+                            <button class="button" onclick="handleForms('studentSprint')" oncontextmenu="copyLink('studentSprint')">Sprint</button>
+                            <button class="button" onclick="handleForms('studentPeer')" oncontextmenu="copyLink('studentPeer')">Peer2Peer</button>
                         </div>
                     </div>
                 </div>
                 <div class="container-block">
                     <label class="label-block">PM Forms:</label>
                     <div class="container-button">
-                        <button class="button" onclick="handleForms('attendance')">Attendance</button>
-                        <button class="button" onclick="handleForms('pmDaily')">Daily</button>
-                        <button class="button" onclick="handleForms('pmSprint')">Sprint</button>
+                        <button class="button" onclick="handleForms('attendance')" oncontextmenu="copyLink('attendance')">Attendance</button>
+                        <button class="button" onclick="handleForms('pmDaily')" oncontextmenu="copyLink('pmDaily')">Daily</button>
+                        <button class="button" onclick="handleForms('pmSprint')" oncontextmenu="copyLink('pmSprint')">Sprint</button>
                     </div>
                 </div>
             </div>

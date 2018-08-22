@@ -211,6 +211,50 @@ input[type=text]:focus {
     transition: all 0.7s;
 }
 
+.snackbar-copied {
+    position: fixed;
+    bottom: 10px;
+    left: 43%;
+    z-index: 1000;
+    background: #1f201f;
+    color: #eeeeee;
+    font-size: 15px;
+    height: 30px;
+    vertical-align: middle;
+    line-height: 30px;
+    padding: 0 10px 0 10px;
+    border-radius: 5px;
+    visibility: hidden;
+    cursor: default;
+}
+
+.showSnackbar {
+    visibility: visible;
+    animation: fadein 0.3s, fadeout 0.5s 2.5s;
+}
+
+@keyframes fadein {
+    from {
+        bottom: -20px;
+        opacity: 0;
+    }
+    to {
+        bottom: 10px;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 10px;
+        opacity: 1;
+    }
+    to {
+        bottom: -20px;
+        opacity: 0;
+    }
+}
+
 @media (max-width: 870px) {
     .container-app {
         width: 90%;
