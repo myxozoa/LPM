@@ -342,3 +342,14 @@ const copyLink = (formName) => {
     clipboard.writeText(airtables[formName], 'selection');
     showSnackbar();
 }
+
+const setFilePathListener = () => {
+    const workingDirectory = document.getElementById('workDir');
+    workingDirectory.addEventListener('drop', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        workingDirectory.value = e.dataTransfer.files[0].path;
+    });
+}
+setFilePathListener();
