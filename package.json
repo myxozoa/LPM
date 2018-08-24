@@ -2,6 +2,7 @@
   "name": "lambda-pm-app",
   "version": "1.1.0",
   "description": "Project Management App",
+  "repository": "github:myxozoa/LPM",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
