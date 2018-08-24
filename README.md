@@ -60,5 +60,4 @@ The latest build is available [here](https://github.com/myxozoa/LPM/releases) fo
 ## TODO
 * Add popups explaining any errors in addition to the border changes
 * Add functionality to allow commenting on a PR directly in the app
-* Add right click to copy student form urls
 * Debounce buttons
