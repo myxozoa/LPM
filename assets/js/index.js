@@ -3,6 +3,11 @@ const path = require('path');
 const { shell, clipboard } = require('electron');
 const exec = require('child_process').exec;
 const mkdirp = require('mkdirp');
+const sudo = require('sudo-prompt');
+
+const options = {
+    name: 'Lambda PM App',
+}
 
 // Global Variables
 let workDir, students, usernames, assignment, assignmentElement;
@@ -11,14 +16,25 @@ const folderNames = [];
 // ########     BEGIN DATABASE FUNCTIONALITY     ########
 // Ensure DB file exists if not Create it
 let touchCommand = process.platform == 'win32' ? 'if not exist "assets\\db\\" mkdir assets\\db\\ && type nul >> .\\assets\\db\\settings.db' :
-                                                 'mkdir -p assets/db && touch assets/db/settings.db';
+                                                 `mkdir -p ${__dirname}/assets/db && touch ${__dirname}/assets/db/settings.db`;
 
-exec(touchCommand, (err) => {
-    if (err) console.log(err);
-});
+if(process.platform === 'win32') {
+    exec(touchCommand, (err) => {
+        if (err) console.log(err);
+    });
+} else {
+    if(!fs.existsSync(`${__dirname}/assets/db`)) {
+        sudo.exec(touchCommand, options, (error, stdout, stderr) => {
+            if(error) throw error;
+            console.log('db create stdout: ', stdout);
+        });
+    } else {
+        console.log('DB exists');
+    }
+}
 
 const DataStore = require('nedb');
-let dbpath = path.resolve('./assets/db/settings.db');
+let dbpath = path.resolve(`${__dirname}/assets/db/settings.db`);
 const db = new DataStore({ filename: dbpath, autoload: true });
 
 // Setting unique Indexes
