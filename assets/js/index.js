@@ -26,7 +26,7 @@ if(process.platform === 'win32') {
     if(!fs.existsSync(`${__dirname}/assets/db`)) {
         sudo.exec(touchCommand, options, (error, stdout, stderr) => {
             if(error) throw error;
-            console.log('db create stdout: ', stdout);
+            console.log('DB created: ', stdout);
         });
     } else {
         console.log('DB exists');
