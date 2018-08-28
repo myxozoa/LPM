@@ -79,7 +79,7 @@ app.on('ready', () => {
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
   // Insert Menu
   Menu.setApplicationMenu(mainMenu);
-  checkForUpdates();
+  autoUpdater.checkForUpdates();
 });
 
 // The "File" Menu
