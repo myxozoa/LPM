@@ -8,7 +8,8 @@
     "start": "electron .",
     "dist": "electron-builder",
     "pack": "electron-builder --dir",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "release": "build -p always"
   },
   "build": {
     "productName": "Lamdba PM App",
@@ -19,13 +20,19 @@
     },
     "mac": {
       "category": "public.app-category.productivity",
-      "target": "dmg"
+      "target": "dmg",
+      "publish": [
+        "github"
+      ]
     },
     "dmg": {
       "icon": "./assets/icons/mac/PM_App.icns"
     },
     "win": {
-      "target": "nsis"
+      "target": "nsis",
+      "publish": [
+        "github"
+      ]
     },
     "nsis": {
       "oneClick": "false",
@@ -36,9 +43,11 @@
     },
     "linux": {
       "target": "AppImage",
-      "maintainer": "Ronnie Miksch"
+      "maintainer": "Ronnie Miksch",
+      "publish": [
+        "github"
+      ]
     }
-
   },
   "keywords": [],
   "author": "",
@@ -48,8 +57,8 @@
     "electron-builder": "^20.28.3"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "jquery": "^3.3.1",
+    "dotenv": "^6.0.0",
+    "electron-updater": "^3.1.2",
     "mkdirp": "^0.5.1",
     "nedb": "^1.8.0",
     "popper.js": "^1.14.3",
