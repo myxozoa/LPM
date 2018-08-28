@@ -81,6 +81,7 @@ app.on('ready', () => {
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
   // Insert Menu
   Menu.setApplicationMenu(mainMenu);
+  checkForUpdates();
 });
 
 // The "File" Menu
@@ -88,6 +89,15 @@ const mainMenuTemplate = [
   {
     label: 'File',
     submenu: [
+      {
+        label: 'Check for Updates',
+        click() {
+          checkForUpdates(this);
+        },
+        // Ternary operator for shortcut on Mac or PC for Quit Program
+        // Works for Both PC and Mac based on that Conditional Statement
+        accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+      },
       {
         label: 'Quit',
         click() {
