@@ -1,6 +1,6 @@
 {
   "name": "lambda-pm-app",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Project Management App",
   "repository": "github:myxozoa/LPM",
   "main": "main.js",
@@ -18,6 +18,9 @@
     "directories": {
       "output": "./release-builds"
     },
+    "publish": [{
+      "provider": "github"
+    }],
     "mac": {
       "category": "public.app-category.productivity",
       "target": "dmg",

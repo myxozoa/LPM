@@ -2,6 +2,8 @@ const { app, BrowserWindow, Menu, ipcMain, dialog } = require('electron');
 const url = require('url');
 const path = require('path');
 const { autoUpdater } = require('electron-updater');
+const dotenv = require('dotenv');
+dotenv.config();
 
 // Declare windows, prepare for Garbage Collection
 let main, updater;
