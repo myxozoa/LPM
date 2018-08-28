@@ -25,8 +25,8 @@ autoUpdater.on('update-available', () => {
       if (buttonIndex === 0) {
         autoUpdater.downloadUpdate();
       } else {
-        updater.enabled = true;
-        updater = null;
+        // updater.enabled = true;
+        // updater = null;
       }
     }
   );
@@ -37,8 +37,6 @@ autoUpdater.on('update-not-available', () => {
     title: 'No Updates',
     message: 'Current version is up-to-date.',
   });
-  updater.enabled = true;
-  updater = null;
 });
 
 autoUpdater.on('update-downloaded', () => {
@@ -54,11 +52,11 @@ autoUpdater.on('update-downloaded', () => {
 });
 
 // export this to MenuItem click callback
-function checkForUpdates(menuItem, focusedWindow, event) {
-  updater = menuItem;
-  updater.enabled = false;
-  autoUpdater.checkForUpdates();
-}
+// function checkForUpdates(menuItem, focusedWindow, event) {
+//   updater = menuItem;
+//   updater.enabled = false;
+//   autoUpdater.checkForUpdates();
+// }
 
 // Listen for app to be ready
 app.on('ready', () => {
@@ -92,7 +90,7 @@ const mainMenuTemplate = [
       {
         label: 'Check for Updates',
         click() {
-          checkForUpdates(this);
+          autoUpdater.checkForUpdates();
         },
         // Ternary operator for shortcut on Mac or PC for Quit Program
         // Works for Both PC and Mac based on that Conditional Statement
