@@ -9,7 +9,7 @@
     "dist": "electron-builder",
     "pack": "electron-builder --dir",
     "postinstall": "electron-builder install-app-deps",
-    "release": "build -p always"
+    "release": "build -p never"
   },
   "build": {
     "productName": "Lamdba PM App",
