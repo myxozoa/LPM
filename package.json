@@ -6,16 +6,46 @@
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package-mac": "electron-packager . Lambda_PM_App --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/PM_App.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . Lambda_PM_App --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/PM_App.ico --prune=true --out=release-builds --version-string.CompanyName=Lambda --version-string.FileDescription=PM_App --version-string.ProductName=\"PM_App\"",
-    "package-linux": "electron-packager . Lambda_PM_App --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/PM_App.png --prune=true --out=release-builds"
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "build": {
+    "productName": "Lamdba PM App",
+    "appId": "com.rmiksch.pmapp",
+    "copyright": "Copyright © 2018 Ronnie Miksch",
+    "directories": {
+      "output": "./release-builds"
+    },
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": "dmg"
+    },
+    "dmg": {
+      "icon": "./assets/icons/mac/PM_App.icns"
+    },
+    "win": {
+      "target": "nsis"
+    },
+    "nsis": {
+      "oneClick": "false",
+      "perMachine": "true",
+      "allowToChangeInstallationDirectory": "true",
+      "installerIcon": "./assets/icons/win/PM_App.ico",
+      "deleteAppDataOnUninstall": "true"
+    },
+    "linux": {
+      "target": "AppImage",
+      "maintainer": "Ronnie Miksch"
+    }
+
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.8.4",
-    "electron-packager": "^12.0.0"
+    "electron-builder": "^20.28.3"
   },
   "dependencies": {
     "bootstrap": "^4.0.0",
