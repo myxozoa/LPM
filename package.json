@@ -23,7 +23,7 @@
     }],
     "mac": {
       "category": "public.app-category.productivity",
-      "target": "dmg",
+      "target": ["dmg", "zip"],
       "publish": [
         "github"
       ]
