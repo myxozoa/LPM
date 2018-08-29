@@ -12,30 +12,36 @@ autoUpdater.on('error', error => {
 });
 
 autoUpdater.on('update-available', () => {
-  let message = {
-    type: 'question',
-    title: 'Update Available',
-    message: 'Found updates, would you like to update now?',
-    buttons: ['Yes', 'No'],
-  };
   if(process.platform === 'darwin') {
-    message = {
-      type: 'question',
-      title: 'Update Available',
-      message: 'Update Available (On MacOS for the time being updates must be downloaded manually.',
-      buttons: ['Go to Download Page', 'Cancel'],
-    };
-  }
-  dialog.showMessageBox(
-    message,
-    buttonIndex => {
-      if (buttonIndex === 0 && process.platform !== 'darwin') {
-        autoUpdater.downloadUpdate();
-      } else if (buttonIndex === 0) {
-        shell.openExternal('https://github.com/myxozoa/LPM/releases');
+    dialog.showMessageBox(
+      {
+        type: 'question',
+        title: 'Update Available',
+        message: 'Update Available (On MacOS for the time being updates must be downloaded manually.',
+        buttons: ['Go to Download Page', 'Cancel'],
+      },
+      buttonIndex => {
+        if (buttonIndex === 0) {
+          shell.openExternal('https://github.com/myxozoa/LPM/releases');
+        }
       }
-    }
-  );
+    );
+  } else {
+    dialog.showMessageBox(
+      {
+        type: 'question',
+        title: 'Update Available',
+        message: 'Found updates, would you like to update now?',
+        buttons: ['Yes', 'No'],
+      },
+      buttonIndex => {
+        if (buttonIndex === 0) {
+          autoUpdater.downloadUpdate();
+        }
+      }
+    );
+  }
+
 });
 
 autoUpdater.on('update-not-available', () => {
@@ -100,7 +106,7 @@ const mainMenuTemplate = [
         },
         // Ternary operator for shortcut on Mac or PC for Quit Program
         // Works for Both PC and Mac based on that Conditional Statement
-        accelerator: process.platform == 'darwin' ? 'Command+Q' : 'Ctrl+Q',
+        accelerator: process.platform == 'darwin' ? 'Command+U' : 'Ctrl+U',
       },
       {
         label: 'Quit',
