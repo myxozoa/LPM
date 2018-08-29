@@ -1,4 +1,4 @@
-const { app, BrowserWindow, Menu, ipcMain, dialog } = require('electron');
+const { app, BrowserWindow, Menu, ipcMain, dialog, shell } = require('electron');
 const url = require('url');
 const path = require('path');
 const { autoUpdater } = require('electron-updater');
@@ -12,16 +12,27 @@ autoUpdater.on('error', error => {
 });
 
 autoUpdater.on('update-available', () => {
-  dialog.showMessageBox(
-    {
+  let message = {
+    type: 'question',
+    title: 'Update Available',
+    message: 'Found updates, would you like to update now?',
+    buttons: ['Yes', 'No'],
+  };
+  if(process.platform === 'darwin') {
+    message = {
       type: 'question',
       title: 'Update Available',
-      message: 'Found updates, would you like to update now?',
-      buttons: ['Yes', 'No'],
-    },
+      message: 'Update Available (On MacOS for the time being updates must be downloaded manually.',
+      buttons: ['Go to Download Page', 'Cancel'],
+    };
+  }
+  dialog.showMessageBox(
+    message,
     buttonIndex => {
-      if (buttonIndex === 0) {
+      if (buttonIndex === 0 && process.platform !== 'darwin') {
         autoUpdater.downloadUpdate();
+      } else if (buttonIndex === 0) {
+        shell.openExternal('https://github.com/myxozoa/LPM/releases');
       }
     }
   );
@@ -38,8 +49,8 @@ autoUpdater.on('update-not-available', () => {
 autoUpdater.on('update-downloaded', () => {
   dialog.showMessageBox(
     {
-      title: 'Install Updates',
-      message: 'Updates downloaded, application will restart for install...',
+    title: 'Install Updates',
+    message: 'Updates downloaded, application will restart for install...',
     },
     () => {
       setImmediate(() => autoUpdater.quitAndInstall());
