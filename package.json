@@ -1,6 +1,6 @@
 {
   "name": "lambda-pm-app",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Project Management App",
   "repository": "github:myxozoa/LPM",
   "main": "main.js",
@@ -9,7 +9,7 @@
     "dist": "electron-builder",
     "pack": "electron-builder --dir",
     "postinstall": "electron-builder install-app-deps",
-    "release": "build -p onTagOrDraft"
+    "release": "build -p always"
   },
   "build": {
     "productName": "Lamdba PM App",
