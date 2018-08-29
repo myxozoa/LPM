@@ -15,14 +15,14 @@ const folderNames = [];
 
 // ########     BEGIN DATABASE FUNCTIONALITY     ########
 // Ensure DB file exists if not Create it
-let touchCommand = process.platform == 'win32' ? 'if not exist "assets\\db\\" mkdir assets\\db\\ && type nul >> .\\assets\\db\\settings.db' :
+let touchCommand = process.platform == 'win32' ? `if not exist "${__dirname}assets\\db\\" mkdir ${__dirname}assets\\db\\ && type nul >> ${__dirname}\\assets\\db\\settings.db` :
                                                  `mkdir -p ${__dirname}/assets/db && touch ${__dirname}/assets/db/settings.db`;
 
-if(process.platform === 'win32') {
-    exec(touchCommand, (err) => {
-        if (err) console.log(err);
-    });
-} else {
+// if(process.platform === 'win32') {
+//     exec(touchCommand, (err) => {
+//         if (err) console.log(err);
+//     });
+// } else {
     if(!fs.existsSync(`${__dirname}/assets/db`)) {
         sudo.exec(touchCommand, options, (error, stdout, stderr) => {
             if(error) throw error;
@@ -31,7 +31,7 @@ if(process.platform === 'win32') {
     } else {
         console.log('DB exists');
     }
-}
+// }
 
 const DataStore = require('nedb');
 let dbpath = path.resolve(`${__dirname}/assets/db/settings.db`);
