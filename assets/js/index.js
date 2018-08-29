@@ -1,9 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 const { shell, clipboard } = require('electron');
-const exec = require('child_process').exec;
-const mkdirp = require('mkdirp');
-const sudo = require('sudo-prompt');
+const { app } = require('electron').remote;
+const { exec } = require('child_process');
 
 const options = {
     name: 'Lambda PM App',
@@ -15,27 +14,28 @@ const folderNames = [];
 
 // ########     BEGIN DATABASE FUNCTIONALITY     ########
 // Ensure DB file exists if not Create it
-let touchCommand = process.platform == 'win32' ? `if not exist "${__dirname}assets\\db\\" mkdir ${__dirname}assets\\db\\ && type nul >> ${__dirname}\\assets\\db\\settings.db` :
-                                                 `mkdir -p ${__dirname}/assets/db && touch ${__dirname}/assets/db/settings.db`;
+// let touchCommand = process.platform == 'win32' ? `if not exist "${process.resourcesPath}\\assets\\db\\" mkdir "${process.resourcesPath}\\assets\\db\\" && type nul >> "${process.resourcesPath}\\assets\\db\\settings.db"` :
+//                                                  `mkdir -p ${process.resourcesPath}/assets/db && touch ${process.resourcesPath}/assets/db/settings.db`;
 
 // if(process.platform === 'win32') {
 //     exec(touchCommand, (err) => {
 //         if (err) console.log(err);
 //     });
 // } else {
-    if(!fs.existsSync(`${__dirname}/assets/db`)) {
-        sudo.exec(touchCommand, options, (error, stdout, stderr) => {
-            if(error) throw error;
-            console.log('DB created: ', stdout);
-        });
-    } else {
-        console.log('DB exists');
-    }
+    // if(!fs.existsSync(`${process.resourcesPath}/assets/db/settings.db`)) {
+    //     sudo.exec(touchCommand, options, (error, stdout, stderr) => {
+    //         if(error) throw error;
+    //         console.log('DB created: ', stdout);
+    //     });
+    // } else {
+    //     console.log('DB exists');
+    // }
 // }
 
 const DataStore = require('nedb');
-let dbpath = path.resolve(`${__dirname}/assets/db/settings.db`);
-const db = new DataStore({ filename: dbpath, autoload: true });
+
+const userData = app.getPath('userData');
+const db = new DataStore({ filename: userData + 'LPM/db/settings.db', autoload: true });
 
 // Setting unique Indexes
 // db.ensureIndex({ fieldName: 'workDir', unique: true }, function (err) {

@@ -2,11 +2,9 @@ const { app, BrowserWindow, Menu, ipcMain, dialog } = require('electron');
 const url = require('url');
 const path = require('path');
 const { autoUpdater } = require('electron-updater');
-const dotenv = require('dotenv');
-dotenv.config();
 
 // Declare windows, prepare for Garbage Collection
-let main, updater;
+let main, firstRun;
 autoUpdater.autoDownload = false;
 
 autoUpdater.on('error', error => {
@@ -16,23 +14,21 @@ autoUpdater.on('error', error => {
 autoUpdater.on('update-available', () => {
   dialog.showMessageBox(
     {
-      type: 'info',
-      title: 'Found Updates',
-      message: 'Found updates, do you want update now?',
-      buttons: ['Sure', 'No'],
+      type: 'question',
+      title: 'Update Available',
+      message: 'Found updates, would you like to update now?',
+      buttons: ['Yes', 'No'],
     },
     buttonIndex => {
       if (buttonIndex === 0) {
         autoUpdater.downloadUpdate();
-      } else {
-        // updater.enabled = true;
-        // updater = null;
       }
     }
   );
 });
 
 autoUpdater.on('update-not-available', () => {
+  if(firstRun) return;
   dialog.showMessageBox({
     title: 'No Updates',
     message: 'Current version is up-to-date.',
@@ -43,7 +39,7 @@ autoUpdater.on('update-downloaded', () => {
   dialog.showMessageBox(
     {
       title: 'Install Updates',
-      message: 'Updates downloaded, application will be quit for update...',
+      message: 'Updates downloaded, application will restart for install...',
     },
     () => {
       setImmediate(() => autoUpdater.quitAndInstall());
@@ -52,11 +48,10 @@ autoUpdater.on('update-downloaded', () => {
 });
 
 // export this to MenuItem click callback
-// function checkForUpdates(menuItem, focusedWindow, event) {
-//   updater = menuItem;
-//   updater.enabled = false;
-//   autoUpdater.checkForUpdates();
-// }
+function checkForUpdates(fr) {
+  firstRun = fr;
+  autoUpdater.checkForUpdates();
+}
 
 // Listen for app to be ready
 app.on('ready', () => {
@@ -79,7 +74,7 @@ app.on('ready', () => {
   const mainMenu = Menu.buildFromTemplate(mainMenuTemplate);
   // Insert Menu
   Menu.setApplicationMenu(mainMenu);
-  autoUpdater.checkForUpdates();
+  checkForUpdates(true);
 });
 
 // The "File" Menu
@@ -90,7 +85,7 @@ const mainMenuTemplate = [
       {
         label: 'Check for Updates',
         click() {
-          autoUpdater.checkForUpdates();
+          checkForUpdates();
         },
         // Ternary operator for shortcut on Mac or PC for Quit Program
         // Works for Both PC and Mac based on that Conditional Statement
