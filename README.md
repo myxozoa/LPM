@@ -11,7 +11,6 @@ The latest build is available [here](https://github.com/myxozoa/LPM/releases) fo
 * `git` installed and configured
 
         Note: If you're using WSL or gitbash exclusively you need to also have git installed so it can run from the regular command prompt.
-* `node.js` with `npm` or `yarn` installed and configured
 
 ## Basic Usage
 * The `Batch` button will `git clone` or `git pull` the input repo from any students added into the `Working Directory`.
@@ -31,31 +30,22 @@ The latest build is available [here](https://github.com/myxozoa/LPM/releases) fo
 
 
 ## Building
-1. Run `yarn` or `npm i` to install the necessary dependencies.
+1. Run `yarn` or `npm i` to install the necessary dependencies.  (`yarn` _highly_ recommended)
 
 2. To build an executable run:
     ```
-    npm run package-win
-    or
-    npm run package-mac
-    or
-    npm run pacakge-linux
+    yarn build
     ```
-    depending on your target platform.
+3. Navigate to the `release-builds` folder to find the folder containing the installer.
 
-        If you use WSL or GitBash exclusively note that this is a native GUI App, so you would build it for windows.
+4. Install the app like you would any other.
 
-3. Navigate to the `release-builds` folder to find the folder containing the executable.
-
-4. Run the App directly, no need to install.
-    * On Mac you can drag the `.app` to Applications
-    * On Windows you can choose a permanent place for the folder and add the `.exe` to your Start Menu or Taskbar
-    * On Linux you can choose a permanent place for the folder and either create an alias or add it to your `PATH`. Some info [here](https://unix.stackexchange.com/questions/57601/create-a-command-for-a-linux-executable-file)
+5. Run
 
 ## To Run for Development
 1. Run `yarn` or `npm i` to install the necessary dependencies.
 
-2. Run `npm start` .
+2. Run `yarn start` .
 
 ## TODO
 * Add popups explaining any errors in addition to the border changes
