@@ -1,28 +1,67 @@
 {
   "name": "lambda-pm-app",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Project Management App",
   "repository": "github:myxozoa/LPM",
   "main": "main.js",
   "scripts": {
     "start": "electron .",
-    "package-mac": "electron-packager . Lambda_PM_App --overwrite --platform=darwin --arch=x64 --icon=assets/icons/mac/PM_App.icns --prune=true --out=release-builds",
-    "package-win": "electron-packager . Lambda_PM_App --overwrite --asar=true --platform=win32 --arch=ia32 --icon=assets/icons/win/PM_App.ico --prune=true --out=release-builds --version-string.CompanyName=Lambda --version-string.FileDescription=PM_App --version-string.ProductName=\"PM_App\"",
-    "package-linux": "electron-packager . Lambda_PM_App --overwrite --asar=true --platform=linux --arch=x64 --icon=assets/icons/png/PM_App.png --prune=true --out=release-builds"
+    "dist": "electron-builder",
+    "pack": "electron-builder --dir",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "build -p always"
+  },
+  "build": {
+    "productName": "Lamdba PM App",
+    "appId": "com.rmiksch.pmapp",
+    "copyright": "Copyright © 2018 Ronnie Miksch",
+    "directories": {
+      "output": "./release-builds"
+    },
+    "publish": [{
+      "provider": "github"
+    }],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": ["dmg", "zip"],
+      "publish": [
+        "github"
+      ]
+    },
+    "dmg": {
+      "icon": "./assets/icons/mac/PM_App.icns"
+    },
+    "win": {
+      "target": "nsis",
+      "publish": [
+        "github"
+      ]
+    },
+    "nsis": {
+      "oneClick": "false",
+      "perMachine": "true",
+      "allowToChangeInstallationDirectory": "true",
+      "installerIcon": "./assets/icons/win/PM_App.ico",
+      "deleteAppDataOnUninstall": "true"
+    },
+    "linux": {
+      "target": "AppImage",
+      "maintainer": "Ronnie Miksch",
+      "publish": [
+        "github"
+      ]
+    }
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
     "electron": "^1.8.4",
-    "electron-packager": "^12.0.0"
+    "electron-builder": "^20.28.3"
   },
   "dependencies": {
-    "bootstrap": "^4.0.0",
-    "jquery": "^3.3.1",
-    "mkdirp": "^0.5.1",
+    "electron-updater": "^3.1.2",
     "nedb": "^1.8.0",
-    "popper.js": "^1.14.3",
-    "sudo-prompt": "^8.2.0"
+    "popper.js": "^1.14.3"
   }
 }
