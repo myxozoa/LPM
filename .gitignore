@@ -25,3 +25,5 @@ yarn-error.log*
 # settings.db
 
 electron-builder.yml
+
+/redesign
