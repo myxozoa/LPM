@@ -1,0 +1,47 @@
+.titlebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-user-select: none;
+  -webkit-app-region: drag;
+  z-index: 100;
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+}
+
+.menu {
+  width: 20px;
+  margin: 10px 0 0 10px;
+  padding: 0 5px;
+}
+
+.menu,
+.controls div {
+  -webkit-app-region: no-drag;
+}
+.menu:hover,
+.controls div:hover {
+  cursor: pointer;
+}
+
+.controls div:hover {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+  display: flex;
+  width: 80px;
+  font-size: 18px;
+  justify-content: space-between;
+  color: rgb(218, 218, 218);
+}
+
+.controls div {
+  width: 50%;
+  height: 100%;
+  line-height: 30px;
+  vertical-align: center;
+}

@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  margin: 25px 0 0 0;
+}
+
+.button {
+  font-family: inherit;
+  width: 50%;
+  height: 36px;
+  background: rgba(164, 164, 164, 0.03);
+  border: none;
+  color: #c7c7c7;
+  font-size: 14px;
+  letter-spacing: 1px;
+  line-height: 36px;
+  vertical-align: center;
+}
+
+.button:hover {
+  background: rgba(164, 164, 164, 0.22);
+  cursor: pointer;
+}

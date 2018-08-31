@@ -14,6 +14,7 @@
     "compat/compat": "error",
     "consistent-return": "off",
     "comma-dangle": "off",
+    "linebreak-style": "off",
     "flowtype/boolean-style": ["error", "boolean"],
     "flowtype/define-flow-type": "warn",
     "flowtype/delimiter-dangle": ["error", "never"],
