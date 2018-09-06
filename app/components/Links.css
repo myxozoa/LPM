@@ -1,0 +1,48 @@
+.container {
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.container * {
+  display: flex;
+  align-items: center;
+  padding-left: 22px;
+  text-align: left;
+}
+
+.section {
+  font-size: 14px;
+  padding-top: 20px;
+  height: 20px;
+  color: rgba(225, 225, 225, 0.65);
+  font-weight: 100;
+}
+
+.section:first-child {
+  margin-top: 10px;
+}
+
+.link {
+  width: calc(100% - 50px);
+  margin-right: 20px;
+  color: inherit;
+  font-weight: 400;
+  padding-left: 34px;
+  font-size: 14px;
+  height: 35px;
+}
+
+.link * {
+  padding: 0;
+}
+
+.link:hover {
+  border-radius: 0 8px 8px 0;
+  background: rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.dot {
+  font-size: 20px;
+  margin-right: 10px;
+}

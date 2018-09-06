@@ -62,10 +62,13 @@ app.on('ready', async () => {
 
   mainWindow = new BrowserWindow({
     show: false,
-    width: 680,
+    width: 645,
     height: 800,
     frame: false,
-    resizable: false
+    // resizable: false,
+    titleBarStyle: 'hidden',
+    alwaysOnTop: true,
+    transparent: true
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);

@@ -3,6 +3,30 @@
   top: 0;
   left: 0;
   height: 100vh;
-  width: 250px;
-  background: linear-gradient(30deg, #1b4770, #522a65 66%, #5e2257);
+  width: 230px;
+  background: #35373a;
+  background-image: radial-gradient(
+    400px 820px at 100% 10%,
+    #28add1 10%,
+    #2291c6 35%,
+    #2684c5,
+    #3166c5,
+    #4a54b5 90%,
+    #5648a2
+  );
+  color: #e6e6e6;
+  border-radius: 3px 0 0 3px;
+}
+.credits {
+  display: flex;
+  justify-content: center;
+  width: 230px;
+  height: 20px;
+  font-weight: 100;
+  font-size: 11px;
+  position: fixed;
+  bottom: 0;
+  letter-spacing: 0.5px;
+  color: #d8d8d8;
+  opacity: 0.23;
 }

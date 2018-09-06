@@ -1,22 +1,17 @@
-.container {
-  display: flex;
-  margin: 25px 0 0 0;
-}
-
 .button {
+  height: 25px;
+  width: 70%;
+  color: #6d6d6d;
+  border: 1px solid #2fb8ec;
+  background: none;
+  border-radius: 12px;
   font-family: inherit;
-  width: 50%;
-  height: 36px;
-  background: rgba(164, 164, 164, 0.03);
-  border: none;
-  color: #c7c7c7;
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 1px;
-  line-height: 36px;
-  vertical-align: center;
 }
-
 .button:hover {
-  background: rgba(164, 164, 164, 0.22);
+  transition: all 0.1s ease-in-out;
+  color: white;
+  background: #2fb8ec;
   cursor: pointer;
 }

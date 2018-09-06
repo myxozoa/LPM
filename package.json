@@ -58,7 +58,10 @@
     ],
     "mac": {
       "category": "public.app-category.productivity",
-      "target": ["dmg", "zip"]
+      "target": [
+        "dmg",
+        "zip"
+      ]
     },
     "dmg": {
       "contents": [
@@ -160,7 +163,7 @@
     "cross-spawn": "^6.0.5",
     "css-loader": "^1.0.0",
     "detect-port": "^1.2.3",
-    "electron": "^2.0.6",
+    "electron": "^2.0.8",
     "electron-builder": "^20.26.0",
     "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.2",
@@ -219,14 +222,17 @@
     "electron-debug": "^2.0.0",
     "history": "^4.7.2",
     "react": "^16.4.1",
+    "react-circular-progressbar": "^1.0.0",
     "react-dom": "^16.4.1",
     "react-hot-loader": "^4.3.4",
     "react-redux": "^5.0.7",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^5.0.0-alpha.6",
+    "react-star-ratings": "^2.3.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",
+    "shortid": "^2.2.13",
     "source-map-support": "^0.5.6"
   },
   "devEngines": {

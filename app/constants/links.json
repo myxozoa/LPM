@@ -1,0 +1,53 @@
+{
+  "CS10": {
+    "links": [
+      {
+        "title": "Student Forms",
+        "links": [
+          {
+            "label": "Standup",
+            "url": "https://airtable.com/shr8ZYuNjevMLRsxI"
+          },
+          {
+            "label": "Sprint",
+            "url": "https://airtable.com/shruSVU97eR6CHE5A"
+          },
+          {
+            "label": "Peer To Peer",
+            "url": "https://airtable.com/shrVBzrhkcT6GqExr"
+          }
+        ]
+      },
+      {
+        "title": "PM Forms",
+        "links": [
+          {
+            "label": "Attendance",
+            "url": "https://airtable.com/shrEawWXvMldYbm5Q"
+          },
+          {
+            "label": "Daily",
+            "url": "https://airtable.com/shripCmauVlvxNrAT"
+          },
+          {
+            "label": "Sprint",
+            "url": "https://airtable.com/shr6wexWV3RM4ITJP"
+          }
+        ]
+      },
+      {
+        "title": "Dashboards",
+        "links": [
+          {
+            "label": "Sprint",
+            "url": "https://airtable.com/shrEnghwzzhacLtaL/tblODr1wzwELzqjRI"
+          },
+          {
+            "label": "Peer To Peer",
+            "url": "https://airtable.com/shrH0UeOuLsWVEtJI"
+          }
+        ]
+      }
+    ]
+  }
+}

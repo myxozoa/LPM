@@ -9,13 +9,17 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  font-size: 15px;
 }
 
 .menu {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 20px;
-  margin: 10px 0 0 10px;
-  padding: 0 5px;
+  height: 100%;
+  width: 40px;
+  border-radius: 3px 0 0 0;
 }
 
 .menu,
@@ -24,11 +28,8 @@
 }
 .menu:hover,
 .controls div:hover {
-  cursor: pointer;
-}
-
-.controls div:hover {
   background: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 }
 
 .controls {
@@ -40,8 +41,13 @@
 }
 
 .controls div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50%;
   height: 100%;
-  line-height: 30px;
-  vertical-align: center;
+}
+
+.controls div:last-child {
+  border-radius: 0 3px 0 0;
 }

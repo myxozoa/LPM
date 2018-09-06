@@ -66,6 +66,12 @@ export default class MenuBuilder {
         },
         { label: 'Show All', selector: 'unhideAllApplications:' },
         { type: 'separator' },
+        // {
+        //   label: 'Preferences',
+        //   click: () => {
+        //     browserHistory.push()
+        //   }
+        // },
         {
           label: 'Quit',
           accelerator: 'Command+Q',

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { history } from '../store/configureStore';
 import styles from './Titlebar.css';
 
 const { remote, shell } = require('electron');
@@ -25,6 +26,12 @@ export default class Titlebar extends Component<Props> {
       {
         label: '&File',
         submenu: [
+          {
+            label: '&Preferences',
+            click: () => {
+              history.push('/preferences');
+            }
+          },
           {
             label: '&Quit',
             accelerator: 'Ctrl+W',
@@ -101,7 +108,41 @@ export default class Titlebar extends Component<Props> {
           role="button"
           tabIndex="0"
         >
-          <i className="fas fa-bars" />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 15.032 11.484"
+            width="15px"
+            height="15px"
+          >
+            <g
+              id="Group_29"
+              data-name="Group 29"
+              style={{ fill: 'none', stroke: '#FFFFFF' }}
+              transform="translate(-10.5 -9)"
+            >
+              <line
+                id="Line_9"
+                data-name="Line 9"
+                className="cls-1"
+                x2="15.032"
+                transform="translate(10.5 9.5)"
+              />
+              <line
+                id="Line_10"
+                data-name="Line 10"
+                className="cls-1"
+                x2="15.032"
+                transform="translate(10.5 14.742)"
+              />
+              <line
+                id="Line_11"
+                data-name="Line 11"
+                className="cls-1"
+                x2="15.032"
+                transform="translate(10.5 19.984)"
+              />
+            </g>
+          </svg>
         </div>
         <div className={styles.controls}>
           <div
@@ -110,7 +151,21 @@ export default class Titlebar extends Component<Props> {
             role="button"
             tabIndex="0"
           >
-            <i className="far fa-window-minimize" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 14.151 1"
+              width="15px"
+              height="4px"
+            >
+              <path
+                id="Minimize_Button"
+                data-name="Minimize Button"
+                style={{ fill: 'none', stroke: '#dbdbdb' }}
+                className="cls-1"
+                d="M0,0H14"
+                transform="translate(0 0.5)"
+              />
+            </svg>
           </div>
           <div
             onClick={this.close}
@@ -118,7 +173,36 @@ export default class Titlebar extends Component<Props> {
             role="button"
             tabIndex="0"
           >
-            <i className="fas fa-times" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 11.707 11.707"
+              width="13px"
+              height="13px"
+            >
+              <g
+                id="Close_Button"
+                data-name="Close Button"
+                style={{ fill: 'none', stroke: '#dbdbdb' }}
+                transform="translate(-658.146 -6.146)"
+              >
+                <line
+                  id="Line_7"
+                  data-name="Line 7"
+                  className="cls-1"
+                  x2="11"
+                  y2="11"
+                  transform="translate(658.5 6.5)"
+                />
+                <line
+                  id="Line_8"
+                  data-name="Line 8"
+                  className="cls-1"
+                  y1="11"
+                  x2="11"
+                  transform="translate(658.5 6.5)"
+                />
+              </g>
+            </svg>
           </div>
         </div>
       </div>

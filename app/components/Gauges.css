@@ -1,0 +1,39 @@
+.container {
+  display: flex;
+  height: 120px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.04);
+}
+
+.section {
+  font-size: 27px;
+  padding-bottom: 10px;
+  color: rgba(145, 145, 145, 0.7);
+  letter-spacing: 2px;
+}
+
+/* Hack to overwrite width of progress circle */
+.right > .progress {
+  width: 70px;
+  height: 70px;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 0;
+  width: 30%;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.right {
+  padding: 0 25px;
+  width: calc(75% - 25px - 25px);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}

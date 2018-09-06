@@ -4,10 +4,12 @@ import { createHashHistory } from 'history';
 import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
+import * as prefsActions from '../actions/preferences';
+import defaults from '../constants/defaults.json';
 
 const history = createHashHistory();
 
-const configureStore = (initialState?: counterStateType) => {
+const configureStore = () => {
   // Redux Configuration
   const middleware = [];
   const enhancers = [];
@@ -32,6 +34,7 @@ const configureStore = (initialState?: counterStateType) => {
 
   // Redux DevTools Configuration
   const actionCreators = {
+    ...prefsActions,
     ...routerActions
   };
   // If Redux DevTools Extension is installed use it, otherwise use Redux compose
@@ -49,7 +52,7 @@ const configureStore = (initialState?: counterStateType) => {
   const enhancer = composeEnhancers(...enhancers);
 
   // Create Store
-  const store = createStore(rootReducer, initialState, enhancer);
+  const store = createStore(rootReducer, defaults, enhancer);
 
   if (module.hot) {
     module.hot.accept(
