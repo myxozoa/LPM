@@ -1,8 +1,8 @@
 // @flow
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import nodegit from 'nodegit';
 import PropTypes from 'prop-types';
+import gitUtils from '../../../utils/gitUtils';
 import styles from './AppFunctions.css';
 
 type Props = {};
@@ -10,31 +10,16 @@ type Props = {};
 class AppFunctions extends Component<Props> {
   props: Props;
 
-  clone = (folder: string, repo: string, repoName: string) => {
-    const { workingDirectory } = this.props;
-    nodegit
-      .Clone(repo, `${workingDirectory}/${folder}/${repoName}`)
-      .then(data => console.log(data))
-      .catch(error => console.error(error));
-  };
-
   cloneAll = () => {
-    const { students, repo } = this.props;
+    const { students, repo, workingDirectory } = this.props;
     if (students.length === 0) return;
-
-    const repoArray = repo.split('/');
-    const repoName = repoArray.slice(-1)[0];
 
     console.log(repo);
     students.forEach(student => {
-      const studentFolder = student.name
-        .replace(/\s|\./, '_')
-        .replace(/\.+$/, '');
-      const temp = repoArray.slice();
-      temp.splice(repoArray.length - 2, 1, student.username);
-      const studentRepo = temp.join('/');
+      const studentFolder = gitUtils.prepareFolderName(student.name);
+      const studentRepo = gitUtils.prepareStudentRepo(repo, student.username);
 
-      this.clone(studentFolder, studentRepo, repoName);
+      gitUtils.clone(studentFolder, studentRepo, workingDirectory);
     });
   };
 

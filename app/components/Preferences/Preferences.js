@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import shortid from 'shortid';
 
 import WorkingDirectory from './WorkingDirectory';
 
@@ -31,7 +32,9 @@ class Preferences extends Component<Props> {
         <div>
           <select onChange={this.selectSection} value={section}>
             {Object.keys(sections).map((sec: string) => (
-              <option value={sec}>{sec}</option>
+              <option key={shortid.generate()} value={sec}>
+                {sec}
+              </option>
             ))}
           </select>
           <WorkingDirectory />
