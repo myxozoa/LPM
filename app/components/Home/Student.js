@@ -5,12 +5,21 @@ import { connect } from 'react-redux';
 import StarRatings from 'react-star-ratings';
 import PropTypes from 'prop-types';
 import { setRating, setName, setUsername } from '../../actions/students';
+import gitUtils from '../../utils/gitUtils';
 import styles from './Student.css';
 
 type Props = {};
 
 class Student extends Component<Props> {
   props: Props;
+
+  clone = () => {
+    const { name, username, repo, workingDirectory } = this.props;
+    const studentFolder = gitUtils.prepareFolderName(name);
+    const studentRepo = gitUtils.prepareStudentRepo(repo, username);
+
+    gitUtils.clone(studentFolder, studentRepo, workingDirectory);
+  };
 
   changeRating = (newRating: number) => {
     const { setRating: rate, id } = this.props;
@@ -153,6 +162,8 @@ Student.propTypes = {
   name: PropTypes.string,
   username: PropTypes.string,
   rating: PropTypes.number,
+  repo: PropTypes.string,
+  workingDirectory: PropTypes.string,
   setRating: PropTypes.func,
   setName: PropTypes.func,
   setUsername: PropTypes.func
@@ -163,12 +174,19 @@ Student.defaultProps = {
   name: 'John Smith',
   username: 'john657',
   rating: 0,
+  repo: '',
+  workingDirectory: '',
   setRating: () => {},
   setName: () => {},
   setUsername: () => {}
 };
 
+const mapStateToProps = state => ({
+  repo: state.preferences.repo,
+  workingDirectory: state.preferences.workingDirectory
+});
+
 export default connect(
-  null,
+  mapStateToProps,
   { setRating, setName, setUsername }
 )(Student);

@@ -1,6 +1,7 @@
 // @flow
 
 import nodegit from 'nodegit';
+import path from 'path';
 
 export default class gitUtils {
   static prepareFolderName(name: string) {
@@ -13,11 +14,36 @@ export default class gitUtils {
     return temp.join('/');
   }
 
+  static pull(localPath: string, folder: string) {
+    const repoPath = path.resolve(`${localPath}/.git`);
+
+    nodegit.Repository.open(repoPath)
+      .then(repo =>
+        repo
+          .fetchAll()
+          .then(() => {
+            console.log('Pull Success: ', folder);
+            return repo.mergeBranches('master', 'origin/master');
+          })
+          .catch(error => {
+            console.error('Pull Failed: ', error);
+          })
+      )
+      .catch(error => {
+        console.error('Pull Failed: ', error);
+      });
+  }
+
   static clone(folder: string, repo: string, workingDirectory: string) {
     const repoName = repo.slice(-1)[0];
+    const localPath = `${workingDirectory}/${folder}/${repoName}`;
     nodegit
-      .Clone(repo, `${workingDirectory}/${folder}/${repoName}`)
-      .then(() => console.log('Success: ', folder))
-      .catch(error => console.error(error));
+      .Clone(repo, localPath)
+      .then(() => console.log('Clone Success: ', folder))
+      .catch(error => {
+        console.error('Clone Failed: ', error);
+        console.log('Trying Pull...');
+        this.pull(localPath, folder);
+      });
   }
 }

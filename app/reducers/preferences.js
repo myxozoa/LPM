@@ -12,7 +12,7 @@ export default function preferences(state = defaultPrefs, action: Action) {
     case SET_SECTION:
       return { ...state, section: action.payload };
     case SET_REPO:
-      return { ...state, repo: action.payload };
+      return { ...state, repo: action.payload.replace(/\/$/, '') };
     case SET_WORKING_DIRECTORY:
       return { ...state, workingDirectory: action.payload };
     default:
