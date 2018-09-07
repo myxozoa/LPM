@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import LinkSection from './LinkSection';
-import links from '../constants/links.json';
+import links from '../../constants/links.json';
 
 import styles from './Links.css';
 

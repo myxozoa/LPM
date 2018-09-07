@@ -1,33 +1,31 @@
 // @flow
 
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import StarRatings from 'react-star-ratings';
+import PropTypes from 'prop-types';
+import { setRating, setName, setUsername } from '../../actions/students';
 import styles from './Student.css';
 
 type Props = {};
 
-export default class Student extends Component<Props> {
+class Student extends Component<Props> {
   props: Props;
 
-  state = {
-    rating: 0
-  };
-
   changeRating = (newRating: number) => {
-    const { rating } = this.state;
-    if (rating === newRating) {
-      this.setState({
-        rating: 0
-      });
-    } else {
-      this.setState({
-        rating: newRating
-      });
-    }
+    const { setRating: rate, id } = this.props;
+    rate(id, newRating);
   };
 
   render() {
-    const { rating } = this.state;
+    const {
+      rating,
+      name,
+      username,
+      id,
+      setName: setNameAction,
+      setUsername: setUsernameAction
+    } = this.props;
     return (
       <div className={styles.container}>
         <div className={styles.inputs}>
@@ -35,11 +33,15 @@ export default class Student extends Component<Props> {
             className={styles.studentName}
             type="text"
             placeholder="John Smith"
+            onChange={e => setNameAction(id, e.target.value)}
+            value={name}
           />
           <input
             className={styles.studentUsername}
             type="text"
             placeholder="john543"
+            onChange={e => setUsernameAction(id, e.target.value)}
+            value={username}
           />
         </div>
         <div className={styles.buttons}>
@@ -145,3 +147,28 @@ export default class Student extends Component<Props> {
     );
   }
 }
+
+Student.propTypes = {
+  id: PropTypes.string,
+  name: PropTypes.string,
+  username: PropTypes.string,
+  rating: PropTypes.number,
+  setRating: PropTypes.func,
+  setName: PropTypes.func,
+  setUsername: PropTypes.func
+};
+
+Student.defaultProps = {
+  id: 'NULL',
+  name: 'John Smith',
+  username: 'john657',
+  rating: 0,
+  setRating: () => {},
+  setName: () => {},
+  setUsername: () => {}
+};
+
+export default connect(
+  null,
+  { setRating, setName, setUsername }
+)(Student);

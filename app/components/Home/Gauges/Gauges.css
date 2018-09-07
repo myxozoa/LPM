@@ -14,9 +14,9 @@
   letter-spacing: 2px;
 }
 
-/* Hack to overwrite width of progress circle */
+/* Specificity hack to overwrite width of progress circle */
 .right > .progress {
-  width: 70px;
+  width: 33%;
   height: 70px;
 }
 
@@ -25,15 +25,30 @@
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 0;
+  padding: 12px 0;
   width: 30%;
   border-right: 1px solid rgba(0, 0, 0, 0.1);
 }
 
 .right {
-  padding: 0 25px;
-  width: calc(75% - 25px - 25px);
+  box-sizing: border-box;
+  padding: 0 10px 0 0;
+  width: 70%;
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: space-evenly;
+}
+
+.date {
+  width: 33%;
+  height: 50%;
+}
+
+.average {
+  font-size: 20px;
+  box-sizing: border-box;
+  padding-right: 15px;
+  width: 33%;
+  display: flex;
+  justify-content: center;
 }

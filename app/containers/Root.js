@@ -1,5 +1,6 @@
 // @flow
 import React, { Component } from 'react';
+import electron from 'electron';
 import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import type { Store } from '../reducers/types';
@@ -11,6 +12,13 @@ type Props = {
 };
 
 export default class Root extends Component<Props> {
+  componentWillMount() {
+    const { history } = this.props;
+    electron.ipcRenderer.on('transitionTo', (event, route) => {
+      history.push(route);
+    });
+  }
+
   render() {
     const { store, history } = this.props;
     return (

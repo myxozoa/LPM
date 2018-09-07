@@ -140,6 +140,7 @@ body,
 }
 
 body {
+  -webkit-app-region: no-drag;
   line-height: 1;
   user-select: none;
   cursor: default;

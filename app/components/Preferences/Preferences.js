@@ -3,11 +3,14 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { setSection } from '../actions/preferences';
+
+import WorkingDirectory from './WorkingDirectory';
+
+import { setSection } from '../../actions/preferences';
 
 import styles from './Preferences.css';
-import routes from '../constants/routes.json';
-import sections from '../constants/links.json';
+import routes from '../../constants/routes.json';
+import sections from '../../constants/links.json';
 
 type Props = {};
 
@@ -31,6 +34,7 @@ class Preferences extends Component<Props> {
               <option value={sec}>{sec}</option>
             ))}
           </select>
+          <WorkingDirectory />
         </div>
       </div>
     );

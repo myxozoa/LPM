@@ -23,7 +23,7 @@
 }
 
 .link {
-  width: calc(100% - 50px);
+  width: calc(100% - 50px); /* To get the tab like effect */
   margin-right: 20px;
   color: inherit;
   font-weight: 400;

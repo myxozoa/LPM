@@ -2,9 +2,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin-top: 30px;
+  margin-top: 50px;
   padding: 10px 0 30px 25px;
-  width: calc(100% - 25px);
+  box-sizing: border-box;
+  width: 100%;
   -webkit-user-select: none;
   -webkit-app-region: drag;
   font-size: 30px;

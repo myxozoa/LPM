@@ -52,8 +52,6 @@ export default class MenuBuilder {
           selector: 'orderFrontStandardAboutPanel:'
         },
         { type: 'separator' },
-        { label: 'Services', submenu: [] },
-        { type: 'separator' },
         {
           label: 'Hide Lambda PM App',
           accelerator: 'Command+H',
@@ -66,12 +64,12 @@ export default class MenuBuilder {
         },
         { label: 'Show All', selector: 'unhideAllApplications:' },
         { type: 'separator' },
-        // {
-        //   label: 'Preferences',
-        //   click: () => {
-        //     browserHistory.push()
-        //   }
-        // },
+        {
+          label: 'Preferences',
+          click: () => {
+            this.mainWindow.webContents.send('transitionTo', '/preferences');
+          }
+        },
         {
           label: 'Quit',
           accelerator: 'Command+Q',
