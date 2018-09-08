@@ -149,8 +149,7 @@ body {
   height: 100vh;
   background: none;
   font-weight: 100;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica,
-    Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font: menu;
 }
 
 input {

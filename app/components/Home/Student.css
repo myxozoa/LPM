@@ -53,6 +53,7 @@
 .clonePull:hover,
 .comment:hover,
 .menu:hover {
+  transform: all 0.1s ease-in-out;
   cursor: pointer;
   background: rgba(0, 0, 0, 0.02);
 }

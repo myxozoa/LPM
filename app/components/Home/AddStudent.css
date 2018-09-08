@@ -1,0 +1,47 @@
+.button {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  height: 45px;
+  width: 45px;
+
+  border-radius: 50%;
+  border: 0;
+  font-size: 30px;
+  color: white;
+  background: #3b3b3b;
+
+  box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.3);
+}
+
+.button:hover {
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 0 9px 2px rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  width: calc(100% - 300px);
+  height: 200px;
+  border-radius: 25px;
+  overflow: hidden;
+  background: black;
+}
+
+.modal {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: white;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.open {
+  transition: all 0.3s ease-in-out;
+  top: 0;
+  right: 0;
+}

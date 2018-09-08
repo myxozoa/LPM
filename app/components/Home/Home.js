@@ -12,6 +12,12 @@ import styles from './Home.css';
 type Props = {};
 
 class Content extends Component<Props> {
+  constructor(props) {
+    super(props);
+
+    this.scrollTarget = React.createRef();
+  }
+
   render() {
     const { students, repo, setRepo: setRepoAction } = this.props;
     return (
@@ -34,7 +40,9 @@ class Content extends Component<Props> {
             <Student key={student.id} {...student} />
           ))}
 
-          <AddStudent />
+          <div ref={this.scrollTarget} className={styles.scrollTarget} />
+
+          <AddStudent scrollTarget={this.scrollTarget} />
         </div>
       </div>
     );

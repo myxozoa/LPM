@@ -1,6 +1,6 @@
 .button {
   height: 25px;
-  width: 70%;
+  width: 65%;
   color: #6d6d6d;
   border: 1px solid #2fb8ec;
   background: none;
@@ -9,6 +9,11 @@
   font-size: 12px;
   letter-spacing: 1px;
 }
+
+.button:first-of-type {
+  margin-bottom: 2px;
+}
+
 .button:hover {
   transition: all 0.1s ease-in-out;
   color: white;
