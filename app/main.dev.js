@@ -64,11 +64,14 @@ app.on('ready', async () => {
     show: false,
     width: 645,
     height: 800,
+    title: 'PM App',
     frame: false,
     // resizable: false,
     titleBarStyle: 'hidden',
     // titleBarStyle: 'customButtonsOnHover',
     alwaysOnTop: true,
+    minHeight: 200,
+    minWidth: 580,
     transparent: true
   });
 

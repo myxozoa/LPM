@@ -54,7 +54,11 @@ class Student extends Component<Props> {
           />
         </div>
         <div className={styles.buttons}>
-          <div className={styles.clonePull}>
+          <button
+            type="button"
+            className={styles.clonePull}
+            onClick={this.clone}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 26 17"
@@ -81,8 +85,8 @@ class Student extends Component<Props> {
                 />
               </g>
             </svg>
-          </div>
-          <div className={styles.comment}>
+          </button>
+          <button type="button" className={styles.comment}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 15 16"
@@ -96,7 +100,7 @@ class Student extends Component<Props> {
                 transform="translate(-3.5 44.388)"
               />
             </svg>
-          </div>
+          </button>
 
           <StarRatings
             rating={rating}

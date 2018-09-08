@@ -16,6 +16,7 @@
   );
   color: #e6e6e6;
   border-radius: 3px 0 0 3px;
+  overflow-y: auto;
 }
 .credits {
   display: flex;

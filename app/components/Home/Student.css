@@ -37,6 +37,12 @@
 }
 
 .clonePull,
+.comment {
+  background: none;
+  border: 0;
+}
+
+.clonePull,
 .comment,
 .menu {
   padding: 7px;
