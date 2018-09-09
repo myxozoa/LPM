@@ -1,0 +1,28 @@
+.container {
+  position: absolute;
+  right: 0;
+  top: 25px;
+  width: 55px;
+  background: black;
+  border-radius: 4px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.button {
+  background: none;
+  color: white;
+  border: 0;
+  width: 100%;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.open {
+  transition: all 0.2s ease-in-out;
+  top: 25px;
+  opacity: 1;
+  pointer-events: auto;
+}

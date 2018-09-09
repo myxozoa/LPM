@@ -1,6 +1,7 @@
 // @flow
 import {
   ADD_STUDENT,
+  REMOVE_STUDENT,
   SET_RATING,
   SET_NAME,
   SET_USERNAME
@@ -11,35 +12,42 @@ export default function preferences(state = [], action: Action) {
   switch (action.type) {
     case ADD_STUDENT:
       return [...state, action.payload];
-    case SET_RATING:
-      return state.map(el => {
-        if (el.id === action.payload.id) {
-          const student = { ...el };
 
-          if (student.rating === action.payload.rating) {
-            student.rating = 0;
+    case SET_RATING:
+      return state.map(student => {
+        if (student.id === action.payload.id) {
+          const temp = { ...temp };
+
+          if (temp.rating === action.payload.rating) {
+            temp.rating = 0;
           } else {
-            student.rating = action.payload.rating;
+            temp.rating = action.payload.rating;
           }
 
-          return student;
+          return temp;
         }
-        return el;
+        return student;
       });
+
     case SET_NAME:
-      return state.map(el => {
-        if (el.id === action.payload.id) {
-          return { ...el, name: action.payload.name };
+      return state.map(student => {
+        if (student.id === action.payload.id) {
+          return { ...student, name: action.payload.name };
         }
-        return el;
+        return student;
       });
+
     case SET_USERNAME:
-      return state.map(el => {
-        if (el.id === action.payload.id) {
-          return { ...el, username: action.payload.username };
+      return state.map(student => {
+        if (student.id === action.payload.id) {
+          return { ...student, username: action.payload.username };
         }
-        return el;
+        return student;
       });
+
+    case REMOVE_STUDENT:
+      return state.filter(student => student.id !== action.payload);
+
     default:
       return state;
   }

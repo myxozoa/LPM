@@ -11,7 +11,7 @@ import { setSection } from '../../actions/preferences';
 
 import styles from './Preferences.css';
 import routes from '../../constants/routes.json';
-import sections from '../../constants/links.json';
+import info from '../../constants/info.json';
 
 type Props = {};
 
@@ -31,7 +31,7 @@ class Preferences extends Component<Props> {
         <h1>Preferences</h1>
         <div>
           <select onChange={this.selectSection} value={section}>
-            {Object.keys(sections).map((sec: string) => (
+            {info.sections.map((sec: string) => (
               <option key={shortid.generate()} value={sec}>
                 {sec}
               </option>

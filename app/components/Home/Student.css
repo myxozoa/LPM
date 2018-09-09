@@ -8,6 +8,7 @@
   box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.04);
   border-radius: 8px;
   margin-bottom: 16px;
+  overflow: hidden;
 }
 
 .inputs {
@@ -50,6 +51,11 @@
   border-radius: 4px;
 }
 
+.menu {
+  background: none;
+  border: 0;
+}
+
 .clonePull:hover,
 .comment:hover,
 .menu:hover {
@@ -68,6 +74,7 @@
 }
 
 .buttons {
+  position: relative;
   display: flex;
   align-items: center;
 }

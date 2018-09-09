@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StarRatings from 'react-star-ratings';
 import PropTypes from 'prop-types';
+import { shell } from 'electron';
+import Dropdown from './Dropdown';
 import { setRating, setName, setUsername } from '../../actions/students';
 import gitUtils from '../../utils/gitUtils';
 import styles from './Student.css';
@@ -12,6 +14,17 @@ type Props = {};
 
 class Student extends Component<Props> {
   props: Props;
+
+  state = {
+    dropDown: false
+  };
+
+  openPR = () => {
+    const { username, repo } = this.props;
+    shell.openExternal(
+      `${repo}/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A${username}`
+    );
+  };
 
   clone = () => {
     const { name, username, repo, workingDirectory } = this.props;
@@ -26,6 +39,10 @@ class Student extends Component<Props> {
     rate(id, newRating);
   };
 
+  toggleDropDown = () => {
+    this.setState(prev => ({ dropDown: !prev.dropDown }));
+  };
+
   render() {
     const {
       rating,
@@ -35,6 +52,7 @@ class Student extends Component<Props> {
       setName: setNameAction,
       setUsername: setUsernameAction
     } = this.props;
+    const { dropDown } = this.state;
     return (
       <div className={styles.container}>
         <div className={styles.inputs}>
@@ -86,7 +104,11 @@ class Student extends Component<Props> {
               </g>
             </svg>
           </button>
-          <button type="button" className={styles.comment}>
+          <button
+            type="button"
+            className={styles.comment}
+            onClick={this.openPR}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 15 16"
@@ -113,7 +135,11 @@ class Student extends Component<Props> {
             name="rating"
           />
 
-          <div className={styles.menu}>
+          <button
+            type="button"
+            className={styles.menu}
+            onClick={this.toggleDropDown}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 3 17"
@@ -154,7 +180,8 @@ class Student extends Component<Props> {
                 />
               </g>
             </svg>
-          </div>
+          </button>
+          <Dropdown id={id} open={dropDown} />
         </div>
       </div>
     );

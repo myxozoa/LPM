@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Link from './Link';
 
-import styles from './Links.css';
+import styles from './LinkSection.css';
 
 const shortid = require('shortid');
 
@@ -20,12 +20,12 @@ export default class LinkSection extends Component<Props> {
   render() {
     const { title, links } = this.props;
     return (
-      <React.Fragment>
+      <div className={styles.container}>
         <h2 className={styles.section}>{title}</h2>
         {links.map((el: linkType) => (
           <Link key={shortid.generate()} {...el} />
         ))}
-      </React.Fragment>
+      </div>
     );
   }
 }

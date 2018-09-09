@@ -1,0 +1,22 @@
+.container {
+  letter-spacing: 1px;
+  width: 100%;
+}
+
+.container * {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  text-align: left;
+}
+
+.section {
+  font-size: 14px;
+  height: 20px;
+  color: rgba(225, 225, 225, 0.65);
+  font-weight: 100;
+}
+
+.section:first-child {
+  margin-top: 10px;
+}

@@ -35,7 +35,7 @@ export default class gitUtils {
   }
 
   static clone(folder: string, repo: string, workingDirectory: string) {
-    const repoName = repo.slice(-1)[0];
+    const repoName = repo.split('/').slice(-1)[0];
     const localPath = `${workingDirectory}/${folder}/${repoName}`;
     nodegit
       .Clone(repo, localPath)

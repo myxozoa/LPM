@@ -1,0 +1,9 @@
+.container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  letter-spacing: 1px;
+  width: 100%;
+  height: 80%;
+  overflow-y: auto;
+}

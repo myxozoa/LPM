@@ -36,9 +36,11 @@ class Content extends Component<Props> {
 
           <Gauges />
 
-          {students.map(student => (
-            <Student key={student.id} {...student} />
-          ))}
+          <div className={styles.students}>
+            {students.map(student => (
+              <Student key={student.id} {...student} />
+            ))}
+          </div>
 
           <div ref={this.scrollTarget} className={styles.scrollTarget} />
 

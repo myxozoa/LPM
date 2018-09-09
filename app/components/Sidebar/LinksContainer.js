@@ -4,9 +4,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import LinkSection from './LinkSection';
-import links from '../../constants/links.json';
+import info from '../../constants/info.json';
 
-import styles from './Links.css';
+import styles from './LinksContainer.css';
 
 const shortid = require('shortid');
 
@@ -26,11 +26,10 @@ class LinksContainer extends Component<Props> {
   props: Props;
 
   render() {
-    const { section } = this.props;
-
+    // const { section } = this.props;
     return (
       <div className={styles.container}>
-        {links[section].links.map((el: linksType) => (
+        {info.links.map((el: linksType) => (
           <LinkSection key={shortid.generate()} {...el} />
         ))}
       </div>

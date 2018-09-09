@@ -68,8 +68,6 @@ app.on('ready', async () => {
     frame: false,
     // resizable: false,
     titleBarStyle: 'hidden',
-    // titleBarStyle: 'customButtonsOnHover',
-    alwaysOnTop: true,
     minHeight: 200,
     minWidth: 580,
     transparent: true
