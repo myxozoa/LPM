@@ -16,7 +16,7 @@ export default function preferences(state = [], action: Action) {
     case SET_RATING:
       return state.map(student => {
         if (student.id === action.payload.id) {
-          const temp = { ...temp };
+          const temp = { ...student };
 
           if (temp.rating === action.payload.rating) {
             temp.rating = 0;

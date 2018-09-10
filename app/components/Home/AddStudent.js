@@ -45,7 +45,7 @@ class AddStudent extends Component<Props> {
 
   togglePrompt = () => {
     this.setState(
-      prev => ({ adding: !prev.adding }),
+      prev => ({ adding: !prev.adding, name: '', username: '' }),
       () => {
         const { adding } = this.state;
         if (adding) this.focusInput.current.focus();
@@ -76,7 +76,9 @@ class AddStudent extends Component<Props> {
             type="button"
             onClick={this.togglePrompt}
           >
-            <div>{adding ? '-' : '+'}</div>
+            <div>
+              <span>{adding ? '-' : '+'}</span>
+            </div>
           </button>
           <div className={containerClass}>
             <div className={modalClass}>

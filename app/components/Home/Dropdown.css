@@ -3,21 +3,23 @@
   right: 0;
   top: 25px;
   width: 55px;
-  background: black;
+  background: white;
   border-radius: 4px;
   opacity: 0;
   pointer-events: none;
+  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
 }
 
 .button {
   background: none;
-  color: white;
+  color: black;
   border: 0;
   width: 100%;
 }
 
 .button:hover {
   cursor: pointer;
+  background: rgba(0, 0, 0, 0.05);
 }
 
 .open {

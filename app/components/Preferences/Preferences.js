@@ -7,7 +7,7 @@ import shortid from 'shortid';
 
 import WorkingDirectory from './WorkingDirectory';
 
-import { setSection } from '../../actions/preferences';
+import { setSection, setAlwaysOnTop } from '../../actions/preferences';
 
 import styles from './Preferences.css';
 import routes from '../../constants/routes.json';
@@ -23,13 +23,19 @@ class Preferences extends Component<Props> {
     set(e.target.value);
   };
 
+  alwaysOnTop = () => {
+    const { setAlwaysOnTop: set, onTop } = this.props;
+    set(!onTop);
+  };
+
   render() {
-    const { section } = this.props;
+    console.log(this.state);
+    const { section, onTop } = this.props;
     return (
       <div className={styles.container}>
         <Link to={routes.HOME}>{'<'}</Link>
         <h1>Preferences</h1>
-        <div>
+        <form>
           <select onChange={this.selectSection} value={section}>
             {info.sections.map((sec: string) => (
               <option key={shortid.generate()} value={sec}>
@@ -38,7 +44,18 @@ class Preferences extends Component<Props> {
             ))}
           </select>
           <WorkingDirectory />
-        </div>
+
+          <label htmlFor="alwaysOnTop">
+            <span>Always on top:</span>
+            <input
+              id="alwaysOnTop"
+              name="alwaysOnTop"
+              type="checkbox"
+              onChange={this.alwaysOnTop}
+              checked={onTop}
+            />
+          </label>
+        </form>
       </div>
     );
   }
@@ -46,19 +63,24 @@ class Preferences extends Component<Props> {
 
 Preferences.propTypes = {
   section: PropTypes.string,
-  setSection: PropTypes.func
+  onTop: PropTypes.bool,
+  setSection: PropTypes.func,
+  setAlwaysOnTop: PropTypes.func
 };
 
 Preferences.defaultProps = {
   section: 'SECTION',
-  setSection: () => {}
+  onTop: false,
+  setSection: () => {},
+  setAlwaysOnTop: () => {}
 };
 
 const mapStateToProps = state => ({
-  section: state.preferences.section
+  section: state.preferences.section,
+  onTop: state.preferences.alwaysOnTop
 });
 
 export default connect(
   mapStateToProps,
-  { setSection }
+  { setSection, setAlwaysOnTop }
 )(Preferences);

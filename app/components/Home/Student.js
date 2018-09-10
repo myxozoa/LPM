@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import { shell } from 'electron';
 import Dropdown from './Dropdown';
 import { setRating, setName, setUsername } from '../../actions/students';
-import gitUtils from '../../utils/gitUtils';
+import { clone } from '../../actions/github';
 import styles from './Student.css';
 
 type Props = {};
@@ -27,11 +27,9 @@ class Student extends Component<Props> {
   };
 
   clone = () => {
-    const { name, username, repo, workingDirectory } = this.props;
-    const studentFolder = gitUtils.prepareFolderName(name);
-    const studentRepo = gitUtils.prepareStudentRepo(repo, username);
+    const { clone: cloneAction, name, username } = this.props;
 
-    gitUtils.clone(studentFolder, studentRepo, workingDirectory);
+    cloneAction(name, username);
   };
 
   changeRating = (newRating: number) => {
@@ -55,6 +53,7 @@ class Student extends Component<Props> {
     const { dropDown } = this.state;
     return (
       <div className={styles.container}>
+        {/* <button type="button" onClick={() => cloneAction(username)}>Test Clone</button> */}
         <div className={styles.inputs}>
           <input
             className={styles.studentName}
@@ -194,10 +193,10 @@ Student.propTypes = {
   username: PropTypes.string,
   rating: PropTypes.number,
   repo: PropTypes.string,
-  workingDirectory: PropTypes.string,
   setRating: PropTypes.func,
   setName: PropTypes.func,
-  setUsername: PropTypes.func
+  setUsername: PropTypes.func,
+  clone: PropTypes.func
 };
 
 Student.defaultProps = {
@@ -206,18 +205,17 @@ Student.defaultProps = {
   username: 'john657',
   rating: 0,
   repo: '',
-  workingDirectory: '',
   setRating: () => {},
   setName: () => {},
-  setUsername: () => {}
+  setUsername: () => {},
+  clone: () => {}
 };
 
 const mapStateToProps = state => ({
-  repo: state.preferences.repo,
-  workingDirectory: state.preferences.workingDirectory
+  repo: state.preferences.repo
 });
 
 export default connect(
   mapStateToProps,
-  { setRating, setName, setUsername }
+  { setRating, setName, setUsername, clone }
 )(Student);

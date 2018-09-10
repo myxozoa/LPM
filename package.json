@@ -1,7 +1,7 @@
 {
   "name": "lambda-pm-app",
-  "productName": "ElectronReact",
-  "version": "2.0.0",
+  "productName": "Lambda PM App",
+  "version": "2.0.1",
   "description": "Project Management App",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -16,6 +16,7 @@
     "lint-fix": "yarn --silent lint --fix; exit 0",
     "lint-styles": "stylelint --ignore-path .eslintignore '**/*.*(css|scss)' --syntax scss",
     "lint-styles-fix": "yarn --silent lint-styles --fix; exit 0",
+    "release": "yarn build && electron-builder build --publish onTagOrDraft",
     "package": "yarn build && electron-builder build --publish never",
     "package-all": "yarn build && electron-builder build -mwl",
     "package-linux": "yarn build && electron-builder build --linux",
@@ -48,6 +49,9 @@
     "productName": "Lambda PM App",
     "appId": "com.rmiksch.pmapp",
     "copyright": "Copyright © 2018 Ronnie Miksch",
+    "publish": [{
+      "provider": "github"
+    }],
     "files": [
       "dist/",
       "node_modules/",
@@ -221,6 +225,7 @@
     "date-fns": "^1.29.0",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
+    "electron-updater": "^3.1.2",
     "history": "^4.7.2",
     "react": "^16.4.1",
     "react-circular-progressbar": "^1.0.0",

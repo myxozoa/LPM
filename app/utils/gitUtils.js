@@ -14,36 +14,46 @@ export default class gitUtils {
     return temp.join('/');
   }
 
-  static pull(localPath: string, folder: string) {
+  static pull(
+    name: string,
+    repo: string,
+    username: string,
+    workingDirectory: string
+  ) {
+    const folder = this.prepareFolderName(name);
+    const studentRepo = this.prepareStudentRepo(repo, username);
+    const repoName = studentRepo.split('/').slice(-1)[0];
+    const localPath = `${workingDirectory}/${folder}/${repoName}`;
     const repoPath = path.resolve(`${localPath}/.git`);
 
-    nodegit.Repository.open(repoPath)
-      .then(repo =>
-        repo
-          .fetchAll()
-          .then(() => {
-            console.log('Pull Success: ', folder);
-            return repo.mergeBranches('master', 'origin/master');
-          })
-          .catch(error => {
-            console.error('Pull Failed: ', error);
-          })
-      )
-      .catch(error => {
-        console.error('Pull Failed: ', error);
-      });
+    return nodegit.Repository.open(repoPath);
+    // .then(repo =>
+    //   repo
+    //     .fetchAll()
+    //     .then(() => {
+    //       console.log('Pull Success: ', folder);
+    //       return repo.mergeBranches('master', 'origin/master');
+    //     })
+    //     .catch(error => {
+    //       console.error('Pull Failed: ', error);
+    //     })
+    // )
+    // .catch(error => {
+    //   console.error('Pull Failed: ', error);
+    // });
   }
 
-  static clone(folder: string, repo: string, workingDirectory: string) {
-    const repoName = repo.split('/').slice(-1)[0];
+  static clone(
+    name: string,
+    repo: string,
+    username: string,
+    workingDirectory: string
+  ) {
+    const folder = this.prepareFolderName(name);
+    const studentRepo = this.prepareStudentRepo(repo, username);
+    const repoName = studentRepo.split('/').slice(-1)[0];
     const localPath = `${workingDirectory}/${folder}/${repoName}`;
-    nodegit
-      .Clone(repo, localPath)
-      .then(() => console.log('Clone Success: ', folder))
-      .catch(error => {
-        console.error('Clone Failed: ', error);
-        console.log('Trying Pull...');
-        this.pull(localPath, folder);
-      });
+
+    return nodegit.Clone(studentRepo, localPath);
   }
 }

@@ -16,6 +16,7 @@ class Content extends Component<Props> {
     super(props);
 
     this.scrollTarget = React.createRef();
+    this.page = React.createRef();
   }
 
   render() {
@@ -23,7 +24,7 @@ class Content extends Component<Props> {
     return (
       <div className={styles.container}>
         {/* <ConfigField placeholder="https://github.com/myxozoa/LPM" /> */}
-        <div className={styles.content}>
+        <div className={styles.content} ref={this.page}>
           <div className={styles.repoContainer}>
             <input
               className={styles.repo}

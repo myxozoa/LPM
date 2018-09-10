@@ -9,15 +9,14 @@
 
 .content {
   margin-left: 230px;
-  padding: 0 20px;
-  max-height: 100%;
+  padding: 0 16px 0 20px;
   height: 100%;
   box-sizing: border-box;
   width: calc(100% - 230px);
   color: #8f8f8f;
   font-size: 13px;
   font-weight: 400;
-  overflow: auto;
+  overflow-y: scroll;
 }
 
 .repo {

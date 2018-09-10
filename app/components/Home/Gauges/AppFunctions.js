@@ -2,7 +2,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import gitUtils from '../../../utils/gitUtils';
+// import gitUtils from '../../../utils/gitUtils';
+import { cloneAll } from '../../../actions/github';
 import styles from './AppFunctions.css';
 
 type Props = {};
@@ -11,16 +12,18 @@ class AppFunctions extends Component<Props> {
   props: Props;
 
   cloneAll = () => {
-    const { students, repo, workingDirectory } = this.props;
+    const { students, cloneAll: cloneAllAction } = this.props;
     if (students.length === 0) return;
 
-    console.log(repo);
-    students.forEach(student => {
-      const studentFolder = gitUtils.prepareFolderName(student.name);
-      const studentRepo = gitUtils.prepareStudentRepo(repo, student.username);
+    // console.log(repo);
+    // students.forEach(student => {
 
-      gitUtils.clone(studentFolder, studentRepo, workingDirectory);
-    });
+    // const studentFolder = gitUtils.prepareFolderName(student.name);
+    // const studentRepo = gitUtils.prepareStudentRepo(repo, student.username);
+
+    // gitUtils.clone(student.name, repo, student.username, workingDirectory);
+    cloneAllAction();
+    // });
   };
 
   render() {
@@ -39,20 +42,19 @@ class AppFunctions extends Component<Props> {
 
 AppFunctions.propTypes = {
   students: PropTypes.arrayOf(PropTypes.object),
-  repo: PropTypes.string,
-  workingDirectory: PropTypes.string
+  cloneAll: PropTypes.func
 };
 
 AppFunctions.defaultProps = {
   students: [{}],
-  repo: '',
-  workingDirectory: ''
+  cloneAll: () => {}
 };
 
 const mapStateToProps = state => ({
-  students: state.students,
-  repo: state.preferences.repo,
-  workingDirectory: state.preferences.workingDirectory
+  students: state.students
 });
 
-export default connect(mapStateToProps)(AppFunctions);
+export default connect(
+  mapStateToProps,
+  { cloneAll }
+)(AppFunctions);
