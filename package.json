@@ -49,9 +49,11 @@
     "productName": "Lambda PM App",
     "appId": "com.rmiksch.pmapp",
     "copyright": "Copyright © 2018 Ronnie Miksch",
-    "publish": [{
-      "provider": "github"
-    }],
+    "publish": [
+      {
+        "provider": "github"
+      }
+    ],
     "files": [
       "dist/",
       "node_modules/",
@@ -222,10 +224,12 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
+    "@octokit/rest": "^15.11.1",
     "date-fns": "^1.29.0",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
     "electron-updater": "^3.1.2",
+    "fuse.js": "^3.2.1",
     "history": "^4.7.2",
     "react": "^16.4.1",
     "react-circular-progressbar": "^1.0.0",
@@ -235,6 +239,7 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-router-redux": "^5.0.0-alpha.6",
+    "react-select": "^2.0.0",
     "react-star-ratings": "^2.3.0",
     "redux": "^4.0.0",
     "redux-thunk": "^2.3.0",

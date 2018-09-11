@@ -35,9 +35,11 @@
 }
 
 .repoContainer {
-  display: flex;
-  align-items: center;
-  height: 60px;
+  /* display: flex;
+  align-items: center; */
+  /* height: 60px; */
+  width: 100%;
+  margin: 10px 0;
 }
 
 .scrollTarget {

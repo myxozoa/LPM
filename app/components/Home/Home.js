@@ -3,13 +3,22 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import Select from 'react-select';
+import Fuse from 'fuse.js';
+
+import { setRepo } from '../../actions/preferences';
+import repos from '../../constants/repos.json';
+
 import Student from './Student';
 import Gauges from './Gauges/Gauges';
 import AddStudent from './AddStudent';
-import { setRepo } from '../../actions/preferences';
 import styles from './Home.css';
 
 type Props = {};
+
+type repoType = { id: number, label: string, value: string };
+
+type optionsType = Array<repoType>;
 
 class Content extends Component<Props> {
   constructor(props) {
@@ -19,19 +28,47 @@ class Content extends Component<Props> {
     this.page = React.createRef();
   }
 
+  state = {
+    repoName: ''
+  };
+
+  filterOptions = (options: optionsType, filter: string) => {
+    const fuseOptions = {
+      shouldSort: true,
+      tokenize: true,
+      threshold: 0.6,
+      location: 0,
+      distance: 100,
+      maxPatternLength: 32,
+      minMatchCharLength: 1,
+      keys: ['label']
+    };
+    const fuse = new Fuse(options, fuseOptions);
+    return fuse.search(filter);
+  };
+
+  onChange = e => {
+    const { setRepo: setRepoAction } = this.props;
+    this.setState({ repoName: e.label });
+    setRepoAction(e.value);
+  };
+
   render() {
-    const { students, repo, setRepo: setRepoAction } = this.props;
+    const { students, repo } = this.props;
+    const { repoName } = this.state;
+
     return (
       <div className={styles.container}>
-        {/* <ConfigField placeholder="https://github.com/myxozoa/LPM" /> */}
         <div className={styles.content} ref={this.page}>
           <div className={styles.repoContainer}>
-            <input
-              className={styles.repo}
-              type="text"
-              placeholder="https://github.com/myxozoa/LPM"
-              onChange={e => setRepoAction(e.target.value)}
+            <Select
+              classNamePrefix="repo"
+              name="repo-selector"
               value={repo}
+              onChange={this.onChange}
+              filterOptions={this.filterOptions}
+              options={repos}
+              placeholder={repoName}
             />
           </div>
 
