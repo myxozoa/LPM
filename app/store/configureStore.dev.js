@@ -5,7 +5,6 @@ import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
 import rootReducer from '../reducers';
 import * as prefsActions from '../actions/preferences';
-import defaults from '../constants/defaults.json';
 
 const history = createHashHistory();
 
@@ -52,7 +51,7 @@ const configureStore = () => {
   const enhancer = composeEnhancers(...enhancers);
 
   // Create Store
-  const store = createStore(rootReducer, defaults, enhancer);
+  const store = createStore(rootReducer, {}, enhancer);
 
   if (module.hot) {
     module.hot.accept(

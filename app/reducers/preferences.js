@@ -1,5 +1,5 @@
 // @flow
-import { remote } from 'electron';
+
 import {
   SET_SECTION,
   SET_REPO,
@@ -9,7 +9,18 @@ import {
 import { preferences as defaultPrefs } from '../constants/defaults.json';
 import type { Action } from './types';
 
-export default function preferences(state = defaultPrefs, action: Action) {
+const { remote } = require('electron');
+const path = require('path');
+
+const { app } = remote;
+
+const userData = app.getPath('userData');
+const prefs = {
+  ...defaultPrefs,
+  workingDirectory: path.join(userData, 'LPM', 'repos')
+}; // setting default workingDirectory to path in userdata
+
+export default function preferences(state = prefs, action: Action) {
   switch (action.type) {
     case SET_SECTION:
       return { ...state, section: action.payload };
