@@ -1,0 +1,1472 @@
+[
+  {
+    "label": "3D-ThreeJS",
+    "value": "https://github.com/LambdaSchool/3D-ThreeJS",
+    "id": 110310465
+  },
+  {
+    "label": "Advanced-JavaScript-Deprecated",
+    "value": "https://github.com/LambdaSchool/Advanced-JavaScript-Deprecated",
+    "id": 87619117
+  },
+  {
+    "label": "Advanced-Javascript-Mini",
+    "value": "https://github.com/LambdaSchool/Advanced-Javascript-Mini",
+    "id": 99845894
+  },
+  {
+    "label": "Algorithms",
+    "value": "https://github.com/LambdaSchool/Algorithms",
+    "id": 147538344
+  },
+  {
+    "label": "Algorithms-One",
+    "value": "https://github.com/LambdaSchool/Algorithms-One",
+    "id": 108161522
+  },
+  {
+    "label": "Algorithms-Two_React-TSP",
+    "value": "https://github.com/LambdaSchool/Algorithms-Two_React-TSP",
+    "id": 108904394
+  },
+  {
+    "label": "Android_Classes",
+    "value": "https://github.com/LambdaSchool/Android_Classes",
+    "id": 142631502
+  },
+  {
+    "label": "Android_Collections",
+    "value": "https://github.com/LambdaSchool/Android_Collections",
+    "id": 142360966
+  },
+  {
+    "label": "Android_Conditionals_and_Loops",
+    "value": "https://github.com/LambdaSchool/Android_Conditionals_and_Loops",
+    "id": 142097024
+  },
+  {
+    "label": "Android_Layouts",
+    "value": "https://github.com/LambdaSchool/Android_Layouts",
+    "id": 142616650
+  },
+  {
+    "label": "Android_Methods",
+    "value": "https://github.com/LambdaSchool/Android_Methods",
+    "id": 142097612
+  },
+  {
+    "label": "Android_Rainbow",
+    "value": "https://github.com/LambdaSchool/Android_Rainbow",
+    "id": 142047173
+  },
+  {
+    "label": "Android_Strings",
+    "value": "https://github.com/LambdaSchool/Android_Strings",
+    "id": 142201213
+  },
+  {
+    "label": "Applied-C-Programming",
+    "value": "https://github.com/LambdaSchool/Applied-C-Programming",
+    "id": 106609640
+  },
+  {
+    "label": "Art-Gallery",
+    "value": "https://github.com/LambdaSchool/Art-Gallery",
+    "id": 141861415
+  },
+  {
+    "label": "async-redux-example",
+    "value": "https://github.com/LambdaSchool/async-redux-example",
+    "id": 122408851
+  },
+  {
+    "label": "Atomic-Design",
+    "value": "https://github.com/LambdaSchool/Atomic-Design",
+    "id": 125393510
+  },
+  {
+    "label": "Atomic-Design-Solution",
+    "value": "https://github.com/LambdaSchool/Atomic-Design-Solution",
+    "id": 125393645
+  },
+  {
+    "label": "auth-hoc",
+    "value": "https://github.com/LambdaSchool/auth-hoc",
+    "id": 101509057
+  },
+  {
+    "label": "auth-i",
+    "value": "https://github.com/LambdaSchool/auth-i",
+    "id": 101209425
+  },
+  {
+    "label": "auth-ii",
+    "value": "https://github.com/LambdaSchool/auth-ii",
+    "id": 101095784
+  },
+  {
+    "label": "auth-iii",
+    "value": "https://github.com/LambdaSchool/auth-iii",
+    "id": 117921159
+  },
+  {
+    "label": "authmini",
+    "value": "https://github.com/LambdaSchool/authmini",
+    "id": 148179738
+  },
+  {
+    "label": "back-end-project-week",
+    "value": "https://github.com/LambdaSchool/back-end-project-week",
+    "id": 124343871
+  },
+  {
+    "label": "Back-End-Quiz",
+    "value": "https://github.com/LambdaSchool/Back-End-Quiz",
+    "id": 107585155
+  },
+  {
+    "label": "Basic-JavaScript",
+    "value": "https://github.com/LambdaSchool/Basic-JavaScript",
+    "id": 96572632
+  },
+  {
+    "label": "Basic-JavaScript-Mini",
+    "value": "https://github.com/LambdaSchool/Basic-JavaScript-Mini",
+    "id": 99597373
+  },
+  {
+    "label": "BEM-block",
+    "value": "https://github.com/LambdaSchool/BEM-block",
+    "id": 123351274
+  },
+  {
+    "label": "bokeh_graphs",
+    "value": "https://github.com/LambdaSchool/bokeh_graphs",
+    "id": 135509405
+  },
+  {
+    "label": "Bootstrap-Project-I",
+    "value": "https://github.com/LambdaSchool/Bootstrap-Project-I",
+    "id": 121438979
+  },
+  {
+    "label": "Bootstrap-Project-II",
+    "value": "https://github.com/LambdaSchool/Bootstrap-Project-II",
+    "id": 121439073
+  },
+  {
+    "label": "Break-Week-Project",
+    "value": "https://github.com/LambdaSchool/Break-Week-Project",
+    "id": 103709927
+  },
+  {
+    "label": "C-Web-Server",
+    "value": "https://github.com/LambdaSchool/C-Web-Server",
+    "id": 114915912
+  },
+  {
+    "label": "Client-Auth-Mini",
+    "value": "https://github.com/LambdaSchool/Client-Auth-Mini",
+    "id": 101905726
+  },
+  {
+    "label": "Client-Auth-Solution",
+    "value": "https://github.com/LambdaSchool/Client-Auth-Solution",
+    "id": 101509384
+  },
+  {
+    "label": "Client-Testing-Mini",
+    "value": "https://github.com/LambdaSchool/Client-Testing-Mini",
+    "id": 99588725
+  },
+  {
+    "label": "Code-Review-Checklist",
+    "value": "https://github.com/LambdaSchool/Code-Review-Checklist",
+    "id": 118801376
+  },
+  {
+    "label": "Components-BEM",
+    "value": "https://github.com/LambdaSchool/Components-BEM",
+    "id": 123332177
+  },
+  {
+    "label": "Components-BEM-Solution",
+    "value": "https://github.com/LambdaSchool/Components-BEM-Solution",
+    "id": 123312940
+  },
+  {
+    "label": "Components-Constructors",
+    "value": "https://github.com/LambdaSchool/Components-Constructors",
+    "id": 123456559
+  },
+  {
+    "label": "Components-Constructors-Solution",
+    "value": "https://github.com/LambdaSchool/Components-Constructors-Solution",
+    "id": 123455953
+  },
+  {
+    "label": "Components-jQuery",
+    "value": "https://github.com/LambdaSchool/Components-jQuery",
+    "id": 129968551
+  },
+  {
+    "label": "Computer-Architecture",
+    "value": "https://github.com/LambdaSchool/Computer-Architecture",
+    "id": 145056855
+  },
+  {
+    "label": "Computer-Architecture-One",
+    "value": "https://github.com/LambdaSchool/Computer-Architecture-One",
+    "id": 104133055
+  },
+  {
+    "label": "Computer-Architecture-Two",
+    "value": "https://github.com/LambdaSchool/Computer-Architecture-Two",
+    "id": 104133285
+  },
+  {
+    "label": "Concurrency-flock",
+    "value": "https://github.com/LambdaSchool/Concurrency-flock",
+    "id": 114797917
+  },
+  {
+    "label": "ConditionalsAndOptionals",
+    "value": "https://github.com/LambdaSchool/ConditionalsAndOptionals",
+    "id": 137283025
+  },
+  {
+    "label": "Contacts",
+    "value": "https://github.com/LambdaSchool/Contacts",
+    "id": 140031446
+  },
+  {
+    "label": "Conways-Life",
+    "value": "https://github.com/LambdaSchool/Conways-Life",
+    "id": 109756878
+  },
+  {
+    "label": "CS-Wiki",
+    "value": "https://github.com/LambdaSchool/CS-Wiki",
+    "id": 110188185
+  },
+  {
+    "label": "CS1-Code-Challenges",
+    "value": "https://github.com/LambdaSchool/CS1-Code-Challenges",
+    "id": 96794176
+  },
+  {
+    "label": "CS13-funtimes",
+    "value": "https://github.com/LambdaSchool/CS13-funtimes",
+    "id": 142469067
+  },
+  {
+    "label": "CS14-Git-Intro",
+    "value": "https://github.com/LambdaSchool/CS14-Git-Intro",
+    "id": 146781582
+  },
+  {
+    "label": "CS2-Code-Challenges",
+    "value": "https://github.com/LambdaSchool/CS2-Code-Challenges",
+    "id": 99710098
+  },
+  {
+    "label": "Data-Structures",
+    "value": "https://github.com/LambdaSchool/Data-Structures",
+    "id": 132027752
+  },
+  {
+    "label": "Data-Structures-I",
+    "value": "https://github.com/LambdaSchool/Data-Structures-I",
+    "id": 87156089
+  },
+  {
+    "label": "Data-Structures-I-Mini-Sprint",
+    "value": "https://github.com/LambdaSchool/Data-Structures-I-Mini-Sprint",
+    "id": 99624141
+  },
+  {
+    "label": "Data-Structures-II",
+    "value": "https://github.com/LambdaSchool/Data-Structures-II",
+    "id": 88178113
+  },
+  {
+    "label": "Data-Structures-II-Mini-Sprint",
+    "value": "https://github.com/LambdaSchool/Data-Structures-II-Mini-Sprint",
+    "id": 100315325
+  },
+  {
+    "label": "db-recipe-book",
+    "value": "https://github.com/LambdaSchool/db-recipe-book",
+    "id": 143304683
+  },
+  {
+    "label": "db-zoos",
+    "value": "https://github.com/LambdaSchool/db-zoos",
+    "id": 113344105
+  },
+  {
+    "label": "Demo-Day-Preparation",
+    "value": "https://github.com/LambdaSchool/Demo-Day-Preparation",
+    "id": 117300878
+  },
+  {
+    "label": "DevOps-Deployment",
+    "value": "https://github.com/LambdaSchool/DevOps-Deployment",
+    "id": 103334866
+  },
+  {
+    "label": "DevOps-Deployment-Mini",
+    "value": "https://github.com/LambdaSchool/DevOps-Deployment-Mini",
+    "id": 106751745
+  },
+  {
+    "label": "DijkstrasD3Demo",
+    "value": "https://github.com/LambdaSchool/DijkstrasD3Demo",
+    "id": 109184844
+  },
+  {
+    "label": "Django-RPG",
+    "value": "https://github.com/LambdaSchool/Django-RPG",
+    "id": 124104862
+  },
+  {
+    "label": "DOM",
+    "value": "https://github.com/LambdaSchool/DOM",
+    "id": 97522760
+  },
+  {
+    "label": "DOM-I",
+    "value": "https://github.com/LambdaSchool/DOM-I",
+    "id": 122894487
+  },
+  {
+    "label": "DOM-II",
+    "value": "https://github.com/LambdaSchool/DOM-II",
+    "id": 123160091
+  },
+  {
+    "label": "DOM-JavaScript-mini",
+    "value": "https://github.com/LambdaSchool/DOM-JavaScript-mini",
+    "id": 107454408
+  },
+  {
+    "label": "DOM-JavaScript-mini-Solution",
+    "value": "https://github.com/LambdaSchool/DOM-JavaScript-mini-Solution",
+    "id": 107449541
+  },
+  {
+    "label": "ForkDemo",
+    "value": "https://github.com/LambdaSchool/ForkDemo",
+    "id": 142180072
+  },
+  {
+    "label": "front-end-challenge--calculator",
+    "value": "https://github.com/LambdaSchool/front-end-challenge--calculator",
+    "id": 117743105
+  },
+  {
+    "label": "front-end-project-week",
+    "value": "https://github.com/LambdaSchool/front-end-project-week",
+    "id": 122791096
+  },
+  {
+    "label": "Getting-Started",
+    "value": "https://github.com/LambdaSchool/Getting-Started",
+    "id": 119092935
+  },
+  {
+    "label": "Git-Foo",
+    "value": "https://github.com/LambdaSchool/Git-Foo",
+    "id": 102884163
+  },
+  {
+    "label": "GitHub-Contribution-Graph",
+    "value": "https://github.com/LambdaSchool/GitHub-Contribution-Graph",
+    "id": 123483098
+  },
+  {
+    "label": "GraphQL",
+    "value": "https://github.com/LambdaSchool/GraphQL",
+    "id": 144054293
+  },
+  {
+    "label": "Graphs",
+    "value": "https://github.com/LambdaSchool/Graphs",
+    "id": 116296528
+  },
+  {
+    "label": "GTMAppAuth",
+    "value": "https://github.com/LambdaSchool/GTMAppAuth",
+    "id": 145368731
+  },
+  {
+    "label": "Hello-Django",
+    "value": "https://github.com/LambdaSchool/Hello-Django",
+    "id": 123947380
+  },
+  {
+    "label": "HTML-CSS",
+    "value": "https://github.com/LambdaSchool/HTML-CSS",
+    "id": 106588490
+  },
+  {
+    "label": "HTML-CSS-mini",
+    "value": "https://github.com/LambdaSchool/HTML-CSS-mini",
+    "id": 107132511
+  },
+  {
+    "label": "HTML-CSS-mini-Solution",
+    "value": "https://github.com/LambdaSchool/HTML-CSS-mini-Solution",
+    "id": 107135068
+  },
+  {
+    "label": "HTTP-AJAX",
+    "value": "https://github.com/LambdaSchool/HTTP-AJAX",
+    "id": 89299766
+  },
+  {
+    "label": "HTTP-Mini-Sprint",
+    "value": "https://github.com/LambdaSchool/HTTP-Mini-Sprint",
+    "id": 98693402
+  },
+  {
+    "label": "HTTP-Movies-Stretch-Assignment",
+    "value": "https://github.com/LambdaSchool/HTTP-Movies-Stretch-Assignment",
+    "id": 129110997
+  },
+  {
+    "label": "Intro-Django",
+    "value": "https://github.com/LambdaSchool/Intro-Django",
+    "id": 142946535
+  },
+  {
+    "label": "Intro-Python",
+    "value": "https://github.com/LambdaSchool/Intro-Python",
+    "id": 139208115
+  },
+  {
+    "label": "Intro-to-C",
+    "value": "https://github.com/LambdaSchool/Intro-to-C",
+    "id": 123644927
+  },
+  {
+    "label": "Intro-to-C-Solution",
+    "value": "https://github.com/LambdaSchool/Intro-to-C-Solution",
+    "id": 122259292
+  },
+  {
+    "label": "Introduction",
+    "value": "https://github.com/LambdaSchool/Introduction",
+    "id": 137123309
+  },
+  {
+    "label": "ios-albums",
+    "value": "https://github.com/LambdaSchool/ios-albums",
+    "id": 146931268
+  },
+  {
+    "label": "ios-astronomy",
+    "value": "https://github.com/LambdaSchool/ios-astronomy",
+    "id": 147626899
+  },
+  {
+    "label": "ios-astronomy-bugs",
+    "value": "https://github.com/LambdaSchool/ios-astronomy-bugs",
+    "id": 148072592
+  },
+  {
+    "label": "ios-debugging",
+    "value": "https://github.com/LambdaSchool/ios-debugging",
+    "id": 148096299
+  },
+  {
+    "label": "ios-google-books-auth-example",
+    "value": "https://github.com/LambdaSchool/ios-google-books-auth-example",
+    "id": 145379060
+  },
+  {
+    "label": "ios-guided-projects",
+    "value": "https://github.com/LambdaSchool/ios-guided-projects",
+    "id": 142462801
+  },
+  {
+    "label": "ios-itunes-search",
+    "value": "https://github.com/LambdaSchool/ios-itunes-search",
+    "id": 143905867
+  },
+  {
+    "label": "ios-journal-coredata",
+    "value": "https://github.com/LambdaSchool/ios-journal-coredata",
+    "id": 144529253
+  },
+  {
+    "label": "ios-journal-REST",
+    "value": "https://github.com/LambdaSchool/ios-journal-REST",
+    "id": 144122964
+  },
+  {
+    "label": "ios-lambda-messages",
+    "value": "https://github.com/LambdaSchool/ios-lambda-messages",
+    "id": 146321147
+  },
+  {
+    "label": "ios-message-board",
+    "value": "https://github.com/LambdaSchool/ios-message-board",
+    "id": 144047336
+  },
+  {
+    "label": "ios-photo-collection",
+    "value": "https://github.com/LambdaSchool/ios-photo-collection",
+    "id": 143324168
+  },
+  {
+    "label": "ios-planets",
+    "value": "https://github.com/LambdaSchool/ios-planets",
+    "id": 143316648
+  },
+  {
+    "label": "ios-projects",
+    "value": "https://github.com/LambdaSchool/ios-projects",
+    "id": 141845820
+  },
+  {
+    "label": "ios-reading-list",
+    "value": "https://github.com/LambdaSchool/ios-reading-list",
+    "id": 143046893
+  },
+  {
+    "label": "ios-recipes",
+    "value": "https://github.com/LambdaSchool/ios-recipes",
+    "id": 143761558
+  },
+  {
+    "label": "ios-shopping-list",
+    "value": "https://github.com/LambdaSchool/ios-shopping-list",
+    "id": 143391478
+  },
+  {
+    "label": "ios-sprint1-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint1-challenge",
+    "id": 140602904
+  },
+  {
+    "label": "ios-sprint10-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint10-challenge",
+    "id": 140602997
+  },
+  {
+    "label": "ios-sprint11-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint11-challenge",
+    "id": 140603005
+  },
+  {
+    "label": "ios-sprint12-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint12-challenge",
+    "id": 140603020
+  },
+  {
+    "label": "ios-sprint13-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint13-challenge",
+    "id": 140603035
+  },
+  {
+    "label": "ios-sprint14-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint14-challenge",
+    "id": 140603047
+  },
+  {
+    "label": "ios-sprint15-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint15-challenge",
+    "id": 140603063
+  },
+  {
+    "label": "ios-sprint2-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint2-challenge",
+    "id": 140602915
+  },
+  {
+    "label": "ios-sprint3-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint3-challenge",
+    "id": 140602816
+  },
+  {
+    "label": "ios-sprint4-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint4-challenge",
+    "id": 140602933
+  },
+  {
+    "label": "ios-sprint5-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint5-challenge",
+    "id": 140602946
+  },
+  {
+    "label": "ios-sprint6-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint6-challenge",
+    "id": 140602951
+  },
+  {
+    "label": "ios-sprint7-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint7-challenge",
+    "id": 140602466
+  },
+  {
+    "label": "ios-sprint8-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint8-challenge",
+    "id": 140602977
+  },
+  {
+    "label": "ios-sprint9-challenge",
+    "value": "https://github.com/LambdaSchool/ios-sprint9-challenge",
+    "id": 140602989
+  },
+  {
+    "label": "ios-student-directory",
+    "value": "https://github.com/LambdaSchool/ios-student-directory",
+    "id": 143679874
+  },
+  {
+    "label": "ios-students-list",
+    "value": "https://github.com/LambdaSchool/ios-students-list",
+    "id": 143681811
+  },
+  {
+    "label": "ios-tasks-theming",
+    "value": "https://github.com/LambdaSchool/ios-tasks-theming",
+    "id": 146011864
+  },
+  {
+    "label": "ios-unit1-project",
+    "value": "https://github.com/LambdaSchool/ios-unit1-project",
+    "id": 145432062
+  },
+  {
+    "label": "JavaScript-I",
+    "value": "https://github.com/LambdaSchool/JavaScript-I",
+    "id": 128836348
+  },
+  {
+    "label": "JavaScript-I-Mini",
+    "value": "https://github.com/LambdaSchool/JavaScript-I-Mini",
+    "id": 105548866
+  },
+  {
+    "label": "JavaScript-I-Stretch-Assignment",
+    "value": "https://github.com/LambdaSchool/JavaScript-I-Stretch-Assignment",
+    "id": 105545337
+  },
+  {
+    "label": "JavaScript-II",
+    "value": "https://github.com/LambdaSchool/JavaScript-II",
+    "id": 128838867
+  },
+  {
+    "label": "JavaScript-II-Mini",
+    "value": "https://github.com/LambdaSchool/JavaScript-II-Mini",
+    "id": 110001292
+  },
+  {
+    "label": "JavaScript-II-Stretch-Assignment",
+    "value": "https://github.com/LambdaSchool/JavaScript-II-Stretch-Assignment",
+    "id": 105809847
+  },
+  {
+    "label": "JavaScript-III",
+    "value": "https://github.com/LambdaSchool/JavaScript-III",
+    "id": 128838726
+  },
+  {
+    "label": "JavaScript-IV",
+    "value": "https://github.com/LambdaSchool/JavaScript-IV",
+    "id": 128838761
+  },
+  {
+    "label": "Java_Introduction",
+    "value": "https://github.com/LambdaSchool/Java_Introduction",
+    "id": 142071099
+  },
+  {
+    "label": "JSE_OkCupid",
+    "value": "https://github.com/LambdaSchool/JSE_OkCupid",
+    "id": 125919668
+  },
+  {
+    "label": "Knapsack",
+    "value": "https://github.com/LambdaSchool/Knapsack",
+    "id": 112531890
+  },
+  {
+    "label": "Lambda-Challenge",
+    "value": "https://github.com/LambdaSchool/Lambda-Challenge",
+    "id": 123366351
+  },
+  {
+    "label": "Lambda-Hello",
+    "value": "https://github.com/LambdaSchool/Lambda-Hello",
+    "id": 141293977
+  },
+  {
+    "label": "Lambda-iOS-Challenge",
+    "value": "https://github.com/LambdaSchool/Lambda-iOS-Challenge",
+    "id": 136962538
+  },
+  {
+    "label": "lambda-school-precourse-calebhicks",
+    "value": "https://github.com/LambdaSchool/lambda-school-precourse-calebhicks",
+    "id": 120149898
+  },
+  {
+    "label": "Lambda_Android_Challenge",
+    "value": "https://github.com/LambdaSchool/Lambda_Android_Challenge",
+    "id": 143767412
+  },
+  {
+    "label": "LoopsAndFunctions",
+    "value": "https://github.com/LambdaSchool/LoopsAndFunctions",
+    "id": 137413247
+  },
+  {
+    "label": "LS-Auth-JWT",
+    "value": "https://github.com/LambdaSchool/LS-Auth-JWT",
+    "id": 101926766
+  },
+  {
+    "label": "LS-Data-Structures-I-Solution",
+    "value": "https://github.com/LambdaSchool/LS-Data-Structures-I-Solution",
+    "id": 100311462
+  },
+  {
+    "label": "LS-Data-Structures-II-Solution",
+    "value": "https://github.com/LambdaSchool/LS-Data-Structures-II-Solution",
+    "id": 100515452
+  },
+  {
+    "label": "LS-Mongo-I-finished",
+    "value": "https://github.com/LambdaSchool/LS-Mongo-I-finished",
+    "id": 100537767
+  },
+  {
+    "label": "LS-Server-Testing",
+    "value": "https://github.com/LambdaSchool/LS-Server-Testing",
+    "id": 102274821
+  },
+  {
+    "label": "LS-Web-Intro-I",
+    "value": "https://github.com/LambdaSchool/LS-Web-Intro-I",
+    "id": 91382589
+  },
+  {
+    "label": "LS2-FT-Code-Challenges",
+    "value": "https://github.com/LambdaSchool/LS2-FT-Code-Challenges",
+    "id": 96909278
+  },
+  {
+    "label": "LS2-PT-Code-Challenges",
+    "value": "https://github.com/LambdaSchool/LS2-PT-Code-Challenges",
+    "id": 97058897
+  },
+  {
+    "label": "Memories",
+    "value": "https://github.com/LambdaSchool/Memories",
+    "id": 143177883
+  },
+  {
+    "label": "middleware-redux",
+    "value": "https://github.com/LambdaSchool/middleware-redux",
+    "id": 140744798
+  },
+  {
+    "label": "ML-day_1",
+    "value": "https://github.com/LambdaSchool/ML-day_1",
+    "id": 124585802
+  },
+  {
+    "label": "ML-day_2",
+    "value": "https://github.com/LambdaSchool/ML-day_2",
+    "id": 124585856
+  },
+  {
+    "label": "ML-day_3",
+    "value": "https://github.com/LambdaSchool/ML-day_3",
+    "id": 124585901
+  },
+  {
+    "label": "ML-Hello-Flask",
+    "value": "https://github.com/LambdaSchool/ML-Hello-Flask",
+    "id": 138687694
+  },
+  {
+    "label": "ML-Precourse",
+    "value": "https://github.com/LambdaSchool/ML-Precourse",
+    "id": 123042299
+  },
+  {
+    "label": "ML-Presenting",
+    "value": "https://github.com/LambdaSchool/ML-Presenting",
+    "id": 130862818
+  },
+  {
+    "label": "ML-Project-Proposal",
+    "value": "https://github.com/LambdaSchool/ML-Project-Proposal",
+    "id": 136525812
+  },
+  {
+    "label": "ML-Reinforcement-Learning",
+    "value": "https://github.com/LambdaSchool/ML-Reinforcement-Learning",
+    "id": 140202100
+  },
+  {
+    "label": "ML-Syllabus",
+    "value": "https://github.com/LambdaSchool/ML-Syllabus",
+    "id": 116441079
+  },
+  {
+    "label": "ML-YouOnlyLookOnce",
+    "value": "https://github.com/LambdaSchool/ML-YouOnlyLookOnce",
+    "id": 140657418
+  },
+  {
+    "label": "Model-Controllers-and-UINavigationController",
+    "value": "https://github.com/LambdaSchool/Model-Controllers-and-UINavigationController",
+    "id": 142026547
+  },
+  {
+    "label": "mongo-bears",
+    "value": "https://github.com/LambdaSchool/mongo-bears",
+    "id": 100302362
+  },
+  {
+    "label": "Mongo-Books-Authors",
+    "value": "https://github.com/LambdaSchool/Mongo-Books-Authors",
+    "id": 100410051
+  },
+  {
+    "label": "mongo-films",
+    "value": "https://github.com/LambdaSchool/mongo-films",
+    "id": 125370385
+  },
+  {
+    "label": "Mongo-Friends",
+    "value": "https://github.com/LambdaSchool/Mongo-Friends",
+    "id": 90684019
+  },
+  {
+    "label": "Mongo-I-Lab-Finished",
+    "value": "https://github.com/LambdaSchool/Mongo-I-Lab-Finished",
+    "id": 101958674
+  },
+  {
+    "label": "Mongo-II",
+    "value": "https://github.com/LambdaSchool/Mongo-II",
+    "id": 90914149
+  },
+  {
+    "label": "Mongo-II-finished",
+    "value": "https://github.com/LambdaSchool/Mongo-II-finished",
+    "id": 100543336
+  },
+  {
+    "label": "Mongo-III",
+    "value": "https://github.com/LambdaSchool/Mongo-III",
+    "id": 101000448
+  },
+  {
+    "label": "Mongo-III-Mini",
+    "value": "https://github.com/LambdaSchool/Mongo-III-Mini",
+    "id": 100751054
+  },
+  {
+    "label": "Mongo-III-Mini-Solution",
+    "value": "https://github.com/LambdaSchool/Mongo-III-Mini-Solution",
+    "id": 100632347
+  },
+  {
+    "label": "Mongo-Mini-II-Solution",
+    "value": "https://github.com/LambdaSchool/Mongo-Mini-II-Solution",
+    "id": 101786288
+  },
+  {
+    "label": "mongo-refs-demo",
+    "value": "https://github.com/LambdaSchool/mongo-refs-demo",
+    "id": 136382430
+  },
+  {
+    "label": "MovieList",
+    "value": "https://github.com/LambdaSchool/MovieList",
+    "id": 142532458
+  },
+  {
+    "label": "Multi-Level-Feedback-Queue",
+    "value": "https://github.com/LambdaSchool/Multi-Level-Feedback-Queue",
+    "id": 105919219
+  },
+  {
+    "label": "Multi-Level-Feedback-Queue-Complete",
+    "value": "https://github.com/LambdaSchool/Multi-Level-Feedback-Queue-Complete",
+    "id": 105587394
+  },
+  {
+    "label": "Newsfeed-Components",
+    "value": "https://github.com/LambdaSchool/Newsfeed-Components",
+    "id": 133879128
+  },
+  {
+    "label": "Newsfeed-jQuery",
+    "value": "https://github.com/LambdaSchool/Newsfeed-jQuery",
+    "id": 127994647
+  },
+  {
+    "label": "nginx-buildpack",
+    "value": "https://github.com/LambdaSchool/nginx-buildpack",
+    "id": 135339151
+  },
+  {
+    "label": "Node-Blog",
+    "value": "https://github.com/LambdaSchool/Node-Blog",
+    "id": 90426964
+  },
+  {
+    "label": "Node-Express-Gmaps",
+    "value": "https://github.com/LambdaSchool/Node-Express-Gmaps",
+    "id": 124266904
+  },
+  {
+    "label": "Node-Express-Gmaps-Solution",
+    "value": "https://github.com/LambdaSchool/Node-Express-Gmaps-Solution",
+    "id": 124291999
+  },
+  {
+    "label": "Node-Express-Gmaps-Solution-Day-I",
+    "value": "https://github.com/LambdaSchool/Node-Express-Gmaps-Solution-Day-I",
+    "id": 124439580
+  },
+  {
+    "label": "Node-Express-Gmaps-Solution-Day-II",
+    "value": "https://github.com/LambdaSchool/Node-Express-Gmaps-Solution-Day-II",
+    "id": 124469184
+  },
+  {
+    "label": "Node-Express-Lab",
+    "value": "https://github.com/LambdaSchool/Node-Express-Lab",
+    "id": 99846119
+  },
+  {
+    "label": "node-express-lab-finished",
+    "value": "https://github.com/LambdaSchool/node-express-lab-finished",
+    "id": 99847373
+  },
+  {
+    "label": "node-express-mini",
+    "value": "https://github.com/LambdaSchool/node-express-mini",
+    "id": 99845587
+  },
+  {
+    "label": "node-express-mini-finished",
+    "value": "https://github.com/LambdaSchool/node-express-mini-finished",
+    "id": 99847217
+  },
+  {
+    "label": "Operating-Systems-One",
+    "value": "https://github.com/LambdaSchool/Operating-Systems-One",
+    "id": 104133493
+  },
+  {
+    "label": "Operating-Systems-Two",
+    "value": "https://github.com/LambdaSchool/Operating-Systems-Two",
+    "id": 104133561
+  },
+  {
+    "label": "pair-programming-checklist",
+    "value": "https://github.com/LambdaSchool/pair-programming-checklist",
+    "id": 123938699
+  },
+  {
+    "label": "Peer-Code-Review-Checklist",
+    "value": "https://github.com/LambdaSchool/Peer-Code-Review-Checklist",
+    "id": 138925664
+  },
+  {
+    "label": "Personal-Project",
+    "value": "https://github.com/LambdaSchool/Personal-Project",
+    "id": 108153687
+  },
+  {
+    "label": "Personal-Project-React-I",
+    "value": "https://github.com/LambdaSchool/Personal-Project-React-I",
+    "id": 108155952
+  },
+  {
+    "label": "Pets",
+    "value": "https://github.com/LambdaSchool/Pets",
+    "id": 142100414
+  },
+  {
+    "label": "Places",
+    "value": "https://github.com/LambdaSchool/Places",
+    "id": 142462891
+  },
+  {
+    "label": "Poll",
+    "value": "https://github.com/LambdaSchool/Poll",
+    "id": 142398100
+  },
+  {
+    "label": "postgrest",
+    "value": "https://github.com/LambdaSchool/postgrest",
+    "id": 127776815
+  },
+  {
+    "label": "Pre-Course-Git-Fu",
+    "value": "https://github.com/LambdaSchool/Pre-Course-Git-Fu",
+    "id": 109415041
+  },
+  {
+    "label": "Precourse",
+    "value": "https://github.com/LambdaSchool/Precourse",
+    "id": 112513641
+  },
+  {
+    "label": "Precourse-Assessment",
+    "value": "https://github.com/LambdaSchool/Precourse-Assessment",
+    "id": 123333340
+  },
+  {
+    "label": "Preprocessing-I",
+    "value": "https://github.com/LambdaSchool/Preprocessing-I",
+    "id": 118963721
+  },
+  {
+    "label": "Preprocessing-II",
+    "value": "https://github.com/LambdaSchool/Preprocessing-II",
+    "id": 119580773
+  },
+  {
+    "label": "Processes",
+    "value": "https://github.com/LambdaSchool/Processes",
+    "id": 106137758
+  },
+  {
+    "label": "PT-Personal-Project",
+    "value": "https://github.com/LambdaSchool/PT-Personal-Project",
+    "id": 105407477
+  },
+  {
+    "label": "Python-OOP-Toy",
+    "value": "https://github.com/LambdaSchool/Python-OOP-Toy",
+    "id": 137273128
+  },
+  {
+    "label": "Q-and-A",
+    "value": "https://github.com/LambdaSchool/Q-and-A",
+    "id": 142908893
+  },
+  {
+    "label": "Rainbow",
+    "value": "https://github.com/LambdaSchool/Rainbow",
+    "id": 136947314
+  },
+  {
+    "label": "RDBMS-API-Full",
+    "value": "https://github.com/LambdaSchool/RDBMS-API-Full",
+    "id": 113361883
+  },
+  {
+    "label": "React-Friends",
+    "value": "https://github.com/LambdaSchool/React-Friends",
+    "id": 98909472
+  },
+  {
+    "label": "React-I-Demo",
+    "value": "https://github.com/LambdaSchool/React-I-Demo",
+    "id": 112779718
+  },
+  {
+    "label": "React-I-Mini-Sprint",
+    "value": "https://github.com/LambdaSchool/React-I-Mini-Sprint",
+    "id": 98561590
+  },
+  {
+    "label": "React-II-Demo",
+    "value": "https://github.com/LambdaSchool/React-II-Demo",
+    "id": 113264309
+  },
+  {
+    "label": "React-Insta-Clone",
+    "value": "https://github.com/LambdaSchool/React-Insta-Clone",
+    "id": 97633151
+  },
+  {
+    "label": "React-Native-I",
+    "value": "https://github.com/LambdaSchool/React-Native-I",
+    "id": 92892006
+  },
+  {
+    "label": "React-Native-II",
+    "value": "https://github.com/LambdaSchool/React-Native-II",
+    "id": 103191054
+  },
+  {
+    "label": "React-Router-Apple-Nav",
+    "value": "https://github.com/LambdaSchool/React-Router-Apple-Nav",
+    "id": 110266442
+  },
+  {
+    "label": "React-Router-Basic-Nav",
+    "value": "https://github.com/LambdaSchool/React-Router-Basic-Nav",
+    "id": 99146381
+  },
+  {
+    "label": "react-router-demo",
+    "value": "https://github.com/LambdaSchool/react-router-demo",
+    "id": 132493359
+  },
+  {
+    "label": "React-Router-Movies",
+    "value": "https://github.com/LambdaSchool/React-Router-Movies",
+    "id": 89526744
+  },
+  {
+    "label": "React-Sorting-Hat",
+    "value": "https://github.com/LambdaSchool/React-Sorting-Hat",
+    "id": 142363442
+  },
+  {
+    "label": "React-Testing",
+    "value": "https://github.com/LambdaSchool/React-Testing",
+    "id": 126534488
+  },
+  {
+    "label": "React-Todo",
+    "value": "https://github.com/LambdaSchool/React-Todo",
+    "id": 97628204
+  },
+  {
+    "label": "React-Todo-Solution",
+    "value": "https://github.com/LambdaSchool/React-Todo-Solution",
+    "id": 128102541
+  },
+  {
+    "label": "React-UI-Components",
+    "value": "https://github.com/LambdaSchool/React-UI-Components",
+    "id": 127214846
+  },
+  {
+    "label": "RecipesServer",
+    "value": "https://github.com/LambdaSchool/RecipesServer",
+    "id": 143668424
+  },
+  {
+    "label": "Redux-Counter",
+    "value": "https://github.com/LambdaSchool/Redux-Counter",
+    "id": 99158356
+  },
+  {
+    "label": "Redux-Friends",
+    "value": "https://github.com/LambdaSchool/Redux-Friends",
+    "id": 117743083
+  },
+  {
+    "label": "Redux-Swapi",
+    "value": "https://github.com/LambdaSchool/Redux-Swapi",
+    "id": 118710363
+  },
+  {
+    "label": "Redux-Todo",
+    "value": "https://github.com/LambdaSchool/Redux-Todo",
+    "id": 88888957
+  },
+  {
+    "label": "Relational-Databases",
+    "value": "https://github.com/LambdaSchool/Relational-Databases",
+    "id": 110753508
+  },
+  {
+    "label": "responsive-web-design-I",
+    "value": "https://github.com/LambdaSchool/responsive-web-design-I",
+    "id": 142893900
+  },
+  {
+    "label": "Responsive-Web-Design-II",
+    "value": "https://github.com/LambdaSchool/Responsive-Web-Design-II",
+    "id": 119641656
+  },
+  {
+    "label": "Secret-Gists",
+    "value": "https://github.com/LambdaSchool/Secret-Gists",
+    "id": 110147130
+  },
+  {
+    "label": "Server-Testing",
+    "value": "https://github.com/LambdaSchool/Server-Testing",
+    "id": 102532175
+  },
+  {
+    "label": "Server-Testing-Mini",
+    "value": "https://github.com/LambdaSchool/Server-Testing-Mini",
+    "id": 114657213
+  },
+  {
+    "label": "Sprint-Challenge--Computer-Architecture",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Computer-Architecture",
+    "id": 114429041
+  },
+  {
+    "label": "Sprint-Challenge--Data-Structures",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Data-Structures",
+    "id": 111025138
+  },
+  {
+    "label": "Sprint-Challenge--Data-Structures-Algorithms",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Data-Structures-Algorithms",
+    "id": 131913999
+  },
+  {
+    "label": "Sprint-Challenge--DevOps",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--DevOps",
+    "id": 111011507
+  },
+  {
+    "label": "Sprint-Challenge--Django-I",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Django-I",
+    "id": 129154593
+  },
+  {
+    "label": "Sprint-Challenge--Django-II",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Django-II",
+    "id": 124289054
+  },
+  {
+    "label": "Sprint-Challenge--Django-III",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Django-III",
+    "id": 131072836
+  },
+  {
+    "label": "Sprint-Challenge--Full-Stack",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Full-Stack",
+    "id": 111047791
+  },
+  {
+    "label": "Sprint-Challenge--Graphs",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Graphs",
+    "id": 116441869
+  },
+  {
+    "label": "Sprint-Challenge--Intro-C-OS",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Intro-C-OS",
+    "id": 114331224
+  },
+  {
+    "label": "Sprint-Challenge--Intro-C-Processes",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Intro-C-Processes",
+    "id": 133708213
+  },
+  {
+    "label": "Sprint-Challenge--Intro-Python",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Intro-Python",
+    "id": 142502761
+  },
+  {
+    "label": "Sprint-Challenge--JavaScript",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--JavaScript",
+    "id": 110197874
+  },
+  {
+    "label": "Sprint-Challenge--OS-Scheduling",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--OS-Scheduling",
+    "id": 133709698
+  },
+  {
+    "label": "Sprint-Challenge--Processes-and-Scheduling",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Processes-and-Scheduling",
+    "id": 115050269
+  },
+  {
+    "label": "Sprint-Challenge--Python-1",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Python-1",
+    "id": 138221567
+  },
+  {
+    "label": "Sprint-Challenge--React-Native",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--React-Native",
+    "id": 110270880
+  },
+  {
+    "label": "Sprint-Challenge--Responsive-Less",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Responsive-Less",
+    "id": 119911616
+  },
+  {
+    "label": "Sprint-Challenge--Security-CA",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Security-CA",
+    "id": 116345815
+  },
+  {
+    "label": "Sprint-Challenge--Security-Theory",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Security-Theory",
+    "id": 141632505
+  },
+  {
+    "label": "Sprint-Challenge--SQL",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--SQL",
+    "id": 136544896
+  },
+  {
+    "label": "Sprint-Challenge--Testing",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Testing",
+    "id": 119893674
+  },
+  {
+    "label": "Sprint-Challenge--Theory-Algorithms",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Theory-Algorithms",
+    "id": 116409123
+  },
+  {
+    "label": "Sprint-Challenge--UI-Responsive",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--UI-Responsive",
+    "id": 120854066
+  },
+  {
+    "label": "Sprint-Challenge--User-Interface",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--User-Interface",
+    "id": 142495478
+  },
+  {
+    "label": "Sprint-Challenge--Web-Tools-And-Frameworks",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge--Web-Tools-And-Frameworks",
+    "id": 121709499
+  },
+  {
+    "label": "Sprint-Challenge-Applied-Javascript",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-Applied-Javascript",
+    "id": 129997422
+  },
+  {
+    "label": "Sprint-Challenge-Authentication",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-Authentication",
+    "id": 114033524
+  },
+  {
+    "label": "Sprint-Challenge-DOM-Javascript",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-DOM-Javascript",
+    "id": 112765479
+  },
+  {
+    "label": "Sprint-Challenge-Lambda-Times-React",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-Lambda-Times-React",
+    "id": 137974893
+  },
+  {
+    "label": "Sprint-Challenge-Mongo",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-Mongo",
+    "id": 112682076
+  },
+  {
+    "label": "Sprint-Challenge-Node-Express",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-Node-Express",
+    "id": 121768725
+  },
+  {
+    "label": "Sprint-Challenge-RDBMS",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-RDBMS",
+    "id": 113504739
+  },
+  {
+    "label": "Sprint-Challenge-React-Smurfs",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-React-Smurfs",
+    "id": 109329243
+  },
+  {
+    "label": "Sprint-Challenge-React-Wars",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-React-Wars",
+    "id": 108430865
+  },
+  {
+    "label": "Sprint-Challenge-Redux-Smurfs",
+    "value": "https://github.com/LambdaSchool/Sprint-Challenge-Redux-Smurfs",
+    "id": 118967272
+  },
+  {
+    "label": "SQL",
+    "value": "https://github.com/LambdaSchool/SQL",
+    "id": 136248631
+  },
+  {
+    "label": "sql-lab",
+    "value": "https://github.com/LambdaSchool/sql-lab",
+    "id": 142894790
+  },
+  {
+    "label": "Static-Pages",
+    "value": "https://github.com/LambdaSchool/Static-Pages",
+    "id": 111024079
+  },
+  {
+    "label": "StructsAndClasses",
+    "value": "https://github.com/LambdaSchool/StructsAndClasses",
+    "id": 137786901
+  },
+  {
+    "label": "SwiftCollections",
+    "value": "https://github.com/LambdaSchool/SwiftCollections",
+    "id": 137786779
+  },
+  {
+    "label": "SwiftStrings",
+    "value": "https://github.com/LambdaSchool/SwiftStrings",
+    "id": 137786703
+  },
+  {
+    "label": "SwiftVocabulary",
+    "value": "https://github.com/LambdaSchool/SwiftVocabulary",
+    "id": 137786949
+  },
+  {
+    "label": "Tabs-Components",
+    "value": "https://github.com/LambdaSchool/Tabs-Components",
+    "id": 134008780
+  },
+  {
+    "label": "Testing",
+    "value": "https://github.com/LambdaSchool/Testing",
+    "id": 99445624
+  },
+  {
+    "label": "The-C-Programming-Language",
+    "value": "https://github.com/LambdaSchool/The-C-Programming-Language",
+    "id": 105822390
+  },
+  {
+    "label": "Theory-Of-Computation",
+    "value": "https://github.com/LambdaSchool/Theory-Of-Computation",
+    "id": 107441708
+  },
+  {
+    "label": "UI-II-Flexbox",
+    "value": "https://github.com/LambdaSchool/UI-II-Flexbox",
+    "id": 132295258
+  },
+  {
+    "label": "User-Interface",
+    "value": "https://github.com/LambdaSchool/User-Interface",
+    "id": 120354554
+  },
+  {
+    "label": "User-Interface-Project-Week",
+    "value": "https://github.com/LambdaSchool/User-Interface-Project-Week",
+    "id": 135877106
+  },
+  {
+    "label": "vidcat",
+    "value": "https://github.com/LambdaSchool/vidcat",
+    "id": 138210683
+  },
+  {
+    "label": "Whiteboard-Pairing",
+    "value": "https://github.com/LambdaSchool/Whiteboard-Pairing",
+    "id": 132179821
+  },
+  {
+    "label": "yttgen",
+    "value": "https://github.com/LambdaSchool/yttgen",
+    "id": 137809782
+  }
+]

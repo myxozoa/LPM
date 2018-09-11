@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 import StarRatings from 'react-star-ratings';
 import PropTypes from 'prop-types';
 import { shell } from 'electron';
-import Dropdown from './Dropdown';
+
 import { setRating, setName, setUsername } from '../../actions/students';
 import { clone } from '../../actions/github';
+
+import Dropdown from './Dropdown';
 import styles from './Student.css';
 
 type Props = {};
@@ -41,6 +43,13 @@ class Student extends Component<Props> {
     this.setState(prev => ({ dropDown: !prev.dropDown }));
   };
 
+  closeDropDown = () => {
+    // TODO: Find a cleaner way of stopping this from breaking the menu
+    setTimeout(() => {
+      this.setState({ dropDown: false });
+    }, 100);
+  };
+
   render() {
     const {
       rating,
@@ -53,7 +62,6 @@ class Student extends Component<Props> {
     const { dropDown } = this.state;
     return (
       <div className={styles.container}>
-        {/* <button type="button" onClick={() => cloneAction(username)}>Test Clone</button> */}
         <div className={styles.inputs}>
           <input
             className={styles.studentName}
@@ -138,6 +146,7 @@ class Student extends Component<Props> {
             type="button"
             className={styles.menu}
             onClick={this.toggleDropDown}
+            onBlur={this.closeDropDown}
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -217,5 +226,10 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { setRating, setName, setUsername, clone }
+  {
+    setRating,
+    setName,
+    setUsername,
+    clone
+  }
 )(Student);

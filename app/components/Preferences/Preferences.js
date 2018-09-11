@@ -5,13 +5,14 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
-import WorkingDirectory from './WorkingDirectory';
-import styles from './Preferences.css';
-
 import { setSection, setAlwaysOnTop } from '../../actions/preferences';
 import routes from '../../constants/routes.json';
 import info from '../../constants/info.json';
 // import prefs from '../../constants/defaults.json';
+import repos from '../../constants/repos.json';
+
+import WorkingDirectory from './WorkingDirectory';
+import styles from './Preferences.css';
 
 // const { remote } = require('electron');
 
@@ -19,6 +20,11 @@ type Props = {};
 
 class Preferences extends Component<Props> {
   props: Props;
+
+  componentDidMount() {
+    console.log(repos);
+    console.log(repos.length);
+  }
 
   selectSection = e => {
     const { setSection: set } = this.props;
@@ -31,7 +37,12 @@ class Preferences extends Component<Props> {
   };
 
   // login = () => {
-  //   let authWindow = new remote.BrowserWindow({ width: 500, height: 600, parent: remote.getCurrentWindow(), modal: true });
+  //   let authWindow = new remote.BrowserWindow(
+  //                                     { width: 500,
+  //                                       height: 600,
+  //                                       parent: remote.getCurrentWindow(),
+  //                                       modal: true
+  //                                     });
 
   //   authWindow.on('closed', () => {
   //     authWindow = null;
