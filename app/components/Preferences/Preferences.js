@@ -58,8 +58,10 @@ class Preferences extends Component<Props> {
       <div className={styles.container}>
         <Link to={routes.HOME}>{'<'}</Link>
         <h1>Preferences</h1>
-        <form>
-          {/* <button type="button" onClick={this.login}>Login</button> */}
+        <form className={styles.form}>
+          <button type="button" onClick={this.login}>
+            Login
+          </button>
           <select onChange={this.selectSection} value={section}>
             {info.sections.map((sec: string) => (
               <option key={shortid.generate()} value={sec}>
