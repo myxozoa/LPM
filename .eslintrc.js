@@ -35,6 +35,7 @@ module.exports = {
     'promise/param-names': 'error',
     'promise/always-return': 'error',
     'promise/catch-or-return': 'error',
+    'one-expression-per-line': 'off',
     'promise/no-native': 'off',
     'react/no-array-index-key': 0,
     'react/sort-comp': [
