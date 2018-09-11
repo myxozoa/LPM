@@ -191,4 +191,5 @@ div > .repo__control {
   border: 0;
   /* background: white; */
   box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.04);
+  border-radius: 8px;
 }

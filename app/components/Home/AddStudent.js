@@ -5,7 +5,9 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import cx from 'classnames';
+
 import { addStudent } from '../../actions/students';
+
 import styles from './AddStudent.css';
 
 type Props = {};
