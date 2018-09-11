@@ -8,13 +8,11 @@ import shortid from 'shortid';
 import { setSection, setAlwaysOnTop } from '../../actions/preferences';
 import routes from '../../constants/routes.json';
 import info from '../../constants/info.json';
-// import prefs from '../../constants/defaults.json';
 import repos from '../../constants/repos.json';
+import { login } from '../../actions/auth';
 
 import WorkingDirectory from './WorkingDirectory';
 import styles from './Preferences.css';
-
-// const { remote } = require('electron');
 
 type Props = {};
 
@@ -36,30 +34,17 @@ class Preferences extends Component<Props> {
     set(!onTop);
   };
 
-  // login = () => {
-  //   let authWindow = new remote.BrowserWindow(
-  //                                     { width: 500,
-  //                                       height: 600,
-  //                                       parent: remote.getCurrentWindow(),
-  //                                       modal: true
-  //                                     });
-
-  //   authWindow.on('closed', () => {
-  //     authWindow = null;
-  //   });
-
-  //   authWindow.loadURL(prefs.login);
-  // }
-
   render() {
     console.log(this.state);
-    const { section, onTop } = this.props;
+    const { section, onTop, login: loginAction } = this.props;
     return (
       <div className={styles.container}>
         <Link to={routes.HOME}>{'<'}</Link>
         <h1>Preferences</h1>
         <form>
-          {/* <button type="button" onClick={this.login}>Login</button> */}
+          <button type="button" onClick={loginAction}>
+            Login
+          </button>
           <select onChange={this.selectSection} value={section}>
             {info.sections.map((sec: string) => (
               <option key={shortid.generate()} value={sec}>
@@ -89,14 +74,16 @@ Preferences.propTypes = {
   section: PropTypes.string,
   onTop: PropTypes.bool,
   setSection: PropTypes.func,
-  setAlwaysOnTop: PropTypes.func
+  setAlwaysOnTop: PropTypes.func,
+  login: PropTypes.func
 };
 
 Preferences.defaultProps = {
   section: 'SECTION',
   onTop: false,
   setSection: () => {},
-  setAlwaysOnTop: () => {}
+  setAlwaysOnTop: () => {},
+  login: () => {}
 };
 
 const mapStateToProps = state => ({
@@ -106,5 +93,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { setSection, setAlwaysOnTop }
+  { setSection, setAlwaysOnTop, login }
 )(Preferences);

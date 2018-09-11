@@ -1,4 +1,5 @@
 // @flow
+
 import {
   ADD_STUDENT,
   REMOVE_STUDENT,
@@ -6,6 +7,7 @@ import {
   SET_NAME,
   SET_USERNAME
 } from '../actions/students';
+
 import type { Action } from './types';
 
 export default function preferences(state = [], action: Action) {
