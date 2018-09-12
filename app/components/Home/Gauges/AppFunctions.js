@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-// import gitUtils from '../../../utils/gitUtils';
 import { cloneAll } from '../../../actions/github';
 
 import styles from './AppFunctions.css';
@@ -17,15 +16,7 @@ class AppFunctions extends Component<Props> {
     const { students, cloneAll: cloneAllAction } = this.props;
     if (students.length === 0) return;
 
-    // console.log(repo);
-    // students.forEach(student => {
-
-    // const studentFolder = gitUtils.prepareFolderName(student.name);
-    // const studentRepo = gitUtils.prepareStudentRepo(repo, student.username);
-
-    // gitUtils.clone(student.name, repo, student.username, workingDirectory);
     cloneAllAction();
-    // });
   };
 
   render() {

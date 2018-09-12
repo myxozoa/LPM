@@ -6,6 +6,8 @@ export const FETCHING_PROFILE_PIC = 'FETCHING_PROFILE_PIC';
 export const PROFILE_PIC_SUCCESS = 'PROFILE_PIC_SUCCESS';
 export const PROFILE_PIC_ERROR = 'PROFILE_PIC_ERROR';
 
+export const FETCHING_REPOS = 'FETCHING_REPOS';
+
 export function getProfilePic() {
   return (dispatch, getState) => {
     dispatch({ type: FETCHING_PROFILE_PIC });
@@ -22,5 +24,14 @@ export function getProfilePic() {
       .catch(() => {
         dispatch({ type: PROFILE_PIC_ERROR });
       });
+  };
+}
+
+export function refreshRepos() {
+  return dispatch => {
+    dispatch({ type: FETCHING_REPOS });
+
+    // axios
+    //   .get('')
   };
 }
