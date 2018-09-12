@@ -6,4 +6,15 @@
   margin-left: 230px;
   background: white;
   color: black;
+  display: flex;
+  flex-direction: column;
+}
+
+.form {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 30%;
+  width: 80%;
 }

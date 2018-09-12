@@ -41,7 +41,7 @@ class Preferences extends Component<Props> {
       <div className={styles.container}>
         <Link to={routes.HOME}>{'<'}</Link>
         <h1>Preferences</h1>
-        <form>
+        <form className={styles.form}>
           <button type="button" onClick={loginAction}>
             Login
           </button>

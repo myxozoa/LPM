@@ -16,7 +16,7 @@ const filtered = array.map(repo => ({
 
 const json = JSON.stringify(filtered);
 
-fs.writeFile('repos.json', json, err => {
+fs.writeFile('./repos.json', json, err => {
   if (err) throw err;
   console.log('SUCCESS');
 });
