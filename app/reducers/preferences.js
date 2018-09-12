@@ -7,10 +7,12 @@ import {
   SET_ALWAYS_ON_TOP
 } from '../actions/preferences';
 import { preferences as defaultPrefs } from '../constants/defaults.json';
+
 import type { Action } from './types';
 
-const { remote } = require('electron');
 const path = require('path');
+
+const { remote } = require('electron');
 
 const { app } = remote;
 

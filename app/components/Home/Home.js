@@ -34,13 +34,14 @@ class Content extends Component<Props> {
 
   filterOptions = (options: optionsType, filter: string) => {
     const fuseOptions = {
-      shouldSort: true,
-      tokenize: true,
+      shouldSort: false,
+      tokenize: false,
+      findAllMatches: true,
       threshold: 0.6,
       location: 0,
       distance: 100,
       maxPatternLength: 32,
-      minMatchCharLength: 1,
+      minMatchCharLength: 2,
       keys: ['label']
     };
     const fuse = new Fuse(options, fuseOptions);

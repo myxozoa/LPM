@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+
 import { history } from '../store/configureStore';
+
 import styles from './Titlebar.css';
 
 const { remote, shell } = require('electron');

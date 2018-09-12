@@ -2,8 +2,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+
 // import gitUtils from '../../../utils/gitUtils';
 import { cloneAll } from '../../../actions/github';
+
 import styles from './AppFunctions.css';
 
 type Props = {};

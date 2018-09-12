@@ -2,6 +2,7 @@
 
 import React from 'react';
 import formatDate from 'date-fns/format';
+
 import styles from './TodaysDate.css';
 
 export default function TodaysDate() {

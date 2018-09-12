@@ -1,8 +1,9 @@
 .container {
   position: absolute;
+  z-index: 500;
   right: 0;
   top: 25px;
-  width: 55px;
+  width: 100px;
   background: white;
   border-radius: 4px;
   opacity: 0;

@@ -225,6 +225,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@octokit/rest": "^15.11.1",
+    "axios": "^0.18.0",
     "date-fns": "^1.29.0",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",

@@ -1,11 +1,11 @@
 // @flow
 
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import LinkSection from './LinkSection';
+
 import info from '../../constants/info.json';
 
+import LinkSection from './LinkSection';
 import styles from './LinksContainer.css';
 
 const shortid = require('shortid');
@@ -45,8 +45,4 @@ LinksContainer.defaultProps = {
   section: 'defaul tprop'
 };
 
-const mapStateToProps = state => ({
-  section: state.preferences.section
-});
-
-export default connect(mapStateToProps)(LinksContainer);
+export default LinksContainer;
