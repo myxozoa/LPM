@@ -1,7 +1,7 @@
 {
   "name": "lambda-pm-app",
   "productName": "Lambda PM App",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "Project Manager Companion App",
   "main": "./main.prod.js",
   "author": {
