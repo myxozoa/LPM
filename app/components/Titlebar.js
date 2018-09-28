@@ -115,7 +115,7 @@ export default class Titlebar extends Component<Props> {
               tabIndex="0"
             >
               <svg
-                xmlns="http://www.w3.org/2000/svg"
+                xmlns="https://www.w3.org/2000/svg"
                 viewBox="0 0 15.032 11.484"
                 width="15px"
                 height="15px"
@@ -158,7 +158,7 @@ export default class Titlebar extends Component<Props> {
                 tabIndex="0"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   viewBox="0 0 14.151 1"
                   width="15px"
                   height="4px"
@@ -180,7 +180,7 @@ export default class Titlebar extends Component<Props> {
                 tabIndex="0"
               >
                 <svg
-                  xmlns="http://www.w3.org/2000/svg"
+                  xmlns="https://www.w3.org/2000/svg"
                   viewBox="0 0 11.707 11.707"
                   width="13px"
                   height="13px"

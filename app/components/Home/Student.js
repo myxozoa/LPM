@@ -94,7 +94,7 @@ class Student extends Component<Props> {
             onClick={this.clone}
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.w3.org/2000/svg"
               viewBox="0 0 26 17"
               width="25px"
               height="16px"
@@ -126,7 +126,7 @@ class Student extends Component<Props> {
             onClick={this.openPR}
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.w3.org/2000/svg"
               viewBox="0 0 15 16"
               width="16px"
               height="16px"
@@ -158,7 +158,7 @@ class Student extends Component<Props> {
             onBlur={this.closeDropDown}
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="https://www.w3.org/2000/svg"
               viewBox="0 0 3 17"
               width="3px"
               height="17px"
