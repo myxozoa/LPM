@@ -6,27 +6,15 @@
 
 The latest build is available [here](https://github.com/myxozoa/LPM/releases) for all platforms.
 
-## Requirements
-
-- `git` installed and configured
-
-        Note: If you're using WSL or gitbash exclusively you need to also have git installed so it can run from the regular command prompt.
-
 ## Basic Usage
 
-- The `Batch` button will `git clone` or `git pull` the input repo from any students added into the `Working Directory`.
-
-        Note: The Working Directory must be an absolute path.
+- The `Batch` button will `git clone` or `git pull` the input repo from any students added into the `Working Directory` set in `Preferences`.
 
 - The `Save` button will save all the input data to _save_ you from having to input it again on subsequent uses of the app.
-- All the `Forms` buttons will open a browser window to their respective airtables.
+- All the links in the sidebar will open a browser window to their respective airtables (right click to copy).
 
-        Note: Ending a Student's Name in a period "." will cause many issues with accessing the resulting folder or even deleting it on many OSes. Try to avoid doing that for the time being.
-
-- The `Clone \ Pull` button will perform a `git clone` or `git pull` in the `Working Directory` inside a folder using the student's name depending if the folder exists or not.
-- The `GH` button will open a browser window to the student's github in the repository section.
-- The `PR` button will open a browser window to the student's PR on the input repo.
-- The `Sandbox` button will open a browser window for [Code Sandbox](https://codesandbox.io/) with the student's git repo (intended for React etc. repos, may not work for others).
+- The `Download` button will perform a `git clone` or `git pull` in the `Working Directory` inside a folder using the student's name depending if the folder exists or not.
+- The `Comment` button will open a browser window to the student's PR.
 - If there is any unexpected behavior you can check the `Dev Tools` under `Dev Tools > Toggle` to see more information about any errors.
 
 ## Building
@@ -54,3 +42,5 @@ The latest build is available [here](https://github.com/myxozoa/LPM/releases) fo
 - Add popups explaining any errors in addition to the border changes
 - Add functionality to allow commenting on a PR directly in the app
 - Debounce buttons
+- Display whether a student has done a PR
+- Add student page to add notes or display data
