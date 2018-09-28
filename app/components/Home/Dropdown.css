@@ -4,23 +4,24 @@
   right: 0;
   top: 25px;
   width: 100px;
-  background: white;
+  background: var(--content-background);
   border-radius: 4px;
   opacity: 0;
   pointer-events: none;
-  box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 3px var(--shadow);
 }
 
 .button {
   background: none;
-  color: black;
+  color: var(--darktext);
   border: 0;
+  padding: 5px;
   width: 100%;
 }
 
 .button:hover {
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.05);
+  background: var(--hover);
 }
 
 .open {

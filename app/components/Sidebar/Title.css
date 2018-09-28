@@ -11,7 +11,7 @@
   font-size: 30px;
   font-weight: 500;
   letter-spacing: 1px;
-  color: #f5f5f5;
+  color: var(--title);
 }
 
 .title h1 {
@@ -20,7 +20,7 @@
 
 .logo {
   fill: transparent;
-  stroke: #f5f5f5;
+  stroke: var(--title);
   stroke-width: 13px;
   stroke-dasharray: 18, 18.8;
 }

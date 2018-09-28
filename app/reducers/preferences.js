@@ -11,16 +11,26 @@ import { preferences as defaultPrefs } from '../constants/defaults.json';
 import type { Action } from './types';
 
 const path = require('path');
+const fs = require('fs');
 
 const { remote } = require('electron');
 
 const { app } = remote;
 
-const userData = app.getPath('userData');
+// Initialize directory in user's documents to clone student repos to
+const documents = app.getPath('documents');
+const localPath = path.join(documents, 'LPM');
+const repoPath = path.join(localPath, 'repos');
+
+if (!fs.existsSync(localPath)) {
+  fs.mkdirSync(localPath);
+  fs.mkdirSync(repoPath);
+}
+
 const prefs = {
   ...defaultPrefs,
-  workingDirectory: path.join(userData, 'LPM', 'repos')
-}; // setting default workingDirectory to path in userdata
+  workingDirectory: localPath
+}; // setting default workingDirectory to path in documents
 
 export default function preferences(state = prefs, action: Action) {
   switch (action.type) {

@@ -42,7 +42,7 @@ class Preferences extends Component<Props> {
         <Link to={routes.HOME}>{'<'}</Link>
         <h1>Preferences</h1>
         <form className={styles.form}>
-          <button type="button" onClick={loginAction}>
+          <button type="button" onClick={loginAction} disabled>
             Login
           </button>
           <select onChange={this.selectSection} value={section}>

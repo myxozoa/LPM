@@ -4,7 +4,6 @@
   left: 0;
   height: 100vh;
   width: 230px;
-  background: #35373a;
   background-image: radial-gradient(
     400px 820px at 100% 10%,
     #28add1 10%,
@@ -14,7 +13,7 @@
     #4a54b5 90%,
     #5648a2
   );
-  color: #e6e6e6;
+  color: var(--sidebar-links);
   border-radius: 3px 0 0 3px;
 }
 .credits {
@@ -27,6 +26,6 @@
   position: fixed;
   bottom: 0;
   letter-spacing: 0.5px;
-  color: #d8d8d8;
+  color: var(--text);
   opacity: 0.23;
 }

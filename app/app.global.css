@@ -189,7 +189,19 @@ input {
 
 div > .repo__control {
   border: 0;
-  /* background: white; */
-  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.04);
+  background: var(--content-background);
+  box-shadow: 0 3px 5px 1px var(--shadow);
   border-radius: 8px;
+}
+
+div > .repo__indicator-separator {
+  background: var(--text);
+}
+
+div > .repo__dropdown-indicator {
+  color: var(--text);
+}
+
+div > .repo__dropdown-indicator:hover {
+  color: var(--darktext);
 }

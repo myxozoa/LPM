@@ -18,9 +18,11 @@ export function login() {
     let authWindow = new remote.BrowserWindow({
       parent: remote.getCurrentWindow(),
       modal: true,
-      nodeIntegration: false,
-      contextIsolation: true,
-      useContentSize: true
+      useContentSize: true,
+      webPreferences: {
+        nodeIntegration: false,
+        contextIsolation: true
+      }
     });
 
     authWindow.on('closed', () => {

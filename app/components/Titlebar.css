@@ -28,7 +28,7 @@
 }
 .menu:hover,
 .controls div:hover {
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--sidebar-hover);
   cursor: pointer;
 }
 
@@ -37,7 +37,7 @@
   width: 80px;
   font-size: 18px;
   justify-content: space-between;
-  color: rgb(218, 218, 218);
+  color: var(--title);
 }
 
 .controls div {

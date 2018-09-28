@@ -3,14 +3,14 @@
   height: 120px;
   margin-bottom: 15px;
   border-radius: 8px;
-  background: white;
-  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.04);
+  background: var(--content-background);
+  box-shadow: 0 3px 5px 1px var(--shadow);
 }
 
 .section {
   font-size: 27px;
   padding-bottom: 10px;
-  color: rgba(145, 145, 145, 0.7);
+  color: var(--darktext);
   letter-spacing: 2px;
 }
 
@@ -27,7 +27,7 @@
   justify-content: space-between;
   padding: 12px 0;
   width: 30%;
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  border-right: 1px solid var(--border);
 }
 
 .right {

@@ -21,9 +21,10 @@
 
   border-radius: 50%;
   border: 0;
-  font-size: 30px;
+  font-size: 20px;
   color: white;
-  background: #3b3b3b;
+  background: var(--add);
+  line-height: 20px;
 }
 .button > div {
   width: 100%;
@@ -31,11 +32,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.button > div > span {
-  height: 18px;
-  line-height: 13px;
 }
 
 .button:hover {
@@ -138,6 +134,6 @@
 
 .submit:hover {
   transition: all 0.1s ease-in-out;
-  background: #2fb8ec;
+  background: var(--primary);
   cursor: pointer;
 }

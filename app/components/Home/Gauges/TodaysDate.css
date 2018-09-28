@@ -8,7 +8,7 @@
 
 .number {
   font-size: 27px;
-  color: #27a7cf;
+  color: var(--primary);
 }
 
 .month,

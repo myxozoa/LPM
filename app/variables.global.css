@@ -1,0 +1,16 @@
+* {
+  --primary: #2fb8ec;
+  --text: #6d6d6d;
+  --darktext: #454546;
+  --add: #3b3b3b;
+  --background: #eff1f2;
+  --content-background: white;
+  --title: #f5f5f5;
+  --placeholder: rgba(109, 109, 109, 0.35);
+  --border: rgb(0, 0, 0, 0.1);
+  --shadow: rgba(0, 0, 0, 0.04);
+  --hover: rgba(0, 0, 0, 0.02);
+  --sidebar-hover: rgba(255, 255, 255, 0.1);
+  --section-label: rgba(225, 225, 225, 0.65);
+  --sidebar-links: #e6e6e6;
+}

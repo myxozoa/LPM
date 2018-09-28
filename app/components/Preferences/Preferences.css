@@ -4,8 +4,8 @@
   padding: 30px;
   width: calc(100% - 230px);
   margin-left: 230px;
-  background: white;
-  color: black;
+  background: var(--background);
+  color: var(--darktext);
   display: flex;
   flex-direction: column;
 }
