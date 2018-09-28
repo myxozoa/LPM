@@ -7,7 +7,9 @@ import {
   SET_NAME,
   SET_USERNAME
 } from '../actions/students';
+import { INITIAL_LOAD, SAVE } from '../actions/misc';
 
+import { store } from './types';
 import type { Action } from './types';
 
 export default function preferences(state = [], action: Action) {
@@ -49,6 +51,13 @@ export default function preferences(state = [], action: Action) {
 
     case REMOVE_STUDENT:
       return state.filter(student => student.id !== action.payload);
+
+    case SAVE:
+      store.set('students', state);
+      return [...state];
+
+    case INITIAL_LOAD:
+      return store.get('students');
 
     default:
       return state;

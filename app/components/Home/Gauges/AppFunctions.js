@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import { cloneAll } from '../../../actions/github';
+import { saveToDB } from '../../../actions/misc';
 
 import styles from './AppFunctions.css';
 
@@ -19,13 +20,19 @@ class AppFunctions extends Component<Props> {
     cloneAllAction();
   };
 
+  save = () => {
+    const { saveToDB: saveToDBAction } = this.props;
+
+    saveToDBAction();
+  };
+
   render() {
     return (
       <React.Fragment>
         <button type="button" className={styles.button} onClick={this.cloneAll}>
           Batch
         </button>
-        <button type="button" className={styles.button}>
+        <button type="button" className={styles.button} onClick={this.save}>
           Save
         </button>
       </React.Fragment>
@@ -35,12 +42,14 @@ class AppFunctions extends Component<Props> {
 
 AppFunctions.propTypes = {
   students: PropTypes.arrayOf(PropTypes.object),
-  cloneAll: PropTypes.func
+  cloneAll: PropTypes.func,
+  saveToDB: PropTypes.func
 };
 
 AppFunctions.defaultProps = {
   students: [{}],
-  cloneAll: () => {}
+  cloneAll: () => {},
+  saveToDB: () => {}
 };
 
 const mapStateToProps = state => ({
@@ -49,5 +58,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { cloneAll }
+  { cloneAll, saveToDB }
 )(AppFunctions);

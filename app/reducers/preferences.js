@@ -6,8 +6,10 @@ import {
   SET_WORKING_DIRECTORY,
   SET_ALWAYS_ON_TOP
 } from '../actions/preferences';
+import { INITIAL_LOAD } from '../actions/misc';
 import { preferences as defaultPrefs } from '../constants/defaults.json';
 
+import { store } from './types';
 import type { Action } from './types';
 
 const path = require('path');
@@ -32,20 +34,30 @@ const prefs = {
   workingDirectory: localPath
 }; // setting default workingDirectory to path in documents
 
+// store.set('prefs', prefs);
+
 export default function preferences(state = prefs, action: Action) {
   switch (action.type) {
     case SET_SECTION:
+      store.set('prefs.section', action.payload);
+      console.log(store.get('prefs'));
       return { ...state, section: action.payload };
 
     case SET_REPO:
+      store.set('prefs.repo', action.payload);
       return { ...state, repo: action.payload.replace(/\/$/, '') };
 
     case SET_WORKING_DIRECTORY:
+      store.set('prefs.workingDirectory', action.payload);
       return { ...state, workingDirectory: action.payload };
 
     case SET_ALWAYS_ON_TOP:
+      store.set('prefs.alwaysOnTop', action.payload);
       remote.getCurrentWindow().setAlwaysOnTop(action.payload);
       return { ...state, alwaysOnTop: action.payload };
+
+    case INITIAL_LOAD:
+      return store.get('prefs');
 
     default:
       return state;
