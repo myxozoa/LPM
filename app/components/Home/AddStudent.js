@@ -79,7 +79,13 @@ class AddStudent extends Component<Props> {
             onClick={this.togglePrompt}
           >
             <div>
-              <span>{adding ? '-' : '+'}</span>
+              <span>
+                {adding ? (
+                  <i className="fas fa-minus" />
+                ) : (
+                  <i className="fas fa-plus" />
+                )}
+              </span>
             </div>
           </button>
           <div className={containerClass}>

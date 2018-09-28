@@ -1,4 +1,5 @@
 // @flow
+
 import {
   ADD_STUDENT,
   REMOVE_STUDENT,
@@ -6,6 +7,7 @@ import {
   SET_NAME,
   SET_USERNAME
 } from '../actions/students';
+
 import type { Action } from './types';
 
 export default function preferences(state = [], action: Action) {
@@ -32,7 +34,7 @@ export default function preferences(state = [], action: Action) {
     case SET_NAME:
       return state.map(student => {
         if (student.id === action.payload.id) {
-          return { ...student, name: action.payload.name };
+          return { ...student, name: action.payload.name.trim() };
         }
         return student;
       });
@@ -40,7 +42,7 @@ export default function preferences(state = [], action: Action) {
     case SET_USERNAME:
       return state.map(student => {
         if (student.id === action.payload.id) {
-          return { ...student, username: action.payload.username };
+          return { ...student, username: action.payload.username.trim() };
         }
         return student;
       });

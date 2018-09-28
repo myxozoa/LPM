@@ -1,5 +1,7 @@
 // @flow
 
+import path from 'path';
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StarRatings from 'react-star-ratings';
@@ -8,6 +10,7 @@ import { shell } from 'electron';
 
 import { setRating, setName, setUsername } from '../../actions/students';
 import { clone } from '../../actions/github';
+import gitUtils from '../../utils/gitUtils';
 
 import Dropdown from './Dropdown';
 import styles from './Student.css';
@@ -26,6 +29,12 @@ class Student extends Component<Props> {
     shell.openExternal(
       `${repo}/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A${username}`
     );
+  };
+
+  openFolder = () => {
+    const { name, workingDirectory } = this.props;
+    const folderName = gitUtils.prepareFolderName(name);
+    shell.openItem(path.join(workingDirectory, folderName));
   };
 
   clone = () => {
@@ -189,7 +198,7 @@ class Student extends Component<Props> {
               </g>
             </svg>
           </button>
-          <Dropdown id={id} open={dropDown} />
+          <Dropdown id={id} open={dropDown} openFolder={this.openFolder} />
         </div>
       </div>
     );
@@ -202,6 +211,7 @@ Student.propTypes = {
   username: PropTypes.string,
   rating: PropTypes.number,
   repo: PropTypes.string,
+  workingDirectory: PropTypes.string,
   setRating: PropTypes.func,
   setName: PropTypes.func,
   setUsername: PropTypes.func,
@@ -214,6 +224,7 @@ Student.defaultProps = {
   username: 'john657',
   rating: 0,
   repo: '',
+  workingDirectory: '',
   setRating: () => {},
   setName: () => {},
   setUsername: () => {},
@@ -221,7 +232,8 @@ Student.defaultProps = {
 };
 
 const mapStateToProps = state => ({
-  repo: state.preferences.repo
+  repo: state.preferences.repo,
+  workingDirectory: state.preferences.workingDirectory
 });
 
 export default connect(

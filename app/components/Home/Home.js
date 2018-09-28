@@ -7,7 +7,7 @@ import Select from 'react-select';
 import Fuse from 'fuse.js';
 
 import { setRepo } from '../../actions/preferences';
-import repos from '../../constants/repos.json';
+import { getRepoList } from '../../actions/api';
 
 import Student from './Student';
 import Gauges from './Gauges/Gauges';
@@ -32,15 +32,21 @@ class Content extends Component<Props> {
     repoName: ''
   };
 
+  componentDidMount() {
+    const { getRepoList: getRepoListAction } = this.props;
+    getRepoListAction();
+  }
+
   filterOptions = (options: optionsType, filter: string) => {
     const fuseOptions = {
-      shouldSort: true,
-      tokenize: true,
+      shouldSort: false,
+      tokenize: false,
+      findAllMatches: true,
       threshold: 0.6,
       location: 0,
       distance: 100,
       maxPatternLength: 32,
-      minMatchCharLength: 1,
+      minMatchCharLength: 2,
       keys: ['label']
     };
     const fuse = new Fuse(options, fuseOptions);
@@ -54,8 +60,10 @@ class Content extends Component<Props> {
   };
 
   render() {
-    const { students, repo } = this.props;
+    const { students, repo, repoList } = this.props;
     const { repoName } = this.state;
+
+    console.log('REPO PROP, ', repo);
 
     return (
       <div className={styles.container}>
@@ -67,7 +75,7 @@ class Content extends Component<Props> {
               value={repo}
               onChange={this.onChange}
               filterOptions={this.filterOptions}
-              options={repos}
+              options={repoList}
               placeholder={repoName}
             />
           </div>
@@ -98,21 +106,26 @@ const studentType = PropTypes.shape({
 Content.propTypes = {
   students: PropTypes.arrayOf(studentType),
   repo: PropTypes.string,
-  setRepo: PropTypes.func
+  setRepo: PropTypes.func,
+  repoList: PropTypes.arrayOf(PropTypes.object),
+  getRepoList: PropTypes.func
 };
 
 Content.defaultProps = {
   students: [],
   repo: '',
-  setRepo: () => {}
+  repoList: [],
+  setRepo: () => {},
+  getRepoList: () => {}
 };
 
 const mapStateToProps = state => ({
   students: state.students,
-  repo: state.preferences.repo
+  repo: state.preferences.repo,
+  repoList: state.api.repoList
 });
 
 export default connect(
   mapStateToProps,
-  { setRepo }
+  { setRepo, getRepoList }
 )(Content);

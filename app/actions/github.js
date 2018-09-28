@@ -11,9 +11,9 @@ export const PULL_ERROR = 'PULL_ERROR';
 
 export function pull(name: string, username: string) {
   return (dispatch, getState) => {
-    const { repo, workingDirectory } = getState().preferences;
-
     dispatch({ type: PULLING });
+
+    const { repo, workingDirectory } = getState().preferences;
 
     gitUtils
       .pull(name, repo, username, workingDirectory)

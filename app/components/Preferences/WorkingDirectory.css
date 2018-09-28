@@ -26,12 +26,12 @@
   height: 26px;
   font-size: 12px;
   letter-spacing: 1px;
-  border: 1px solid #cccccc;
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 0 0 0 10px;
 }
 
 input::placeholder {
-  color: #d8d8d8;
+  color: rgba(var(--placeholder), 0.35);
   letter-spacing: 1.2px;
 }

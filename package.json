@@ -1,7 +1,7 @@
 {
   "name": "lambda-pm-app",
   "productName": "Lambda PM App",
-  "version": "2.0.1",
+  "version": "2.0.0",
   "description": "Project Management App",
   "scripts": {
     "build": "concurrently \"yarn build-main\" \"yarn build-renderer\"",
@@ -225,12 +225,15 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@octokit/rest": "^15.11.1",
+    "axios": "^0.18.0",
     "date-fns": "^1.29.0",
     "devtron": "^1.4.0",
     "electron-debug": "^2.0.0",
     "electron-updater": "^3.1.2",
     "fuse.js": "^3.2.1",
     "history": "^4.7.2",
+    "lodash.debounce": "^4.0.8",
+    "lodash.isequal": "^4.5.0",
     "react": "^16.4.1",
     "react-circular-progressbar": "^1.0.0",
     "react-dom": "^16.4.1",
@@ -242,6 +245,8 @@
     "react-select": "^2.0.0",
     "react-star-ratings": "^2.3.0",
     "redux": "^4.0.0",
+    "redux-persist": "^5.10.0",
+    "redux-persist-electron-storage": "^1.1.2",
     "redux-thunk": "^2.3.0",
     "shortid": "^2.2.13",
     "source-map-support": "^0.5.6"

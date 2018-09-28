@@ -2,13 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: white;
+  background: var(--content-background);
   padding: 0 15px;
   height: 74px;
-  box-shadow: 0 3px 5px 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 3px 5px 1px var(--shadow);
   border-radius: 8px;
   margin-bottom: 16px;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .inputs {
@@ -17,12 +17,18 @@
 
 .inputs * {
   /* background: rgba(48, 64, 82, 0.02); */
+  color: var(--darktext);
   border-radius: 4px;
   padding: 3px 10px;
   width: 100%;
   border: 0;
   margin: 2px 0;
   letter-spacing: 1.5px;
+}
+
+.inputs *:hover,
+.inputs *:focus {
+  background: var(--hover);
 }
 
 .studentName {
@@ -34,7 +40,7 @@
 }
 
 .inputs *::placeholder {
-  color: rgba(109, 109, 109, 0.5);
+  color: rgba(var(--placeholder), 0.35);
 }
 
 .clonePull,
@@ -61,16 +67,16 @@
 .menu:hover {
   transform: all 0.1s ease-in-out;
   cursor: pointer;
-  background: rgba(0, 0, 0, 0.02);
+  background: var(--hover);
 }
 
 .icon {
   fill: none;
-  stroke: #707070;
+  stroke: var(--text);
   fill-rule: evenodd;
 }
 .menuIcon {
-  fill: #707070;
+  fill: var(--text);
 }
 
 .buttons {

@@ -13,7 +13,7 @@
 .section {
   font-size: 14px;
   height: 20px;
-  color: rgba(225, 225, 225, 0.65);
+  color: var(--section-label);
   font-weight: 100;
 }
 

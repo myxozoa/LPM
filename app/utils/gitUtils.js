@@ -1,7 +1,8 @@
 // @flow
 
-import nodegit from 'nodegit';
 import path from 'path';
+
+import nodegit from 'nodegit';
 
 export default class gitUtils {
   static prepareFolderName(name: string) {
