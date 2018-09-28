@@ -8,6 +8,7 @@ import Fuse from 'fuse.js';
 
 import { setRepo } from '../../actions/preferences';
 import { getRepoList } from '../../actions/api';
+import { initialLoad } from '../../actions/misc';
 
 import Student from './Student';
 import Gauges from './Gauges/Gauges';
@@ -33,8 +34,12 @@ class Content extends Component<Props> {
   };
 
   componentDidMount() {
-    const { getRepoList: getRepoListAction } = this.props;
+    const {
+      getRepoList: getRepoListAction,
+      initialLoad: initialLoadAction
+    } = this.props;
     getRepoListAction();
+    initialLoadAction();
   }
 
   filterOptions = (options: optionsType, filter: string) => {
@@ -127,5 +132,5 @@ const mapStateToProps = state => ({
 
 export default connect(
   mapStateToProps,
-  { setRepo, getRepoList }
+  { setRepo, getRepoList, initialLoad }
 )(Content);

@@ -3,8 +3,6 @@ import thunk from 'redux-thunk';
 import { createHashHistory } from 'history';
 import { routerMiddleware, routerActions } from 'react-router-redux';
 import { createLogger } from 'redux-logger';
-import createElectronStorage from 'redux-persist-electron-storage';
-import { persistReducer } from 'redux-persist';
 
 import rootReducer from '../reducers';
 import * as prefsActions from '../actions/preferences';
@@ -53,15 +51,7 @@ const configureStore = () => {
   enhancers.push(applyMiddleware(...middleware));
   const enhancer = composeEnhancers(...enhancers);
 
-  // Create Store
-  const persistConfig = {
-    key: 'root',
-    storage: createElectronStorage()
-  };
-
-  const persistedReducer = persistReducer(persistConfig, rootReducer);
-
-  const store = createStore(persistedReducer, {}, enhancer);
+  const store = createStore(rootReducer, {}, enhancer);
 
   if (module.hot) {
     module.hot.accept(
