@@ -57,7 +57,7 @@ export default function preferences(state = prefs, action: Action) {
       return { ...state, alwaysOnTop: action.payload };
 
     case INITIAL_LOAD:
-      return store.get('prefs');
+      return store.get('prefs') || prefs;
 
     default:
       return state;

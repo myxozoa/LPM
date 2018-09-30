@@ -11,6 +11,7 @@
  * @flow
  */
 import { app, BrowserWindow, dialog, shell } from 'electron';
+
 import MenuBuilder from './menu';
 
 const { autoUpdater } = require('electron-updater');

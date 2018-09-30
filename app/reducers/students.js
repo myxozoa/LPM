@@ -57,7 +57,7 @@ export default function preferences(state = [], action: Action) {
       return [...state];
 
     case INITIAL_LOAD:
-      return store.get('students');
+      return store.get('students') || [];
 
     default:
       return state;
