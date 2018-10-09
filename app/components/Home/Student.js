@@ -8,7 +8,12 @@ import StarRatings from 'react-star-ratings';
 import PropTypes from 'prop-types';
 import { shell } from 'electron';
 
-import { setRating, setName, setUsername } from '../../actions/students';
+import {
+  setRating,
+  setName,
+  setUsername,
+  removeStudent
+} from '../../actions/students';
 import { clone } from '../../actions/github';
 import gitUtils from '../../utils/gitUtils';
 
@@ -59,6 +64,11 @@ class Student extends Component<Props> {
     }, 100);
   };
 
+  removeStudent = () => {
+    const { removeStudent: removeStudentAction, id } = this.props;
+    removeStudentAction(id);
+  };
+
   render() {
     const {
       rating,
@@ -107,6 +117,7 @@ class Student extends Component<Props> {
                 <path
                   id="upload"
                   className={styles.icon}
+                  // eslint-disable-next-line
                   d="M20.211-14.148c-.726-3.525-2.542-5.574-6.71-5.465a8.634,8.634,0,0,0-7.279,4.547c-3.214.415-6.2,1.949-6.145,5.9C.078-5.746,2.8-3.4,6.223-3.4H19.7c2.9,0,5.59-2.59,5.548-5.088C25.25-10.07,25.1-13.817,20.211-14.148Z"
                   transform="translate(581.266 60)"
                 />
@@ -134,6 +145,7 @@ class Student extends Component<Props> {
               <path
                 id="message"
                 className={styles.icon}
+                // eslint-disable-next-line
                 d="M17.34-43.888H5.482A1.487,1.487,0,0,0,4-42.405v13.34l2.965-2.965H17.34a1.487,1.487,0,0,0,1.482-1.482v-8.894a1.487,1.487,0,0,0-1.482-1.482Z"
                 transform="translate(-3.5 44.388)"
               />
@@ -198,7 +210,12 @@ class Student extends Component<Props> {
               </g>
             </svg>
           </button>
-          <Dropdown id={id} open={dropDown} openFolder={this.openFolder} />
+          <Dropdown
+            id={id}
+            open={dropDown}
+            openFolder={this.openFolder}
+            removeStudent={this.removeStudent}
+          />
         </div>
       </div>
     );
@@ -215,7 +232,8 @@ Student.propTypes = {
   setRating: PropTypes.func,
   setName: PropTypes.func,
   setUsername: PropTypes.func,
-  clone: PropTypes.func
+  clone: PropTypes.func,
+  removeStudent: PropTypes.func
 };
 
 Student.defaultProps = {
@@ -228,7 +246,8 @@ Student.defaultProps = {
   setRating: () => {},
   setName: () => {},
   setUsername: () => {},
-  clone: () => {}
+  clone: () => {},
+  removeStudent: () => {}
 };
 
 const mapStateToProps = state => ({
@@ -242,6 +261,7 @@ export default connect(
     setRating,
     setName,
     setUsername,
-    clone
+    clone,
+    removeStudent
   }
 )(Student);
