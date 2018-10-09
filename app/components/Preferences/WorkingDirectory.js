@@ -3,7 +3,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+
 import { setWorkingDirectory } from '../../actions/preferences';
+
 import styles from './WorkingDirectory.css';
 
 const { dialog } = require('electron').remote;
@@ -37,7 +39,7 @@ class WorkingDirectory extends Component<Props> {
           <input
             className={styles.input}
             type="text"
-            placeholder="C:\Users\admin\programming\Lambda-PM  **No Spaces**"
+            placeholder="directory"
             value={value}
             onChange={e => setWorkingDirectoryAction(e.target.value)}
           />
