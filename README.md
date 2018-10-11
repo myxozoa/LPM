@@ -23,9 +23,9 @@ The latest build is available [here](https://github.com/myxozoa/LPM/releases) fo
 
 2. To build an executable run:
    ```
-   yarn build
+   yarn package
    ```
-3. Navigate to the `release-builds` folder to find the folder containing the installer.
+3. Navigate to the `release` folder to find the folder containing the installer.
 
 4. Install the app like you would any other.
 
