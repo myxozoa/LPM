@@ -21,4 +21,11 @@ describe('actions', () => {
       payload: 'C:/test'
     });
   });
+
+  it('should create setAlwaysOnTop actions properly', () => {
+    expect(actions.setAlwaysOnTop(true)).toEqual({
+      type: 'SET_ALWAYS_ON_TOP',
+      payload: true
+    });
+  });
 });
