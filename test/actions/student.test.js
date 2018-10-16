@@ -24,4 +24,14 @@ describe('actions', () => {
       payload: 'testid'
     });
   });
+
+  it('should create setRating action properly', () => {
+    expect(actions.setRating('testid', 2)).toEqual({
+      type: 'SET_RATING',
+      payload: {
+        id: 'testid',
+        rating: 2
+      }
+    });
+  });
 });
