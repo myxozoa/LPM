@@ -1,7 +1,7 @@
 // @flow
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-// import PropTypes from 'prop-types';
 
 import { Student } from '../../../reducers/types';
 import { cloneAll } from '../../../actions/github';
@@ -16,16 +16,14 @@ type Props = {
 };
 
 class AppFunctions extends Component<Props> {
-  props: Props;
-
-  cloneAll = () => {
+  cloneAll = (): void => {
     const { students, cloneAll: cloneAllAction } = this.props;
     if (students.length === 0) return;
 
     cloneAllAction();
   };
 
-  save = () => {
+  save = (): void => {
     const { saveToDB: saveToDBAction } = this.props;
 
     saveToDBAction();
@@ -44,18 +42,6 @@ class AppFunctions extends Component<Props> {
     );
   }
 }
-
-// AppFunctions.propTypes = {
-//   students: PropTypes.arrayOf(PropTypes.object),
-//   cloneAll: PropTypes.func,
-//   saveToDB: PropTypes.func
-// };
-
-// AppFunctions.defaultProps = {
-//   students: [{}],
-//   cloneAll: () => {},
-//   saveToDB: () => {}
-// };
 
 const mapStateToProps = state => ({
   students: state.students
