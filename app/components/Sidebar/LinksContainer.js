@@ -1,7 +1,6 @@
 // @flow
 
-import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
+import React from 'react';
 
 import info from '../../constants/info.json';
 
@@ -10,17 +9,9 @@ import styles from './LinksContainer.css';
 
 const shortid = require('shortid');
 
-// LinksContainer.propTypes = {
-//   section: PropTypes.string
+// type Props = {
+//   section: string,
 // };
-
-// LinksContainer.defaultProps = {
-//   section: 'defaul tprop'
-// };
-
-type Props = {
-  section: string,
-};
 
 type subLinksType = {
   label: string,
@@ -32,19 +23,12 @@ type linksType = {
   links: Array<subLinksType>
 };
 
-class LinksContainer extends Component<Props> {
-  props: Props;
-
-  render() {
-    // const { section } = this.props;
-    return (
-      <div className={styles.container}>
-        {info.links.map((el: linksType) => (
-          <LinkSection key={shortid.generate()} {...el} />
-        ))}
-      </div>
-    );
-  }
+export default function LinksContainer(/* props: Props */) {
+  return (
+    <div className={styles.container}>
+      {info.links.map((el: linksType) => (
+        <LinkSection key={shortid.generate()} {...el} />
+      ))}
+    </div>
+  );
 }
-
-export default LinksContainer;

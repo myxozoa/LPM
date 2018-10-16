@@ -27,17 +27,17 @@ type Props = {
 export default class Link extends Component<Props> {
   props: Props;
 
-  open = () => {
+  open = (): void => {
     const { url } = this.props;
     shell.openExternal(url);
   };
 
-  copy = () => {
+  copy = (): void => {
     const { url } = this.props;
     clipboard.writeText(url, 'selection');
   };
 
-  copyMenu = (e: SyntheticEvent<HTMLAnchorElement>) => {
+  copyMenu = (e: SyntheticEvent<HTMLAnchorElement>): void => {
     e.preventDefault();
     const window = remote.getCurrentWindow();
     const contextMenu = new Menu();

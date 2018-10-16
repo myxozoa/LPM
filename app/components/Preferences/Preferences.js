@@ -14,22 +14,6 @@ import { login } from '../../actions/auth';
 import WorkingDirectory from './WorkingDirectory';
 import styles from './Preferences.css';
 
-// Preferences.propTypes = {
-//   section: PropTypes.string,
-//   onTop: PropTypes.bool,
-//   setSection: PropTypes.func,
-//   setAlwaysOnTop: PropTypes.func,
-//   login: PropTypes.func
-// };
-
-// Preferences.defaultProps = {
-//   section: 'SECTION',
-//   onTop: false,
-//   setSection: () => {},
-//   setAlwaysOnTop: () => {},
-//   login: () => {}
-// };
-
 type Props = {
   section: string,
   onTop: boolean,
@@ -39,18 +23,17 @@ type Props = {
 };
 
 class Preferences extends Component<Props> {
-  selectSection = e => {
+  selectSection = (e: SyntheticInputEvent<HTMLSelectElement>): void => {
     const { setSection: set } = this.props;
     set(e.target.value);
   };
 
-  alwaysOnTop = () => {
+  alwaysOnTop = (): void => {
     const { setAlwaysOnTop: set, onTop } = this.props;
     set(!onTop);
   };
 
   render() {
-    console.log(this.state);
     const { section, onTop, login: loginAction } = this.props;
     return (
       <div className={styles.container}>

@@ -10,23 +10,13 @@ import styles from './WorkingDirectory.css';
 
 const { dialog } = require('electron').remote;
 
-// WorkingDirectory.propTypes = {
-//   value: PropTypes.string,
-//   setWorkingDirectory: PropTypes.func
-// };
-
-// WorkingDirectory.defaultProps = {
-//   value: '',
-//   setWorkingDirectory: () => {}
-// };
-
 type Props = {
   setWorkingDirectory: Function,
   value: string,
 };
 
 class WorkingDirectory extends Component<Props> {
-  selectFile = () => {
+  selectFile = (): void => {
     const { setWorkingDirectory: setWorkingDirectoryAction } = this.props;
     dialog.showOpenDialog(
       {
