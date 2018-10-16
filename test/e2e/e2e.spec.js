@@ -1,6 +1,8 @@
+import path from 'path';
+
 import { Application } from 'spectron';
 import electronPath from 'electron';
-import path from 'path';
+
 import '../../internals/scripts/CheckBuiltsExist';
 
 jasmine.DEFAULT_TIMEOUT_INTERVAL = 15000;
