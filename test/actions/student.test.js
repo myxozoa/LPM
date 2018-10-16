@@ -44,4 +44,14 @@ describe('actions', () => {
       }
     });
   });
+
+  it('should create setUsername action properly', () => {
+    expect(actions.setUsername('testid', 'testusernamechange')).toEqual({
+      type: 'SET_USERNAME',
+      payload: {
+        id: 'testid',
+        username: 'testusernamechange'
+      }
+    });
+  });
 });
