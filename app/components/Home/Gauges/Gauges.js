@@ -17,22 +17,22 @@ type Props = {
 };
 
 class Gauges extends Component<Props> {
-  getAverageScore = () => {
+  getAverageScore = (): string => {
     const { students } = this.props;
 
     const reviewed = students.filter(student => student.rating > 0);
     const sum = reviewed.reduce((acc, student) => acc + student.rating, 0);
-    if (sum === 0) return 0;
+    if (sum === 0) return '0';
 
     return (sum / reviewed.length).toFixed(2);
   };
 
-  getDayReviewPercentage = () => {
+  getDayReviewPercentage = (): string => {
     const { students } = this.props;
 
     // add 1 if > 0
     const numberOfReviews = students.reduce((acc, student) => acc + !!student.rating, 0);
-    if (numberOfReviews === 0) return 0;
+    if (numberOfReviews === 0) return '0';
 
     // Floored to avoid floating point precision issues
     return Math.floor((numberOfReviews / students.length) * 100).toFixed(2);
@@ -68,16 +68,6 @@ class Gauges extends Component<Props> {
     );
   }
 }
-
-// Gauges.propTypes = {
-//   section: PropTypes.string,
-//   students: PropTypes.arrayOf(PropTypes.object)
-// };
-
-// Gauges.defaultProps = {
-//   section: 'SECTION',
-//   students: [{}]
-// };
 
 const mapStateToProps = state => ({
   section: state.preferences.section,
