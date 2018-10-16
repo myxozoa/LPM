@@ -34,4 +34,14 @@ describe('actions', () => {
       }
     });
   });
+
+  it('should create setName action properly', () => {
+    expect(actions.setName('testid', 'Test Name Change')).toEqual({
+      type: 'SET_NAME',
+      payload: {
+        id: 'testid',
+        name: 'Test Name Change'
+      }
+    });
+  });
 });
