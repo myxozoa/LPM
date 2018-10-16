@@ -73,7 +73,7 @@ class AddStudent extends Component<Props, State> {
     );
   };
 
-  onChange = e => {
+  onChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -161,16 +161,6 @@ class AddStudent extends Component<Props, State> {
     );
   }
 }
-
-// AddStudent.propTypes = {
-//   addStudent: PropTypes.func,
-//   scrollTarget: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
-// };
-
-// AddStudent.defaultProps = {
-//   addStudent: () => {},
-//   scrollTarget: {}
-// };
 
 export default connect(
   null,
