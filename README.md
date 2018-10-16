@@ -19,17 +19,29 @@ The latest build is available [here](https://github.com/myxozoa/LPM/releases) fo
 
 ## Building
 
+```
+You must have node version >=8 to build this app
+```
+
 1. Run `yarn` or `npm i` to install the necessary dependencies. (`yarn` _highly_ recommended)
 
 2. To build an executable run:
    ```
-   yarn build
+   yarn package
    ```
-3. Navigate to the `release-builds` folder to find the folder containing the installer.
+3. Navigate to the `release` folder to find the folder containing the installer.
 
 4. Install the app like you would any other.
 
 5. Run
+
+```
+To build on linux you currently have to install one of the libcurl libraries due to a strange issue causing the nodegit compilation to fail.
+
+I have tested and confirmed libcurl4-openssl-dev to be working, the others may or may not.
+
+To install this on ubuntu you would run sudo apt-get install libcurl4-openssl-dev
+```
 
 ## To Run for Development
 
