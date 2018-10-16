@@ -20,12 +20,10 @@ export function getProfilePic() {
       .get('https://api.github.com/user', {
         headers: { Authorization: `token ${ghOauth}` }
       })
-      .then(data =>
-        dispatch({
-          type: PROFILE_PIC_SUCCESS,
-          payload: data.data.avatar_url
-        })
-      )
+      .then(data => dispatch({
+        type: PROFILE_PIC_SUCCESS,
+        payload: data.data.avatar_url
+      }))
       .catch(() => {
         dispatch({ type: PROFILE_PIC_ERROR });
       });
@@ -46,9 +44,7 @@ export function getRepoList(override?: boolean) {
     for (let i = 1; i <= 3; i++) {
       promises.push(
         axios // grab 100 repos at a time because thats the limit
-          .get(
-            `https://api.github.com/users/LambdaSchool/repos?per_page=100&type=public&page=${i}`
-          )
+          .get(`https://api.github.com/users/LambdaSchool/repos?per_page=100&type=public&page=${i}`)
       );
     }
 
