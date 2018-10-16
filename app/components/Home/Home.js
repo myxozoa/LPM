@@ -2,10 +2,16 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import Select from 'react-select';
 import Fuse from 'fuse.js';
 
+import type {
+  Student as StudentType,
+  ReactObjRef,
+  repoListType,
+  repoType
+} from '../../reducers/types';
 import { setRepo } from '../../actions/preferences';
 import { getRepoList } from '../../actions/api';
 import { initialLoad } from '../../actions/misc';
@@ -15,13 +21,38 @@ import Gauges from './Gauges/Gauges';
 import AddStudent from './AddStudent';
 import styles from './Home.css';
 
-type Props = {};
+// const studentType = PropTypes.shape({
+//   name: PropTypes.string,
+//   username: PropTypes.string,
+//   rating: PropTypes.number
+// });
 
-type repoType = { id: number, label: string, value: string };
+// Content.propTypes = {
+//   students: PropTypes.arrayOf(studentType),
+//   repo: PropTypes.string,
+//   setRepo: PropTypes.func,
+//   repoList: PropTypes.arrayOf(PropTypes.object),
+//   getRepoList: PropTypes.func
+// };
 
-type optionsType = Array<repoType>;
+type Props = {
+  students: Array<StudentType>,
+  repo: repoType,
+  setRepo: Function,
+  repoList: repoListType,
+  getRepoList: Function,
+  initialLoad: Function
+};
 
-class Content extends Component<Props> {
+type State = {
+  repoName: string
+};
+
+class Content extends Component<Props, State> {
+  scrollTarget: ReactObjRef<'div'>;
+
+  page: ReactObjRef<'div'>;
+
   constructor(props) {
     super(props);
 
@@ -34,15 +65,12 @@ class Content extends Component<Props> {
   };
 
   componentDidMount() {
-    const {
-      getRepoList: getRepoListAction,
-      initialLoad: initialLoadAction
-    } = this.props;
+    const { getRepoList: getRepoListAction, initialLoad: initialLoadAction } = this.props;
     getRepoListAction();
     initialLoadAction();
   }
 
-  filterOptions = (options: optionsType, filter: string) => {
+  filterOptions = (options: repoListType, filter: string) => {
     const fuseOptions = {
       shouldSort: false,
       tokenize: false,
@@ -61,7 +89,7 @@ class Content extends Component<Props> {
   onChange = e => {
     const { setRepo: setRepoAction } = this.props;
     this.setState({ repoName: e.label });
-    setRepoAction(e.value);
+    setRepoAction(e);
   };
 
   render() {
@@ -101,28 +129,6 @@ class Content extends Component<Props> {
     );
   }
 }
-
-const studentType = PropTypes.shape({
-  name: PropTypes.string,
-  username: PropTypes.string,
-  rating: PropTypes.number
-});
-
-Content.propTypes = {
-  students: PropTypes.arrayOf(studentType),
-  repo: PropTypes.string,
-  setRepo: PropTypes.func,
-  repoList: PropTypes.arrayOf(PropTypes.object),
-  getRepoList: PropTypes.func
-};
-
-Content.defaultProps = {
-  students: [],
-  repo: '',
-  repoList: [],
-  setRepo: () => {},
-  getRepoList: () => {}
-};
 
 const mapStateToProps = state => ({
   students: state.students,

@@ -1,4 +1,7 @@
 // @flow
+
+import type { repoType } from '../reducers/types';
+
 export const SET_SECTION = 'SET_SECTION';
 export const SET_REPO = 'SET_REPO';
 export const SET_WORKING_DIRECTORY = 'SET_WORKING_DIRECTORY';
@@ -11,7 +14,7 @@ export function setSection(section: string) {
   };
 }
 
-export function setRepo(repo: string) {
+export function setRepo(repo: repoType) {
   return {
     type: SET_REPO,
     payload: repo

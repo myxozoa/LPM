@@ -2,28 +2,43 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import shortid from 'shortid';
 
 import { setSection, setAlwaysOnTop } from '../../actions/preferences';
 import routes from '../../constants/routes.json';
 import info from '../../constants/info.json';
-import repos from '../../constants/repos.json';
+// import repos from '../../constants/repos.json';
 import { login } from '../../actions/auth';
 
 import WorkingDirectory from './WorkingDirectory';
 import styles from './Preferences.css';
 
-type Props = {};
+// Preferences.propTypes = {
+//   section: PropTypes.string,
+//   onTop: PropTypes.bool,
+//   setSection: PropTypes.func,
+//   setAlwaysOnTop: PropTypes.func,
+//   login: PropTypes.func
+// };
+
+// Preferences.defaultProps = {
+//   section: 'SECTION',
+//   onTop: false,
+//   setSection: () => {},
+//   setAlwaysOnTop: () => {},
+//   login: () => {}
+// };
+
+type Props = {
+  section: string,
+  onTop: boolean,
+  setSection: Function,
+  setAlwaysOnTop: Function,
+  login: Function
+};
 
 class Preferences extends Component<Props> {
-  props: Props;
-
-  componentDidMount() {
-    console.log(repos);
-    console.log(repos.length);
-  }
-
   selectSection = e => {
     const { setSection: set } = this.props;
     set(e.target.value);
@@ -69,22 +84,6 @@ class Preferences extends Component<Props> {
     );
   }
 }
-
-Preferences.propTypes = {
-  section: PropTypes.string,
-  onTop: PropTypes.bool,
-  setSection: PropTypes.func,
-  setAlwaysOnTop: PropTypes.func,
-  login: PropTypes.func
-};
-
-Preferences.defaultProps = {
-  section: 'SECTION',
-  onTop: false,
-  setSection: () => {},
-  setAlwaysOnTop: () => {},
-  login: () => {}
-};
 
 const mapStateToProps = state => ({
   section: state.preferences.section,

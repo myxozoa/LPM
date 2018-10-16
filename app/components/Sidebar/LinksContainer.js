@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 import info from '../../constants/info.json';
 
@@ -10,7 +10,17 @@ import styles from './LinksContainer.css';
 
 const shortid = require('shortid');
 
-type Props = {};
+// LinksContainer.propTypes = {
+//   section: PropTypes.string
+// };
+
+// LinksContainer.defaultProps = {
+//   section: 'defaul tprop'
+// };
+
+type Props = {
+  section: string,
+};
 
 type subLinksType = {
   label: string,
@@ -36,13 +46,5 @@ class LinksContainer extends Component<Props> {
     );
   }
 }
-
-LinksContainer.propTypes = {
-  section: PropTypes.string
-};
-
-LinksContainer.defaultProps = {
-  section: 'defaul tprop'
-};
 
 export default LinksContainer;

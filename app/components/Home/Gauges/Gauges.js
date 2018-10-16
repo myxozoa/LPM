@@ -3,12 +3,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CircularProgressbar from 'react-circular-progressbar';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+
+import { Student } from '../../../reducers/types';
+
 import AppFunctions from './AppFunctions';
 import Date from './TodaysDate';
 import styles from './Gauges.css';
 
-type Props = {};
+type Props = {
+  section: string,
+  students: Array<Student>
+};
 
 class Gauges extends Component<Props> {
   getAverageScore = () => {
@@ -24,13 +30,12 @@ class Gauges extends Component<Props> {
   getDayReviewPercentage = () => {
     const { students } = this.props;
 
-    const numberOfReviews = students.reduce(
-      (acc, student) => acc + !!student.rating,
-      0
-    ); // add 1 if > 0
+    // add 1 if > 0
+    const numberOfReviews = students.reduce((acc, student) => acc + !!student.rating, 0);
     if (numberOfReviews === 0) return 0;
 
-    return Math.floor((numberOfReviews / students.length).toFixed(2) * 100); // Floored to avoid floating point precision issues
+    // Floored to avoid floating point precision issues
+    return Math.floor((numberOfReviews / students.length) * 100).toFixed(2);
   };
 
   render() {
@@ -54,7 +59,7 @@ class Gauges extends Component<Props> {
             initialAnimation
             className={styles.progress}
             styles={{
-              path: { stroke: `rgba(39, 167, 207, ${reviewPercentage / 100})` },
+              path: { stroke: `rgba(39, 167, 207, ${+reviewPercentage / 100})` },
               text: { fontWeight: 'bold' }
             }}
           />
@@ -64,15 +69,15 @@ class Gauges extends Component<Props> {
   }
 }
 
-Gauges.propTypes = {
-  section: PropTypes.string,
-  students: PropTypes.arrayOf(PropTypes.object)
-};
+// Gauges.propTypes = {
+//   section: PropTypes.string,
+//   students: PropTypes.arrayOf(PropTypes.object)
+// };
 
-Gauges.defaultProps = {
-  section: 'SECTION',
-  students: [{}]
-};
+// Gauges.defaultProps = {
+//   section: 'SECTION',
+//   students: [{}]
+// };
 
 const mapStateToProps = state => ({
   section: state.preferences.section,

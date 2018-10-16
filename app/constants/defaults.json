@@ -1,7 +1,10 @@
 {
-  "preferences": {
-    "section": "CS10",
-    "repo": ""
+  "section": "CS15",
+  "repo": {
+    "id": 0,
+    "label": "",
+    "value": ""
   },
+  "alwaysOnTop": false,
   "login": "https://micro-github-tprdmbagpd.now.sh/login"
 }

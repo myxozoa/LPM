@@ -1,7 +1,7 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { setWorkingDirectory } from '../../actions/preferences';
@@ -10,11 +10,22 @@ import styles from './WorkingDirectory.css';
 
 const { dialog } = require('electron').remote;
 
-type Props = {};
+// WorkingDirectory.propTypes = {
+//   value: PropTypes.string,
+//   setWorkingDirectory: PropTypes.func
+// };
+
+// WorkingDirectory.defaultProps = {
+//   value: '',
+//   setWorkingDirectory: () => {}
+// };
+
+type Props = {
+  setWorkingDirectory: Function,
+  value: string,
+};
 
 class WorkingDirectory extends Component<Props> {
-  props: Props;
-
   selectFile = () => {
     const { setWorkingDirectory: setWorkingDirectoryAction } = this.props;
     dialog.showOpenDialog(
@@ -51,16 +62,6 @@ class WorkingDirectory extends Component<Props> {
     );
   }
 }
-
-WorkingDirectory.propTypes = {
-  value: PropTypes.string,
-  setWorkingDirectory: PropTypes.func
-};
-
-WorkingDirectory.defaultProps = {
-  value: '',
-  setWorkingDirectory: () => {}
-};
 
 const mapStateToProps = state => ({
   value: state.preferences.workingDirectory

@@ -14,6 +14,8 @@ module.exports = {
   },
   rules: {
     semi: 'off',
+    "flowtype/define-flow-type": 1,
+    "flowtype/use-flow-type": 1,
     'arrow-parens': ['off'],
     'compat/compat': 'error',
     'comma-dangle': 'off',

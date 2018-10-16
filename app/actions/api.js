@@ -3,6 +3,8 @@
 import axios from 'axios';
 import isSameDay from 'date-fns/is_same_day';
 
+import { ThunkAction, Dispatch, GetState } from '../reducers/types';
+
 export const FETCHING_PROFILE_PIC = 'FETCHING_PROFILE_PIC';
 export const PROFILE_PIC_SUCCESS = 'PROFILE_PIC_SUCCESS';
 export const PROFILE_PIC_ERROR = 'PROFILE_PIC_ERROR';
@@ -10,8 +12,8 @@ export const PROFILE_PIC_ERROR = 'PROFILE_PIC_ERROR';
 export const FETCHING_REPO_LIST = 'FETCHING_REPO_LIST';
 export const REPO_LIST_SUCCESS = 'REPO_LIST_SUCCESS';
 
-export function getProfilePic() {
-  return (dispatch, getState) => {
+export function getProfilePic(): ThunkAction {
+  return (dispatch: Dispatch, getState: GetState) => {
     dispatch({ type: FETCHING_PROFILE_PIC });
 
     const { ghOauth } = getState().auth;
@@ -30,8 +32,8 @@ export function getProfilePic() {
   };
 }
 
-export function getRepoList(override?: boolean) {
-  return (dispatch, getState) => {
+export function getRepoList(override?: boolean): ThunkAction {
+  return (dispatch: Dispatch, getState: GetState) => {
     // don't bother to do the calls if you've already updated today
     // and they haven't explicitly called
     if (isSameDay(getState().api.lastChanged, Date.now()) && !override) return;
