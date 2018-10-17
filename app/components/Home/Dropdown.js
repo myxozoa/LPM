@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-// import PropTypes from 'prop-types';
 import cx from 'classnames';
 
 import styles from './Dropdown.css';
@@ -18,7 +17,6 @@ function Dropdown({
   const dropClass = cx(styles.container, {
     [styles.open]: open
   });
-  // console.log(open);
   return (
     <div className={dropClass}>
       <button className={styles.button} type="button" onClick={openFolder}>
@@ -30,17 +28,5 @@ function Dropdown({
     </div>
   );
 }
-
-// Dropdown.propTypes = {
-//   removeStudent: PropTypes.func,
-//   open: PropTypes.bool,
-//   openFolder: PropTypes.func
-// };
-
-// Dropdown.defaultProps = {
-//   removeStudent: () => {},
-//   open: false,
-//   openFolder: () => {}
-// };
 
 export default Dropdown;

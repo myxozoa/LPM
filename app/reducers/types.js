@@ -7,7 +7,8 @@ import ElectronStore from 'electron-store';
 // };
 
 export type Action = {
-  +type: string
+  +type: string,
+  payload: ?any,
 };
 
 

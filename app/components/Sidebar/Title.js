@@ -1,15 +1,12 @@
 // @flow
 
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 
 import styles from './Title.css';
 
 type Props = {};
 
 export default class Title extends Component<Props> {
-  props: Props;
-
   render() {
     // const { profilePic } = this.props;
 

@@ -96,8 +96,6 @@ class Content extends Component<Props, State> {
     const { students, repo, repoList } = this.props;
     const { repoName } = this.state;
 
-    console.log('REPO PROP, ', repo);
-
     return (
       <div className={styles.container}>
         <div className={styles.content} ref={this.page}>

@@ -32,7 +32,7 @@ export function login(): ThunkAction {
 
     authWindow.loadURL(prefs.login);
 
-    const callback = (oldURL, newURL) => {
+    const callback = (oldURL: string, newURL: string): void => {
       const parsed = url.parse(newURL, true);
       const { query } = parsed;
 
@@ -54,7 +54,7 @@ export function login(): ThunkAction {
 
     authWindow.webContents.on(
       'did-get-redirect-request',
-      (event, oldURL, newURL) => {
+      (event: SyntheticEvent<>, oldURL: string, newURL: string): void => {
         callback(oldURL, newURL);
       }
     );

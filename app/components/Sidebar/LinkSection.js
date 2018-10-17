@@ -1,22 +1,11 @@
 // @flow
 
 import React, { Component } from 'react';
-// import PropTypes from 'prop-types';
 
 import Link from './Link';
 import styles from './LinkSection.css';
 
 const shortid = require('shortid');
-
-// LinkSection.propTypes = {
-//   title: PropTypes.string,
-//   links: PropTypes.arrayOf(PropTypes.object)
-// };
-
-// LinkSection.defaultProps = {
-//   title: '',
-//   links: [{}]
-// };
 
 type linkType = {
   label: string,
@@ -27,7 +16,6 @@ type Props = {
   title: string,
   links: Array<linkType>,
 };
-
 
 export default class LinkSection extends Component<Props> {
   render() {
