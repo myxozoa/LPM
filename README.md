@@ -1,4 +1,4 @@
-## Lambda PM Companion
+## Lambda PM Companion [![Build Status](https://travis-ci.com/myxozoa/LPM.svg?branch=master)](https://travis-ci.com/myxozoa/LPM)
 
 ![alt text](./lambda_pm_app_screenshot.png)
 
