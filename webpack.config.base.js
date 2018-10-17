@@ -3,8 +3,10 @@
  */
 
 import path from 'path';
-import webpack from 'webpack';
 import fs from 'fs';
+
+import webpack from 'webpack';
+
 import { dependencies as externals } from './app/package.json';
 import { dependencies as possibleExternals } from './package.json';
 
