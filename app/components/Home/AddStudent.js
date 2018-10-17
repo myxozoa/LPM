@@ -2,17 +2,29 @@
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import shortid from 'shortid';
 import cx from 'classnames';
 
 import { addStudent } from '../../actions/students';
+import { ReactObjRef } from '../../reducers/types';
 
 import styles from './AddStudent.css';
 
-type Props = {};
+type Props = {
+  addStudent: Function,
+  scrollTarget: ReactObjRef<'div'>,
+};
 
-class AddStudent extends Component<Props> {
+type State = {
+  name: string,
+  username: string,
+  adding: boolean,
+};
+
+class AddStudent extends Component<Props, State> {
+  focusInput: ReactObjRef<'div'>;
+
   constructor(props) {
     super(props);
 
@@ -37,11 +49,15 @@ class AddStudent extends Component<Props> {
     });
 
     this.setState({ name: '', username: '' }, () => {
-      this.focusInput.current.focus();
+      if (this.focusInput.current) {
+        this.focusInput.current.focus();
+      }
     });
 
     setTimeout(() => {
-      scrollTarget.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
+      if (scrollTarget.current) {
+        scrollTarget.current.scrollIntoView({ block: 'end', behavior: 'smooth' });
+      }
     }, 100);
   };
 
@@ -50,12 +66,14 @@ class AddStudent extends Component<Props> {
       prev => ({ adding: !prev.adding, name: '', username: '' }),
       () => {
         const { adding } = this.state;
-        if (adding) this.focusInput.current.focus();
+        if (this.focusInput.current) {
+          if (adding) this.focusInput.current.focus();
+        }
       }
     );
   };
 
-  onChange = e => {
+  onChange = (e: SyntheticInputEvent<HTMLInputElement>) => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
@@ -143,16 +161,6 @@ class AddStudent extends Component<Props> {
     );
   }
 }
-
-AddStudent.propTypes = {
-  addStudent: PropTypes.func,
-  scrollTarget: PropTypes.oneOfType([PropTypes.object, PropTypes.func])
-};
-
-AddStudent.defaultProps = {
-  addStudent: () => {},
-  scrollTarget: {}
-};
 
 export default connect(
   null,

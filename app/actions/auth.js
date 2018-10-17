@@ -1,5 +1,6 @@
 // @flow
 
+import { ThunkAction, Dispatch } from '../reducers/types';
 import prefs from '../constants/defaults.json';
 
 import { getProfilePic } from './api';
@@ -11,8 +12,8 @@ const { remote } = require('electron');
 export const LOGGING_IN = 'LOGGING_IN';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
 
-export function login() {
-  return dispatch => {
+export function login(): ThunkAction {
+  return (dispatch: Dispatch) => {
     dispatch({ type: LOGGING_IN });
 
     let authWindow = new remote.BrowserWindow({
@@ -31,32 +32,37 @@ export function login() {
 
     authWindow.loadURL(prefs.login);
 
-    const callback = (oldURL, newURL) => {
+    const callback = (oldURL: string, newURL: string): void => {
       const parsed = url.parse(newURL, true);
       const { query } = parsed;
-      console.log(parsed);
-      if (query.error) {
-        console.error(query.error);
-      }
 
-      if (parsed.host === 'localhost') {
-        fetchResources();
-        dispatch({ type: LOGIN_SUCCESS, payload: query.access_token });
-        authWindow.close();
+      if (query) {
+        if (query.error) {
+          console.error(query.error);
+        }
+
+        if (parsed.host === 'localhost') {
+          fetchResources();
+          dispatch({ type: LOGIN_SUCCESS, payload: query.access_token });
+          if (authWindow) authWindow.close();
+          else console.error('window closed before action completed');
+        }
+      } else {
+        console.error('there was no query for login');
       }
     };
 
     authWindow.webContents.on(
       'did-get-redirect-request',
-      (event, oldURL, newURL) => {
+      (event: SyntheticEvent<>, oldURL: string, newURL: string): void => {
         callback(oldURL, newURL);
       }
     );
   };
 }
 
-export function fetchResources() {
-  return dispatch => {
+export function fetchResources(): ThunkAction {
+  return (dispatch: Dispatch) => {
     dispatch(getProfilePic());
   };
 }

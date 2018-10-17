@@ -7,8 +7,8 @@ import styles from './TodaysDate.css';
 
 export default function TodaysDate() {
   const date = new Date();
-  const dateString = formatDate(date, 'MMM D ddd');
-  const dateArray = dateString.split(' ');
+  const dateString: string = formatDate(date, 'MMM D ddd');
+  const dateArray: Array<string> = dateString.split(' ');
   return (
     <div className={styles.container}>
       <div className={styles.month}>{dateArray[0]}</div>

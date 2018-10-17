@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { history } from '../store/configureStore';
 
@@ -9,7 +8,9 @@ const { remote, shell } = require('electron');
 
 const { Menu } = remote;
 
-type Props = {};
+type Props = {
+  mac: boolean,
+};
 
 export default class Titlebar extends Component<Props> {
   props: Props;
@@ -217,11 +218,3 @@ export default class Titlebar extends Component<Props> {
     );
   }
 }
-
-Titlebar.propTypes = {
-  mac: PropTypes.bool
-};
-
-Titlebar.defaultProps = {
-  mac: false
-};

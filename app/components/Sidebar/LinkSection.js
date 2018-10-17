@@ -1,22 +1,23 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import Link from './Link';
 
+import Link from './Link';
 import styles from './LinkSection.css';
 
 const shortid = require('shortid');
 
-type Props = {};
-
 type linkType = {
-  label: string
+  label: string,
+  url: string,
+};
+
+type Props = {
+  title: string,
+  links: Array<linkType>,
 };
 
 export default class LinkSection extends Component<Props> {
-  props: Props;
-
   render() {
     const { title, links } = this.props;
     return (
@@ -29,12 +30,3 @@ export default class LinkSection extends Component<Props> {
     );
   }
 }
-LinkSection.propTypes = {
-  title: PropTypes.string,
-  links: PropTypes.arrayOf(PropTypes.object)
-};
-
-LinkSection.defaultProps = {
-  title: '',
-  links: [{}]
-};

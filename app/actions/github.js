@@ -1,5 +1,7 @@
 // @flow
+// travis test
 
+import { ThunkAction, Dispatch, GetState } from '../reducers/types';
 import gitUtils from '../utils/gitUtils';
 
 export const CLONE_SUCCESS = 'CLONE_SUCCESS';
@@ -9,8 +11,8 @@ export const PULL_SUCCESS = 'PULL_SUCCESS';
 export const PULLING = 'PULLING';
 export const PULL_ERROR = 'PULL_ERROR';
 
-export function pull(name: string, username: string) {
-  return (dispatch, getState) => {
+export function pull(name: string, username: string): ThunkAction {
+  return (dispatch: Dispatch, getState: GetState) => {
     dispatch({ type: PULLING });
 
     const { repo, workingDirectory } = getState().preferences;
@@ -24,8 +26,8 @@ export function pull(name: string, username: string) {
   };
 }
 
-export function clone(name: string, username: string) {
-  return (dispatch, getState) => {
+export function clone(name: string, username: string): ThunkAction {
+  return (dispatch: Dispatch, getState: GetState) => {
     const { repo, workingDirectory } = getState().preferences;
 
     dispatch({ type: CLONING });
@@ -41,8 +43,8 @@ export function clone(name: string, username: string) {
   };
 }
 
-export function cloneAll() {
-  return (dispatch, getState) => {
+export function cloneAll(): ThunkAction {
+  return (dispatch: Dispatch, getState: GetState) => {
     const { students, preferences } = getState();
     const { repo, workingDirectory } = preferences;
 

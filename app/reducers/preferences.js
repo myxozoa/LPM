@@ -10,7 +10,7 @@ import { INITIAL_LOAD } from '../actions/misc';
 import { preferences as defaultPrefs } from '../constants/defaults.json';
 
 import { store } from './types';
-import type { Action } from './types';
+import type { Action, repoType } from './types';
 
 const path = require('path');
 const fs = require('fs');
@@ -29,6 +29,14 @@ if (!fs.existsSync(localPath)) {
   fs.mkdirSync(repoPath);
 }
 
+type State = {
+  section: string,
+  repo: repoType,
+  workingDirectory: string,
+  login: string,
+  alwaysOnTop: boolean,
+}
+
 const prefs = {
   ...defaultPrefs,
   workingDirectory: localPath
@@ -36,11 +44,10 @@ const prefs = {
 
 // store.set('prefs', prefs);
 
-export default function preferences(state = prefs, action: Action) {
+export default function preferences(state: State = prefs, action: Action): State {
   switch (action.type) {
     case SET_SECTION:
       store.set('prefs.section', action.payload);
-      console.log(store.get('prefs'));
       return { ...state, section: action.payload };
 
     case SET_REPO:

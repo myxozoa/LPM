@@ -10,7 +10,9 @@
  *
  * @flow
  */
-import { app, BrowserWindow, dialog, shell } from 'electron';
+import {
+  app, BrowserWindow, dialog, shell
+} from 'electron';
 
 import MenuBuilder from './menu';
 
@@ -25,10 +27,7 @@ if (process.env.NODE_ENV === 'production') {
   sourceMapSupport.install();
 }
 
-if (
-  process.env.NODE_ENV === 'development' ||
-  process.env.DEBUG_PROD === 'true'
-) {
+if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
   require('electron-debug')();
   const path = require('path');
   const p = path.join(__dirname, '..', 'app', 'node_modules');
@@ -50,10 +49,7 @@ const installExtensions = async () => {
  */
 
 autoUpdater.on('error', error => {
-  dialog.showErrorBox(
-    'Error: ',
-    error == null ? 'unknown' : (error.stack || error).toString()
-  );
+  dialog.showErrorBox('Error: ', error == null ? 'unknown' : (error.stack || error).toString());
 });
 
 autoUpdater.on('update-available', () => {
@@ -124,10 +120,7 @@ app.on('window-all-closed', () => {
 });
 
 app.on('ready', async () => {
-  if (
-    process.env.NODE_ENV === 'development' ||
-    process.env.DEBUG_PROD === 'true'
-  ) {
+  if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
     await installExtensions();
   } else {
     checkForUpdates(true);

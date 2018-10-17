@@ -1,29 +1,43 @@
 // @flow
 
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
+
 import styles from './Links.css';
 
 const { shell, clipboard, remote } = require('electron');
 
 const { Menu, MenuItem } = remote;
 
-type Props = {};
+// Link.propTypes = {
+//   label: PropTypes.string,
+//   url: PropTypes.string
+// };
+
+// Link.defaultProps = {
+//   label: 'Airtable',
+//   url: '#'
+// };
+
+type Props = {
+  url: string,
+  label: string,
+};
 
 export default class Link extends Component<Props> {
   props: Props;
 
-  open = () => {
+  open = (): void => {
     const { url } = this.props;
     shell.openExternal(url);
   };
 
-  copy = () => {
+  copy = (): void => {
     const { url } = this.props;
     clipboard.writeText(url, 'selection');
   };
 
-  copyMenu = e => {
+  copyMenu = (e: SyntheticEvent<HTMLAnchorElement>): void => {
     e.preventDefault();
     const window = remote.getCurrentWindow();
     const contextMenu = new Menu();
@@ -44,7 +58,7 @@ export default class Link extends Component<Props> {
         className={styles.link}
         onClick={this.open}
         onContextMenu={this.copyMenu}
-        onKeyDown={this.handleKey}
+        // onKeyDown={this.handleKey}
         role="button"
         tabIndex="0"
       >
@@ -53,13 +67,3 @@ export default class Link extends Component<Props> {
     );
   }
 }
-
-Link.propTypes = {
-  label: PropTypes.string,
-  url: PropTypes.string
-};
-
-Link.defaultProps = {
-  label: 'Airtable',
-  url: '#'
-};

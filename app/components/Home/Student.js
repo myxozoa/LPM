@@ -5,7 +5,6 @@ import path from 'path';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import StarRatings from 'react-star-ratings';
-import PropTypes from 'prop-types';
 import { shell } from 'electron';
 
 import {
@@ -16,55 +15,71 @@ import {
 } from '../../actions/students';
 import { clone } from '../../actions/github';
 import gitUtils from '../../utils/gitUtils';
+import type { repoType } from '../../reducers/types';
 
 import Dropdown from './Dropdown';
 import styles from './Student.css';
 
-type Props = {};
 
-class Student extends Component<Props> {
-  props: Props;
+type Props = {
+  id: string,
+  name: string,
+  username: string,
+  rating: number,
+  repo: repoType,
+  workingDirectory: string,
+  setRating: Function,
+  setName: Function,
+  setUsername: Function,
+  clone: Function,
+  removeStudent: Function,
+};
 
+type State = {
+  dropDown: boolean,
+};
+
+class Student extends Component<Props, State> {
   state = {
     dropDown: false
   };
 
-  openPR = () => {
+  openPR = (): void => {
     const { username, repo } = this.props;
     shell.openExternal(
-      `${repo}/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A${username}`
+      `${repo.value}/pulls?utf8=%E2%9C%93&q=is%3Apr+author%3A${username}`
     );
   };
 
-  openFolder = () => {
+  openFolder = (): void => {
     const { name, workingDirectory } = this.props;
     const folderName = gitUtils.prepareFolderName(name);
     shell.openItem(path.join(workingDirectory, folderName));
   };
 
-  clone = () => {
+  clone = (): void => {
     const { clone: cloneAction, name, username } = this.props;
 
     cloneAction(name, username);
   };
 
-  changeRating = (newRating: number) => {
+  changeRating = (newRating: number): void => {
     const { setRating: rate, id } = this.props;
     rate(id, newRating);
   };
 
-  toggleDropDown = () => {
+  toggleDropDown = (): void => {
     this.setState(prev => ({ dropDown: !prev.dropDown }));
   };
 
-  closeDropDown = () => {
+  closeDropDown = (): void => {
     // TODO: Find a cleaner way of stopping this from breaking the menu
     setTimeout(() => {
       this.setState({ dropDown: false });
     }, 100);
   };
 
-  removeStudent = () => {
+  removeStudent = (): void => {
     const { removeStudent: removeStudentAction, id } = this.props;
     removeStudentAction(id);
   };
@@ -221,34 +236,6 @@ class Student extends Component<Props> {
     );
   }
 }
-
-Student.propTypes = {
-  id: PropTypes.string,
-  name: PropTypes.string,
-  username: PropTypes.string,
-  rating: PropTypes.number,
-  repo: PropTypes.string,
-  workingDirectory: PropTypes.string,
-  setRating: PropTypes.func,
-  setName: PropTypes.func,
-  setUsername: PropTypes.func,
-  clone: PropTypes.func,
-  removeStudent: PropTypes.func
-};
-
-Student.defaultProps = {
-  id: 'NULL',
-  name: 'John Smith',
-  username: 'john657',
-  rating: 0,
-  repo: '',
-  workingDirectory: '',
-  setRating: () => {},
-  setName: () => {},
-  setUsername: () => {},
-  clone: () => {},
-  removeStudent: () => {}
-};
 
 const mapStateToProps = state => ({
   repo: state.preferences.repo,
