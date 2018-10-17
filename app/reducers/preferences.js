@@ -48,7 +48,6 @@ export default function preferences(state: State = prefs, action: Action): State
   switch (action.type) {
     case SET_SECTION:
       store.set('prefs.section', action.payload);
-      console.log(store.get('prefs'));
       return { ...state, section: action.payload };
 
     case SET_REPO:
