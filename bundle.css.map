@@ -1,1 +1,1 @@
-{"version":3,"sources":["webpack:///./src/styles/index.scss"],"names":[],"mappings":"AAAA;AACA,cAAc","file":"bundle.css","sourcesContent":["body {\n  color: blue; }\n"],"sourceRoot":""}
+{"version":3,"sources":["webpack:///./src/styles/index.scss"],"names":[],"mappings":"AAAA;AACA;AACA,0BAA0B","file":"bundle.css","sourcesContent":["body {\n  color: #151F29;\n  font-family: filson-pro; }\n"],"sourceRoot":""}
