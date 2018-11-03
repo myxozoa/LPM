@@ -4,3 +4,27 @@ body {
   color: $body-color;
   font-family: filson-pro;
 }
+
+h1 {
+  font-weight: 700;
+  font-size: 70px;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 40px;
+}
+
+h4 {
+  font-weight: 300;
+  font-size: 20px;
+}
+
+p {
+  font-weight: 300;
+  font-size: 15px;
+}
+
+section {
+  display: flex;
+}
