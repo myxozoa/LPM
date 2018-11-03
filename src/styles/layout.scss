@@ -8,3 +8,18 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.wallpaper {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: -55%;
+  clip-path: polygon(20% 0, 90% 0%, 90% 100%, 20% 100%);
+}
+
+.demo-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}

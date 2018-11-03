@@ -43,3 +43,13 @@ section {
     background: $background-color;
   }
 }
+
+::selection {
+  color: white;
+  background: $accent-color; /* WebKit/Blink Browsers */
+}
+::-moz-selection {
+  color: white;
+
+  background: $accent-color; /* Gecko Browsers */
+}
