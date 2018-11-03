@@ -1,4 +1,5 @@
 $body-color: #151F29;
+$accent-color: #3A71D9;
 
 body {
   color: $body-color;
@@ -23,6 +24,11 @@ h4 {
 p {
   font-weight: 300;
   font-size: 15px;
+}
+
+p > span {
+  font-weight: 500;
+  color: $accent-color;
 }
 
 section {
