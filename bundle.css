@@ -1,6 +1,193 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol,
+ul {
+  list-style: none; }
+
+blockquote,
+q {
+  quotes: none; }
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body {
+  height: 100%; }
+
 body {
   color: #151F29;
   font-family: filson-pro; }
+
+h1 {
+  font-weight: 700;
+  font-size: 70px; }
+
+h2 {
+  font-weight: 300;
+  font-size: 40px; }
+
+h4 {
+  font-weight: 300;
+  font-size: 20px; }
+
+p {
+  font-weight: 300;
+  font-size: 15px; }
+  p > span {
+    font-weight: 500;
+    color: #3A71D9; }
+
+section {
+  display: flex; }
+  section:nth-of-type(even) {
+    background: #F8F8FA; }
+
+::selection {
+  color: white;
+  background: #3A71D9;
+  /* WebKit/Blink Browsers */ }
+
+::-moz-selection {
+  color: white;
+  background: #3A71D9;
+  /* Gecko Browsers */ }
+
+.headline {
+  height: 100%;
+  justify-content: space-around; }
+
+.title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+
+.wallpaper {
+  position: absolute;
+  z-index: -10;
+  top: 0;
+  left: -55%;
+  clip-path: polygon(20% 0, 90% 0%, 90% 100%, 20% 100%); }
+
+.demo-image {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative; }
 
 
 /*# sourceMappingURL=bundle.css.map*/
