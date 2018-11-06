@@ -23,3 +23,21 @@
   justify-content: center;
   position: relative;
 }
+
+.students {
+  display: flex;
+  justify-content: space-around;
+  padding: 50px;
+}
+
+.students-info {
+  > h2 {
+    margin-bottom: 50px;
+  }
+}
+
+.students-images {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
