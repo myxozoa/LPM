@@ -157,7 +157,8 @@ p {
     color: #3A71D9; }
 
 section {
-  display: flex; }
+  display: flex;
+  padding: 100px 50px; }
   section:nth-of-type(even) {
     background: #F8F8FA; }
 
@@ -194,9 +195,7 @@ section {
   position: relative; }
 
 .students, .stats {
-  display: flex;
-  justify-content: space-around;
-  padding: 100px 50px; }
+  justify-content: space-around; }
 
 .students-info > h2, .stats-info > h2 {
   margin-bottom: 80px; }
@@ -205,6 +204,21 @@ section {
   display: flex;
   flex-direction: column;
   justify-content: center; }
+
+@media (max-width: 1000px) {
+  section {
+    flex-direction: column; }
+  img {
+    width: 80%;
+    height: auto; } }
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 60px; }
+  section {
+    padding: 50px 10px; }
+  img {
+    width: 95%; } }
 
 
 /*# sourceMappingURL=bundle.css.map*/
