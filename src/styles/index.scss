@@ -4,6 +4,7 @@ $background-color: #F8F8FA;
 
 html, body {
   height: 100%;
+  line-height: 25px;
 }
 
 body {
@@ -14,6 +15,8 @@ body {
 h1 {
   font-weight: 700;
   font-size: 70px;
+  line-height: 80px;
+
 }
 
 h2 {
@@ -29,8 +32,7 @@ h4 {
 p {
   font-weight: 300;
   font-size: 18px;
-  line-height: 25px;
-  width: 500px;
+  width: 400px;
   margin-bottom: 30px;
 
   > span {
@@ -41,6 +43,7 @@ p {
 
 section {
   display: flex;
+  padding: 100px 50px;
 
   &:nth-of-type(even) {
     background: $background-color;

@@ -1,0 +1,22 @@
+@media (max-width: 1000px) {
+  section {
+    flex-direction: column;
+  }
+
+  img {
+    width: 80%;
+    height: auto;
+  }
+}
+
+@media (max-width: 550px) {
+  h1 {
+    font-size: 60px;
+  }
+  section {
+    padding: 50px 10px;
+  }
+  img {
+    width: 95%;
+  }
+}

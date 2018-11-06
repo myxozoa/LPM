@@ -25,14 +25,12 @@
 }
 
 .students, .stats {
-  display: flex;
   justify-content: space-around;
-  padding: 50px;
 }
 
 .students-info, .stats-info {
   > h2 {
-    margin-bottom: 50px;
+    margin-bottom: 80px;
   }
 }
 
