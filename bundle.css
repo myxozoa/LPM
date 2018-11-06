@@ -127,15 +127,17 @@ table {
   border-spacing: 0; }
 
 html, body {
-  height: 100%; }
+  height: 100%;
+  line-height: 25px; }
 
 body {
-  color: #151F29;
+  color: #090B13;
   font-family: filson-pro; }
 
 h1 {
   font-weight: 700;
-  font-size: 70px; }
+  font-size: 70px;
+  line-height: 80px; }
 
 h2 {
   font-weight: 500;
@@ -148,8 +150,7 @@ h4 {
 p {
   font-weight: 300;
   font-size: 18px;
-  line-height: 25px;
-  width: 500px;
+  width: 400px;
   margin-bottom: 30px; }
   p > span {
     font-weight: 500;
@@ -195,10 +196,10 @@ section {
 .students, .stats {
   display: flex;
   justify-content: space-around;
-  padding: 50px; }
+  padding: 100px 50px; }
 
 .students-info > h2, .stats-info > h2 {
-  margin-bottom: 50px; }
+  margin-bottom: 80px; }
 
 .students-images, .stats-images {
   display: flex;
