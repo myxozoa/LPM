@@ -24,19 +24,19 @@
   position: relative;
 }
 
-.students {
+.students, .stats {
   display: flex;
   justify-content: space-around;
   padding: 50px;
 }
 
-.students-info {
+.students-info, .stats-info {
   > h2 {
     margin-bottom: 50px;
   }
 }
 
-.students-images {
+.students-images, .stats-images {
   display: flex;
   flex-direction: column;
   justify-content: center;
