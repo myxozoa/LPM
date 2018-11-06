@@ -39,3 +39,25 @@
   flex-direction: column;
   justify-content: center;
 }
+
+.students-images {
+  position: relative;
+  align-items: flex-end;
+}
+
+.student {
+  border-radius: 15px;
+  margin-right: 12px;
+  -webkit-box-shadow: 0px 8px 55px 0px rgba(189,198,217,0.56);
+  -moz-box-shadow: 0px 8px 55px 0px rgba(189,198,217,0.56);
+  box-shadow: 0px 8px 55px 0px rgba(189,198,217,0.56);
+}
+
+.selected-student {
+  z-index: 10;
+  border-radius: 15px;
+  position: relative;
+  -webkit-box-shadow: 0px 17px 55px 0px rgba(189,198,217,0.56);
+  -moz-box-shadow: 0px 17px 55px 0px rgba(189,198,217,0.56);
+  box-shadow: 0px 17px 55px 0px rgba(189,198,217,0.56);
+}
