@@ -18,8 +18,12 @@
       </div>
     </div>
     <div class="demo-image">
-      <img src=${require('./assets/app.png')} class="screenshot" width="430px" alt="SCREENSHOT">
-      <img src=${require('./assets/wallpaper.jpeg')} class="wallpaper" height="550px" alt="WALLPAPER">
+      <div class="demo-image-container">
+        <img src=${require('./assets/app.png')} class="screenshot" width="430px" alt="SCREENSHOT">
+        <div class="wallpaper-container">
+          <img src=${require('./assets/wallpaper.jpeg')} class="wallpaper" width="600px" alt="WALLPAPER">
+        </div>
+      </div>
     </div>
   </section>
   <section class="students">
@@ -29,15 +33,19 @@
         <p><span>View Pull Request - </span>Navigate to your student's Github Pull Request at the click of a button.</p>
         <p><span>Rate their Performance - </span>Keep track of how you feel they've done in the moment, letting you take control of how you'd like to fill out forms.</p>
       </div>
-      <div class="students-images">
-        <img src=${require('./assets/student_1.png')} class="student" width="500px" alt="img">
-        <img src=${require('./assets/student_2.png')} class="selected-student" width="550px" alt="img">
-        <img src=${require('./assets/student_3.png')} class="student" width="500px" alt="img">
+      <div class="images">
+        <div class="students-images">
+          <img src=${require('./assets/student_1.png')} class="student-image" width="400px" alt="img">
+          <img src=${require('./assets/student_2.png')} class="selected-student-image" width="450px" alt="img">
+          <img src=${require('./assets/student_3.png')} class="student-image" width="400px" alt="img">
+        </div>
       </div>
   </section>
   <section class="stats">
-    <div class="stats-images">
-      <img src=${require('./assets/stats.png')} width="500px" alt="img">
+    <div class="images">
+      <div class="stats-images">
+        <img src=${require('./assets/stats.png')} class="stats-image" width="400px" alt="img">
+      </div>
     </div>
     <div class="stats-info">
       <h2>Stats</h2>
