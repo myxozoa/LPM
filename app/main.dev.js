@@ -13,10 +13,13 @@
 import {
   app, BrowserWindow, dialog, shell
 } from 'electron';
+import { init } from '@sentry/electron';
 
 import MenuBuilder from './menu';
 
 const { autoUpdater } = require('electron-updater');
+
+init({ dsn: 'https://9f48b79523c948e3ab1fc7ea31abb3a8@sentry.io/1319532' });
 
 let mainWindow = null;
 let firstRun = false;

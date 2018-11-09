@@ -222,6 +222,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.2.0",
     "@octokit/rest": "^15.11.1",
+    "@sentry/electron": "^0.13.0",
     "axios": "^0.18.0",
     "date-fns": "^1.29.0",
     "devtron": "^1.4.0",
