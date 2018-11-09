@@ -42,7 +42,14 @@ const prefs = {
   workingDirectory: localPath
 }; // setting default workingDirectory to path in documents
 
-// store.set('prefs', prefs);
+Object.keys(prefs).forEach(item => {
+  if (store.has(`prefs.${item}`) === undefined || store.has(`prefs.${item}`) === null) {
+    console.log(store.store, item);
+    store.set(`prefs.${item}`, prefs[item]);
+  }
+});
+
+console.log(store.store);
 
 export default function preferences(state: State = prefs, action: Action): State {
   switch (action.type) {
@@ -51,8 +58,10 @@ export default function preferences(state: State = prefs, action: Action): State
       return { ...state, section: action.payload };
 
     case SET_REPO:
+      console.log(store.store);
       store.set('prefs.repo', action.payload);
-      return { ...state, repo: action.payload.replace(/\/$/, '') };
+      console.log(store.store);
+      return { ...state, repo: { ...action.payload, value: action.payload.value.replace(/\/$/, '') } };
 
     case SET_WORKING_DIRECTORY:
       store.set('prefs.workingDirectory', action.payload);
@@ -60,6 +69,7 @@ export default function preferences(state: State = prefs, action: Action): State
 
     case SET_ALWAYS_ON_TOP:
       store.set('prefs.alwaysOnTop', action.payload);
+      console.log(store.store);
       remote.getCurrentWindow().setAlwaysOnTop(action.payload);
       return { ...state, alwaysOnTop: action.payload };
 

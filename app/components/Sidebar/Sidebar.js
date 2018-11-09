@@ -9,7 +9,7 @@ import styles from './Sidebar.css';
 type Props = {
   section: string,
   profilePic: string,
-  ghOauth: string,
+  ghOauth: ?string,
 };
 
 class Sidebar extends Component<Props> {

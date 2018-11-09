@@ -43,7 +43,7 @@ export function getRepoList(override?: boolean): ThunkAction {
     const promises = [];
 
     // remove this magic number
-    for (let i = 1; i <= 3; i++) {
+    for (let i = 1; i <= 4; i++) {
       promises.push(
         axios // grab 100 repos at a time because thats the limit
           .get(`https://api.github.com/users/LambdaSchool/repos?per_page=100&type=public&page=${i}`)

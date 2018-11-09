@@ -5,7 +5,7 @@ import { LOGIN_SUCCESS } from '../actions/auth';
 import type { Action } from './types';
 
 type State = {
-  ghOauth: ?string,
+  ghOauth?: ?string,
 };
 
 export default function auth(state: State = { ghOauth: null }, action: Action): State {

@@ -12,6 +12,7 @@ type State = {
 
 const initialState = {
   repoList,
+  profilePic: '',
   lastChanged: 1536525743102
 };
 
