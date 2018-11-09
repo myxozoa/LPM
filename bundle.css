@@ -205,8 +205,7 @@ section {
 .demo-image {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  min-width: 300px; }
+  justify-content: center; }
 
 .students, .stats {
   justify-content: space-around; }
