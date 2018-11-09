@@ -10,16 +10,18 @@
  *
  * @flow
  */
+import path from 'path';
+
 import {
   app, BrowserWindow, dialog, shell
 } from 'electron';
-import { init } from '@sentry/electron';
+
 
 import MenuBuilder from './menu';
 
 const { autoUpdater } = require('electron-updater');
+require('./sentry');
 
-init({ dsn: 'https://9f48b79523c948e3ab1fc7ea31abb3a8@sentry.io/1319532' });
 
 let mainWindow = null;
 let firstRun = false;
@@ -32,7 +34,6 @@ if (process.env.NODE_ENV === 'production') {
 
 if (process.env.NODE_ENV === 'development' || process.env.DEBUG_PROD === 'true') {
   require('electron-debug')();
-  const path = require('path');
   const p = path.join(__dirname, '..', 'app', 'node_modules');
   require('module').globalPaths.push(p);
 }
@@ -139,7 +140,10 @@ app.on('ready', async () => {
     titleBarStyle: 'hidden',
     minHeight: 200,
     minWidth: 580,
-    transparent: true
+    transparent: true,
+    webPreferences: {
+      preload: path.join(__dirname, 'sentry.js')
+    }
   });
 
   mainWindow.loadURL(`file://${__dirname}/app.html`);

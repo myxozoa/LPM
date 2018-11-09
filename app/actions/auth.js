@@ -1,5 +1,7 @@
 // @flow
 
+import path from 'path';
+
 import { ThunkAction, Dispatch } from '../reducers/types';
 import prefs from '../constants/defaults.json';
 
@@ -22,7 +24,8 @@ export function login(): ThunkAction {
       useContentSize: true,
       webPreferences: {
         nodeIntegration: false,
-        contextIsolation: true
+        contextIsolation: true,
+        preload: path.join(__dirname, 'sentry.js')
       }
     });
 

@@ -20,6 +20,11 @@ import type { repoType } from '../../reducers/types';
 import Dropdown from './Dropdown';
 import styles from './Student.css';
 
+const test = () => {
+  throw new Error('testing tags');
+}
+
+test();
 
 type Props = {
   id: string,

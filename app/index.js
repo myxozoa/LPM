@@ -1,14 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
-import { init } from '@sentry/electron';
 
 import Root from './containers/Root';
 import { configureStore, history } from './store/configureStore';
 import './app.global.css';
 import './variables.global.css';
+import './sentry';
 
-init({ dsn: 'https://9f48b79523c948e3ab1fc7ea31abb3a8@sentry.io/1319532' });
 
 const store = configureStore();
 
