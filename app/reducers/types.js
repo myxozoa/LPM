@@ -8,7 +8,7 @@ import ElectronStore from 'electron-store';
 
 export type Action = {
   +type: string,
-  payload: ?any,
+  payload?: ?any,
 };
 
 

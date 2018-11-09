@@ -48,7 +48,7 @@ To install this on ubuntu you would run sudo apt-get install libcurl4-openssl-de
 
 1. Run `yarn` or `npm i` to install the necessary dependencies.
 
-2. Run `yarn start` .
+2. Run `yarn run dev` .
 
 ## TODO
 

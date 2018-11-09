@@ -14,7 +14,7 @@ import type { Action, Student } from './types';
 
 type State = Array<Student>;
 
-export default function preferences(state: State = [], action: Action): State {
+export default function students(state: State = [], action: Action): State {
   switch (action.type) {
     case ADD_STUDENT:
       return [...state, action.payload];

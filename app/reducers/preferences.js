@@ -7,7 +7,7 @@ import {
   SET_ALWAYS_ON_TOP
 } from '../actions/preferences';
 import { INITIAL_LOAD } from '../actions/misc';
-import { preferences as defaultPrefs } from '../constants/defaults.json';
+import defaultPrefs from '../constants/defaults.json';
 
 import { store } from './types';
 import type { Action, repoType } from './types';
